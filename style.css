@@ -124,6 +124,14 @@ ul#contact img{
     width: 15px;
     margin-right: 5px;
 }
+
+div#techno-flex{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 7px;
+}
+
 div#competences{
     display: flex;
     flex-flow: row nowrap;
@@ -132,16 +140,15 @@ div#competences{
     margin-top: 20px;
 }
 
-div#competences div{
-    max-width: 215px;
+div#competences > div{
+    max-width: 30%;
 }
 
-div#techno-flex{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    gap: 7px;
+div#competences div#interets{
+    min-width: 255px;
 }
+
+
 
 main{
     padding: 50px 25%;
