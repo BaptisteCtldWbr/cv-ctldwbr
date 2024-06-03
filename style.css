@@ -64,14 +64,13 @@ strong{
 }
 
 header{
-    /*background-color: #00265F;*/
     color: #FFFFFF;
     display: flex;
     flex-direction: column;
     align-items: stretch;
     justify-content: center;
     
-    background-image: url(bande.png);
+    background-image: url(ressources/bande.png);
     background-repeat: repeat-x;
     background-position: bottom right;
     padding-bottom: 20px;
@@ -125,11 +124,6 @@ ul#contact img{
     width: 15px;
     margin-right: 5px;
 }
-
-/*ul#contact a{
-    color: white;
-}*/
-
 div#competences{
     display: flex;
     flex-flow: row nowrap;
@@ -141,18 +135,6 @@ div#competences{
 div#competences div{
     max-width: 215px;
 }
-
-/*div#technologies{
-    flex: 3;
-}
-
-div#langues{
-    flex: 2;
-}
-
-div#interets{
-    flex: 2;
-}*/
 
 div#techno-flex{
     display: flex;
