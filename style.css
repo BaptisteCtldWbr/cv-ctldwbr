@@ -19,6 +19,14 @@ h2{
     margin: 20px 0px;
 }
 
+h2::before{
+    content: ">";
+    font-family: "Montserrat";
+    font-weight: 900;
+    color: #444444;
+    margin-right: 10px;
+}
+
 h3{
     font-family: 'Roboto Mono';
     font-weight: 400;
@@ -46,22 +54,37 @@ p, a, li{
     font-weight: 300;
 }
 
+a{
+    color: inherit;
+}
+
 strong{
     font-weight: 700;
+    color: #444444;
 }
 
 header{
-    background-color: #00265F;
+    /*background-color: #00265F;*/
     color: #FFFFFF;
     display: flex;
     flex-direction: column;
     align-items: stretch;
     justify-content: center;
+    
+    background-image: url(bande.png);
+    background-repeat: repeat-x;
+    background-position: bottom right;
+    padding-bottom: 20px;
+}
+
+div#header-couleur{
+    background-color: #00265F;
     padding: 50px 25%;
 }
 
 header div#moi{
     display: flex;
+    gap: 20px;
 }
 
 header div#moi img{
@@ -86,12 +109,16 @@ div#moi-texte p#moi-valeurs{
     font-style: italic;
 }
 
+div#moi p#moi-stage strong{
+    color: #FFFFFF;
+}
+
 ul#contact{
     display: flex;
     flex-flow: wrap row;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
-    gap: 15px 30px;
+    gap: 10px 30px;
 }
 
 ul#contact img{
@@ -99,6 +126,69 @@ ul#contact img{
     margin-right: 5px;
 }
 
-ul#contact a{
+/*ul#contact a{
     color: white;
+}*/
+
+div#competences{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
 }
+
+div#competences div{
+    max-width: 215px;
+}
+
+/*div#technologies{
+    flex: 3;
+}
+
+div#langues{
+    flex: 2;
+}
+
+div#interets{
+    flex: 2;
+}*/
+
+div#techno-flex{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 7px;
+}
+
+main{
+    padding: 50px 25%;
+}
+
+div.exp{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: self-start;
+    gap: 20px;
+}
+
+div.exp span.exp-det{font-style: italic;    color: #444444;}
+div.exp span.exp-det::before{content: "\003c";}
+div.exp span.exp-det::after{content: "\003e";}
+
+
+div.exp img.exp-img{
+    width: 30px;
+    margin-top: 10px;
+}
+
+div.exp p.exp-date{
+    font-weight: 300;
+    font-style: italic;
+    color: #444444;
+}
+
+div.exp p.exp-comp{
+    font-style: italic;
+}
+
