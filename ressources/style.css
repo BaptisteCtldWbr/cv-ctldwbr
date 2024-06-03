@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+body{
+    margin: 0;
+}
+
+header{
+    background-color: #00265F;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+
+}
+
+header div#moi{
+    display: flex;
+}
+
+header div#moi img{
+    height: 250px;
+}
+
+h1{
+    font-family: 'Roboto Mono';
+    font-weight: 700;
+    font-size: 2em;
+}
+
+h3{
+    font-family: 'Roboto Mono';
+    font-weight: 500;
+}
+
+p, a, li{
+    font-family: "Montserrat";
+}
