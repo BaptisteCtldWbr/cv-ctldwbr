@@ -50,8 +50,9 @@ h4{
 
 p, a, li{
     font-family: "Montserrat";
-    margin: 5px 0px;
+    margin: 7px 0px;
     font-weight: 300;
+    line-height: 1.2;
 }
 
 a{
@@ -195,3 +196,18 @@ div.exp p.exp-comp{
     font-style: italic;
 }
 
+p#lien-cv{
+    margin: 60px 0px;
+}
+
+p#lien-cv a::before{
+    content: "";
+    display: inline-block;
+    height: 17px;
+    width: 14px;
+    background-image: url(ressources/pdf.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin-right: 5px;
+}
