@@ -137,7 +137,7 @@ div#moi p#moi-stage strong{
 ul#contact{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
+    gap: 10px 50px;
 }
 
 ul#contact img{
@@ -157,16 +157,15 @@ div#techno-flex{
 }
 
 div#competences{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px;
     margin-top: 20px;
 }
 
-div#competences > div{
+/*div#competences > div{
     max-width: 30%;
-}
+}*/
 
 div#competences div#interets{
     min-width: 255px;
