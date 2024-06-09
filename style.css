@@ -71,7 +71,7 @@ header{
     align-items: stretch;
     justify-content: center;
     
-    background-image: url(ressources/bande.png);
+    background-image: url(cv-ressources/bande.png);
     background-repeat: repeat-x;
     background-position: bottom right;
     padding-bottom: 20px;
@@ -214,7 +214,7 @@ p#lien-cv a::before{
     display: inline-block;
     height: 17px;
     width: 14px;
-    background-image: url(ressources/pdf.png);
+    background-image: url(cv-ressources/pdf.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
