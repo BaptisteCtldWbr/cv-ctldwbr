@@ -1,0 +1,40 @@
+div.cont-projet{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+
+}
+
+article.projet{
+    aspect-ratio: 2/1;
+    background-position: center center;
+    background-size: cover;
+    border-radius: 15px;
+}
+
+article.projet a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+article.projet h4{
+    background-color: #FFFFFF;
+    color: #00265F;
+    padding: 5px;
+    width: fit-content;
+    font-size: 1em;
+    border-radius: 5px;
+    position: relative;
+    top: 10px;
+    left: 10px;
+    margin: 0;
+}
+
+article.projet h4::before{
+    content: ">";
+    font-family: "Montserrat";
+    font-weight: 900;
+    color: #00265F;
+    margin-right: 10px;
+}
