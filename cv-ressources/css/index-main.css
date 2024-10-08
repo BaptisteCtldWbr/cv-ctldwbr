@@ -61,7 +61,7 @@ p#lien-cv a::after{
     display: inline-block;
     height: 17px;
     width: 14px;
-    background-image: url(cv-ressources/pdf.png);
+    background-image: url(../pdf.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
