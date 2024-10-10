@@ -11,13 +11,14 @@ div#header-couleur{
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    justify-content: center;
+    justify-content: space-evenly;
     background-color: #00265F;
-    padding: 50px 20vw;
+    padding: 0px 20vw;
     width: 100%;
+    min-height: 100vh;
 }
 
- header section#moi, div#moi-details{
+header section#moi, div#moi-details{
     max-width: 60vw;
 }
 
@@ -54,7 +55,8 @@ header section#moi p#moi-stage strong{
 div#moi-details{
     display: flex;
     flex-flow: row wrap;
-    gap: 10px;
+    justify-content: space-between;
+    gap: 40px;
 }
 
 header section#contact{
@@ -104,6 +106,20 @@ header div#techno-flex{
 
 header section#competences div#interets{
     min-width: 255px;
+}
+
+div#scroll{
+    display: flex;
+    justify-content: center;
+}
+
+div#scroll p{
+    font-family: 'Roboto Mono';
+    font-weight: 700;
+    font-size: 4em;
+    width: fit-content;
+    text-align: center;
+    transform: rotate(90deg);
 }
 
 @media screen and (max-width: 1000px) {

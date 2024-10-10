@@ -16,6 +16,7 @@ nav ul li a{
     color: #FFFFFF;
     border-radius: 30px;
     transition: all 0.3s ease-in-out;
+    font-family: 'Roboto Mono';
 }
 
 nav ul li a:hover{
@@ -54,6 +55,7 @@ article.exp p.exp-comp{
 
 p#lien-cv{
     margin: 60px 0px 0px 0px;
+    text-align: center;
 }
 
 p#lien-cv a::after{
