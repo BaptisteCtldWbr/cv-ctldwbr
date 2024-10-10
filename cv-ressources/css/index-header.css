@@ -24,7 +24,8 @@ header section#moi, div#moi-details{
 
 header section#moi{
     display: flex;
-    gap: 20px;
+    gap: 80px;
+    justify-content: space-between;
 }
 
 header section#moi img{
@@ -35,7 +36,7 @@ header div#moi-texte{
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-end;
-    width: max-content;
+    width: 50%;
     /* gap: 10px; */
 }
 
