@@ -3,6 +3,7 @@ header{
     background-image: url(../bande.png);
     background-repeat: repeat-x;
     background-position: bottom right;
+    background-size: 60%;
     padding-bottom: 20px;
     display: flex;
 }
@@ -26,6 +27,7 @@ header section#moi{
     display: flex;
     gap: 80px;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 header section#moi img{
@@ -36,7 +38,7 @@ header div#moi-texte{
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-end;
-    width: 50%;
+    max-width: 50%;
     /* gap: 10px; */
 }
 
@@ -56,13 +58,17 @@ header section#moi p#moi-stage strong{
 div#moi-details{
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     gap: 40px;
 }
 
+section#contact, div#competences, section#interets{
+    max-width: 30%;
+    width: fit-content;
+}
+
 header section#contact{
-    width: 30%;
-    min-width: 200px;
+        min-width: 200px;
 }
 
 header ul#contact{
@@ -84,14 +90,11 @@ header ul#contact a{
     text-decoration: none;
 }
 
-header section#competences{
-    width: 60%;
-    min-width: 200px;
+header div#competences{
     display: flex;
-    flex-flow: row wrap;
-    column-gap: 50px;
     justify-content: space-between;
-    align-items: stretch;
+    flex-direction: column;
+    gap: 20px;
 }
 
 header div#techno-flex{
@@ -103,10 +106,6 @@ header div#techno-flex{
     justify-content: center;
     gap: 7px;*/
     max-width: 300px;
-}
-
-header section#competences div#interets{
-    min-width: 255px;
 }
 
 div#scroll{
