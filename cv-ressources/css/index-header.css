@@ -124,6 +124,10 @@ div#scroll p{
     transform: rotate(90deg);
 }
 
+meter{
+    margin-left: 10px;
+}
+
 @media screen and (max-width: 1000px) {
     main{
         padding: 50px 10%;
