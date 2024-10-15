@@ -62,7 +62,7 @@ h4{
     font-family: 'Roboto Mono';
     font-weight: 400;
     font-size: 1.2em;
-    margin: 10px 0px;
+    margin: 20px 0px;
     color: var(--bleu);
 }
 
@@ -90,8 +90,9 @@ strong{
 
 figure{
     img{
-        width: 80%;
-        margin: 0 10%;
+        width: 70%;
+        margin: 0 15%;
+        border: var(--bleu) 1px dashed;
     }
     figcaption{
         font-style: italic;
