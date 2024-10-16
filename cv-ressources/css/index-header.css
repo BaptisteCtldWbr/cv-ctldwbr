@@ -1,13 +1,12 @@
 header{
-    background-image: url(../bande.png);
+    background-image: url(../bande.svg);
     background-repeat: repeat-x;
     background-position: bottom right;
-    background-size: 60%;
-    padding-bottom: 20px;
+    padding-bottom: 40px;
     display: flex;
     *, *::before{
         color: #FFFFFF !important;
-        }
+    }
 }
 
 div#header-couleur{
