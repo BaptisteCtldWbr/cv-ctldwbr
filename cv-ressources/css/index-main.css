@@ -35,4 +35,31 @@ p#lien-cv{
     a::after{
         content: "";
     }
-}   
+}
+
+#contact-form form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    column-gap: 50px;
+    row-gap: 30px;
+    *{
+        display: block;
+    }
+    #div-msg{
+        grid-column: 1/3;
+        textarea{
+            height: 150px;
+        }
+    }
+}
+
+#contact-form form button[type="submit"]{
+    width: fit-content;
+    padding: 10px 50px;
+    transition: all 0.3s ease-in-out;
+    &:hover{
+        background-color: var(--bleu);
+        color: white;
+    }
+}
