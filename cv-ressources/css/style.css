@@ -125,25 +125,35 @@ figure{
     }
 }
 
+@media only screen and (max-width: 800px) {
+    figure img{
+        width: 100%;
+        margin: 0;
+    }
+}
+
 img{
     max-width: 100%;
 }
 
 nav ul{
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     align-items: stretch;
     justify-content: center;
-    gap: 60px;
+    column-gap: 30px;
+    row-gap: 10px;
 }
 
 nav ul li a{
     background-color: #00265F;
-    padding: 10px 30px !important;
+    padding: 7px 15px !important;
     color: #FFFFFF;
     border-radius: 30px;
     transition: all 0.3s ease-in-out;
     font-family: 'Roboto Mono';
+    font-weight: 500;
 }
 
 nav ul li a:hover{

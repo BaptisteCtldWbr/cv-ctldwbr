@@ -2,6 +2,12 @@ main{
     padding: 50px 25%;
 }
 
+@media screen and (max-width: 1000px) {
+    main{
+        padding: 50px 5%;
+    }
+}
+
 article.exp{
     display: flex;
     flex-flow: row nowrap;
@@ -61,5 +67,12 @@ p#lien-cv{
     &:hover{
         background-color: var(--bleu);
         color: white;
+    }
+}
+
+
+@media only screen and (max-width: 420px) {
+    #contact-form form{
+        grid-template-columns: 1fr;
     }
 }

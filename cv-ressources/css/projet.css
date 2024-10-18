@@ -2,6 +2,12 @@ body {
     margin: 20px 20vw;
 }
 
+@media only screen and (max-width: 1200px) {
+    body{
+        margin: 20px 5vw;
+    }
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -45,6 +51,13 @@ div.pres {
     }
     p.desc{
         margin-bottom: 0;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    div.pres{
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
     }
 }
 

@@ -32,6 +32,13 @@ header section#moi{
     flex-wrap: wrap;
 }
 
+@media only screen and (max-width: 895px){
+    header div#moi{
+        justify-content: center;
+        align-items: center;
+    }
+}
+
 header section#moi img{
     height: 250px;
 }
@@ -42,6 +49,13 @@ header div#moi-texte{
     justify-content: flex-end;
     max-width: 50%;
     /* gap: 10px; */
+}
+
+@media only screen and (max-width: 895px){
+    header div#moi-texte{
+        max-width: none;
+        width: 100%;
+    }
 }
 
 header div#moi-texte p#moi-titre{
@@ -60,13 +74,20 @@ header section#moi p#moi-stage strong{
 div#moi-details{
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     gap: 40px;
 }
 
 section#contact, div#competences, section#interets{
     max-width: 30%;
     width: fit-content;
+}
+
+@media only screen and  (max-width: 1350px){
+    section#contact, div#competences, section#interets{
+        max-width: none;
+        width: fit-content;
+    }
 }
 
 header section#contact{
@@ -126,10 +147,7 @@ div#scroll p{
 
 meter{
     margin-left: 10px;
+    border: none;
+    border-radius: 2px;
 }
 
-@media screen and (max-width: 1000px) {
-    main{
-        padding: 50px 10%;
-    }
-}
