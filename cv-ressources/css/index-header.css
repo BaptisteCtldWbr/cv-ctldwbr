@@ -13,9 +13,10 @@ div#header-couleur{
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    gap: 40px;
     background-color: #00265F;
-    padding: 0px 20vw;
+    padding: 5% 20vw;
     width: 100%;
     min-height: 100vh;
 }
