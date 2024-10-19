@@ -2,6 +2,11 @@
 
 require_once('cv-ressources/includes/connexion-bdd.php');                       //inclure la connexion au SGBDR
 
+if(!isset($_GET['p'])){
+    header("Location: index.php");
+    die("Aucun projet sélectionné.");
+}
+
 $url= $_GET['p'];                                                               //récupération du projet par l'url
 
 $query = "SELECT * FROM portfolio WHERE `url` = \"{$url}\"";                    //définition de la requête pour avoir les données du projet
@@ -13,14 +18,14 @@ if($result){                                                                    
     $nb_ligne = mysqli_num_rows($result);
     //printf("SELECT a retourné %d de lignes. <br>", $nb_ligne);                //on écrit le nombre de lignes retournée
 } else {
-    die();                                                                      //sinon, on arrête les frais.
+    die("Problème avec la requête.");                                           //sinon, on arrête les frais.
 }
 
-/*if($nb_ligne=0){
-    header("Location: 404.php");
+if($nb_ligne=0){
+    header("Location: index.php");
 } else if ($nb_ligne>1){
     header('Location: projets.php');
-}*/
+}
 
 $projet = mysqli_fetch_assoc($result);                                          //on assigne le résultat de la requête au tableau $projet.
 
