@@ -94,13 +94,9 @@
 
     <main id="contenu">
         
-        <nav>
-            <ul>
-                <li class="nav"><a class="sans" href="#formations">Expériences</a></li>
-                <li class="nav"><a class="sans" href="#projets">Projets</a></li>
-                <li class="nav"><a class="sans" href="#portfolio">Portfolio</a></li>
-            </ul>
-        </nav>
+        <?php
+            require_once('cv-ressources/includes/nav.php');
+        ?>
 
         <p id="lien-cv">Accéder au CV au format PDF : <a href="cv-pdf.html" target="_blank">cv-catelandwambre.pdf</a><i class="bi-filetype-pdf"></i></p>
         
@@ -250,7 +246,10 @@
                 </form>
             </section>
         </main>
-        <div style="height: 200px;" id="bas"></div>
-        <a class="haut" href="#" title="Retourner en haut de la page"><i class="bi-arrow-up"></i></a>
+        <?php
+        
+        require_once('cv-ressources/includes/footer.php');
+
+        ?>
     </body>
     </html>
