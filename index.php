@@ -1,3 +1,32 @@
+<?php
+
+$mailEnvoi = "baptiste.catelandwambre@gmail.com";                                               //l'adresse à qui envoyer le message
+
+if (isset($_POST['envoi'])) {                                                                   //si le bouton envoyé est appuyé, on commence le traitement.
+    if (isset($_POST['nom']) || isset($_POST['mail']) || isset($_POST['msg'])) {                //si toutes les données sont saisies
+        $nom = $_POST['nom'];
+        $mail = $_POST['mail'];
+        $message = $_POST['msg'];
+        if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {                                        //et que le mail est valide
+            $msgErreur = "Email non valide, veuillez réessayer.";
+        } else {                                                                                //on envoie le message :
+            $sujet = printf("Nouveau message de %s", $nom);                                     //définition du sujet
+            $headers = "Reply-To: $mail" . "\r\n" . "FROM: $nom <catelandwambre@alwaysdata.net>" . "\r\n" . "cc:$mail";
+            $validation = mail($mailEnvoi, $sujet, $message, $headers);                         //envoie du mail /!\ pas possible en local
+            if ($validation == true) {
+                $msgOk = "Message envoyé ! vous avez reçu une copie.";                          //message de validation.
+            } else {
+                $msgErreur = "Problème avec l'envoi du message, veuillez réessayer plus tard.";
+            }
+        }
+    } else {
+        $msgErreur = "Veuillez remplir tous les champs.";
+    }
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -6,10 +35,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV - Baptiste Cateland Wambre</title>
     <link rel="stylesheet" href="cv-ressources/css/reset.css">
+    <link rel="stylesheet" href="cv-ressources/css/style.css">
     <link rel="stylesheet" href="cv-ressources/css/index-header.css">
     <link rel="stylesheet" href="cv-ressources/css/index-main.css">
     <link rel="stylesheet" href="cv-ressources/css/index-portfolio.css">
-    <link rel="stylesheet" href="cv-ressources/css/style.css">
+    <link rel="stylesheet" href="cv-ressources/css/index-contact.css">
     <link rel="shortcut icon" href="cv-ressources/favicon.png" type="image/x-icon">
     <meta property="og:title" content="CV - Baptiste Cateland Wambre">
     <meta property="og:description" content="Découvrez mon profil à travers mon CV et mes expériences">
@@ -89,17 +119,15 @@
             </div>
         </div>
     </header>
-    
-
 
     <main id="contenu">
-        
+
         <?php
-            require_once('cv-ressources/includes/nav.php');
+        require_once('cv-ressources/includes/nav.php');
         ?>
 
         <p id="lien-cv">Accéder au CV au format PDF : <a href="cv-pdf.html" target="_blank">cv-catelandwambre.pdf</a><i class="bi-filetype-pdf"></i></p>
-        
+
         <section id="formations">
             <h2>Expériences et Formations</h2>
             <article class="exp">
@@ -130,6 +158,7 @@
                 </div>
             </article>
         </section>
+
         <section id="projet">
             <h2 id="projets">Expériences et projets</h2>
             <article class="exp">
@@ -149,10 +178,10 @@
                     </p>
                     <p class="exp-comp">HTML - CSS - PHP - MySql - GitHub - Hébergement - Travail en équipe</p>
                     <p class="exp-lien"><a href="https://asaf-font.alwaysdata.net/sae203/code" target="_blank">Site web
-                        hébergé</a> - <a href="https://github.com/BaptisteCtldWbr/SAE203" target="_blank">Dépôt
+                            hébergé</a> - <a href="https://github.com/BaptisteCtldWbr/SAE203" target="_blank">Dépôt
                             Github</a></p>
-                        </div>
-                    </article>
+                </div>
+            </article>
             <article class="exp">
                 <img src="cv-ressources/exp/ahuana.png" alt="Logo " class="exp-img">
                 <div class="exp-text">
@@ -171,7 +200,7 @@
                     <p class="exp-desc">Par passion, je réalise des cinématiques avec mon drone. Majoritairement de par moi-même, mais aussi pour des court-métrages.</p>
                     <p class="exp-comp">Pilotage de drone stabilisé - Pilotage de drone FPV - Montage Vidéo (DaVinci
                         Resolve) - Étalonnage - Sound Design</p>
-                        <p class="exp-lien"><a href="https://www.youtube.com/@baptistedrone" target="_blank">Chaîne
+                    <p class="exp-lien"><a href="https://www.youtube.com/@baptistedrone" target="_blank">Chaîne
                             YouTube</a> - <a href="https://www.instagram.com/baptiste.drone/" target="_blank">Compte
                             Instagram</a> - <a
                             href="https://www.behance.net/gallery/199966985/baptistedrone-cinmatiques"
@@ -186,70 +215,78 @@
                     <p class="exp-desc">Élaboration et mise en place d’une stratégie de communication</p>
                     <p class="exp-comp">Bases de la communication - Gestion de projet - Réalisation de pastilles de
                         communication - Réalisation d'affiches - Rédaction de contenus</p>
-                        <a href="https://www.behance.net/gallery/199938091/Promotion-dun-festival" target="_blank">Pastilles
+                    <a href="https://www.behance.net/gallery/199938091/Promotion-dun-festival" target="_blank">Pastilles
                         de communication et Affiches (Behance)</a>
-                    </div>
-                </article>
-            </section>
-            
-            <section id="portfolio">
-                <h2>Portflio</h2>
-                <div class="cont-projet">
-                    <article class="projet univ" style="background-image: url('cv-ressources/img-portfolio/cv-portfolio.png');" title="CV / Portflio : Afin de présenter mon profil et mes atouts, j'ai conçu et développé ce petit site web. Vous pouvez retrouver dessus mon CV : mes expériences et mon contact, avec mon portfolio : les projets que j'ai réalisé récemment."><!--cadre du projet ///// image projet ///// {Titre} : {Description} ({Date})--><a class="sans" href="projet.php"><!--Lien Projet-->
-                        <h4 class="titre-projet">CV / Portfolio</h4>        <!--Nom Projet-->
-                        <ul>                                                <!--Tags Projet-->
-                            <li><i class="bi-filetype-html"></i></li>
-                            <li><i class="bi-filetype-css"></i></li>
-                            <li><i class="bi-filetype-php"></i></li>
-                            <li><i class="bi-filetype-sql"></i></li>
-                            <li><i class="bi-github"></i></li>
-                        </ul>
-                    </a></article>
-                    <article class="projet scout" style="background-image: url('cv-ressources/img-portfolio/cv-portfolio.png');" title="CV / Portflio : Afin de présenter mon profil et mes atouts, j'ai conçu et développé ce petit site web. Vous pouvez retrouver dessus mon CV : mes expériences et mon contact, avec mon portfolio : les projets que j'ai réalisé récemment."><!--image projet ///// {Titre} : {Description} ({Date})--><a class="sans" href="projets.html"><!--Lien Projet-->
-                        <h4 class="titre-projet">CV / Portfolio</h4>        <!--Nom Projet-->
-                        <ul>                                                <!--Tags Projet-->
-                            <li><i class="bi-filetype-html"></i></li>
-                            <li><i class="bi-filetype-css"></i></li>
-                            <li><i class="bi-filetype-php"></i></li>
-                            <li><i class="bi-filetype-sql"></i></li>
-                            <li><i class="bi-github"></i></li>
-                        </ul>
-                    </a></article>
-                    <article class="projet audiovisuel" style="background-image: url('cv-ressources/img-portfolio/cv-portfolio.png');" title="CV / Portflio : Afin de présenter mon profil et mes atouts, j'ai conçu et développé ce petit site web. Vous pouvez retrouver dessus mon CV : mes expériences et mon contact, avec mon portfolio : les projets que j'ai réalisé récemment."><!--image projet ///// {Titre} : {Description} ({Date})--><a class="sans" href="projets.html"><!--Lien Projet-->
-                        <h4 class="titre-projet">CV / Portfolio</h4>        <!--Nom Projet-->
-                        <ul>                                                <!--Tags Projet-->
-                            <li><i class="bi-filetype-html"></i></li>
-                            <li><i class="bi-filetype-css"></i></li>
-                            <li><i class="bi-filetype-php"></i></li>
-                            <li><i class="bi-filetype-sql"></i></li>
-                            <li><i class="bi-github"></i></li>
-                        </ul>
-                    </a></article>
                 </div>
-            </section>
-            <section id="contact-form">
-                <h2>Me contacter</h2>
-                <form action="#" method="post">
-                    <div class="contact-champs" id="div-nom">
-                        <label for="nom" class="required">Votre nom</label>
-                        <input type="text" name="nom" id="nom" placeholder="Prénom Nom..." required>
-                    </div>
-                    <div class="contact-champs" id="div-mail">
-                        <label for="mail" class="required">Votre mail</label>
-                        <input type="email" name="mail" id="mail" placeholder="hello@exemple.fr" required>
-                    </div>
-                    <div class="contact-champs" id="div-msg">
-                        <label for="msg" class="required">Votre message</label>
-                        <textarea name="msg" id="msg" placeholder="Bonjour, je souhaite vous contacter pour ..." required></textarea>
-                    </div>
-                    <button type="submit">Envoyer</button>
-                </form>
-            </section>
-        </main>
-        <?php
-        
-        require_once('cv-ressources/includes/footer.php');
+            </article>
+        </section>
 
-        ?>
-    </body>
-    </html>
+        <section id="portfolio">
+            <h2>Portflio</h2>
+            <div class="cont-projet">
+                <article class="projet univ" style="background-image: url('cv-ressources/img-portfolio/cv-portfolio.png');" title="CV / Portflio : Afin de présenter mon profil et mes atouts, j'ai conçu et développé ce petit site web. Vous pouvez retrouver dessus mon CV : mes expériences et mon contact, avec mon portfolio : les projets que j'ai réalisé récemment."><!--cadre du projet ///// image projet ///// {Titre} : {Description} ({Date})--><a class="sans" href="projet.php"><!--Lien Projet-->
+                        <h4 class="titre-projet">CV / Portfolio</h4> <!--Nom Projet-->
+                        <ul> <!--Tags Projet-->
+                            <li><i class="bi-filetype-html"></i></li>
+                            <li><i class="bi-filetype-css"></i></li>
+                            <li><i class="bi-filetype-php"></i></li>
+                            <li><i class="bi-filetype-sql"></i></li>
+                            <li><i class="bi-github"></i></li>
+                        </ul>
+                    </a></article>
+                <article class="projet scout" style="background-image: url('cv-ressources/img-portfolio/cv-portfolio.png');" title="CV / Portflio : Afin de présenter mon profil et mes atouts, j'ai conçu et développé ce petit site web. Vous pouvez retrouver dessus mon CV : mes expériences et mon contact, avec mon portfolio : les projets que j'ai réalisé récemment."><!--image projet ///// {Titre} : {Description} ({Date})--><a class="sans" href="projets.html"><!--Lien Projet-->
+                        <h4 class="titre-projet">CV / Portfolio</h4> <!--Nom Projet-->
+                        <ul> <!--Tags Projet-->
+                            <li><i class="bi-filetype-html"></i></li>
+                            <li><i class="bi-filetype-css"></i></li>
+                            <li><i class="bi-filetype-php"></i></li>
+                            <li><i class="bi-filetype-sql"></i></li>
+                            <li><i class="bi-github"></i></li>
+                        </ul>
+                    </a></article>
+                <article class="projet audiovisuel" style="background-image: url('cv-ressources/img-portfolio/cv-portfolio.png');" title="CV / Portflio : Afin de présenter mon profil et mes atouts, j'ai conçu et développé ce petit site web. Vous pouvez retrouver dessus mon CV : mes expériences et mon contact, avec mon portfolio : les projets que j'ai réalisé récemment."><!--image projet ///// {Titre} : {Description} ({Date})--><a class="sans" href="projets.html"><!--Lien Projet-->
+                        <h4 class="titre-projet">CV / Portfolio</h4> <!--Nom Projet-->
+                        <ul> <!--Tags Projet-->
+                            <li><i class="bi-filetype-html"></i></li>
+                            <li><i class="bi-filetype-css"></i></li>
+                            <li><i class="bi-filetype-php"></i></li>
+                            <li><i class="bi-filetype-sql"></i></li>
+                            <li><i class="bi-github"></i></li>
+                        </ul>
+                    </a></article>
+            </div>
+        </section>
+        <section id="contact-form">
+            <h2>Me contacter</h2>
+
+            <?php 
+            
+            if (isset($msgErreur)) {
+                echo "<p class=\"message erreur\">" . $msgErreur . "</p>";
+            } else if (isset($msgOk)){
+                echo "<p class=\"message valide\">" . $msgOk . "</p>";
+            }
+            
+            ?>
+            
+            <form action="#" method="post">
+                <div class="contact-champs" id="div-nom">
+                    <label for="nom" class="required">Votre nom</label>
+                    <input type="text" name="nom" id="nom" placeholder="Prénom Nom..." required>
+                </div>
+                <div class="contact-champs" id="div-mail">
+                    <label for="mail" class="required">Votre mail</label>
+                    <input type="email" name="mail" id="mail" placeholder="hello@exemple.fr" required>
+                </div>
+                <div class="contact-champs" id="div-msg">
+                    <label for="msg" class="required">Votre message</label>
+                    <textarea name="msg" id="msg" placeholder="Bonjour, je souhaite vous contacter pour ..." required></textarea>
+                </div>
+                <button type="submit" name="envoi">Envoyer</button>
+            </form>
+        </section>
+    </main>
+    <?php require_once('cv-ressources/includes/footer.php'); ?>
+</body>
+
+</html>
