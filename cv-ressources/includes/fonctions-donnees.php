@@ -49,3 +49,12 @@ function tagsEtOutils(array $tableau, string $tags) : array{                    
 }
 
 ?>
+
+<?php
+
+//---------------------
+//- LISTE DES PROJETS -
+//---------------------
+
+
+?>

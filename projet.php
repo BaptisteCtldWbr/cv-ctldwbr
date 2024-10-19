@@ -9,7 +9,7 @@ if(!isset($_GET['p']) || empty($_GET['p'])){                                    
 
 $url= $_GET['p'];                                                               //récupération du projet par l'url
 
-$query = "SELECT * FROM portfolio WHERE `url` = \"{$url}\"";                    //définition de la requête pour avoir les données du projet
+$query = "SELECT * FROM portfolio WHERE `url` = \"{$url}\";";                    //définition de la requête pour avoir les données du projet
 
 $result = mysqli_query($lien, $query);                                          //exection de la requête
 
@@ -39,7 +39,7 @@ $cheminCompletMiniature = __DIR__ . "/cv-ressources/img-portfolio/" . $projet['m
 $cheminMiniature = "cv-ressources/img-portfolio/" . $projet['miniature'] ;
 $cheminContenu = "projets/" . $projet['contenu'];
 
-require_once('cv-ressources/includes/contexte-tags.php');                       //tableau contextes et tags, avec leurs fonctions
+require_once('cv-ressources/includes/fonctions-donnees.php');                       //tableau contextes et tags, avec leurs fonctions
 
 $contexte = contexte($contexteTableau, $projet['contexte']);                    //on récupère le texte associé au contexte
 
@@ -69,7 +69,7 @@ $tags = tagsEtOutils($tagsTableau, $projet['tags']);                            
         <div class="pres">
             <div class="pres-texte">
                 <h2><?php echo($projet['nom-complet']); ?></h2>                                                                 <!--Nom Projet-->
-                <p class="cadre-date"><?php echo($contexte); ?> <span class="chevron">></span> <?php echo($projet['date']); ?></p>  <!--cadre et date Projet-->
+                <p class="cadre-date"><?php echo($contexte); ?> <span class="chevron">></span> <?php echo($projet['periode']); ?></p>  <!--cadre et date Projet-->
                 <ul>
                 <?php                                                                                                           //Tags
                 foreach($tags as $key => $value){
@@ -88,27 +88,11 @@ $tags = tagsEtOutils($tagsTableau, $projet['tags']);                            
         require_once($cheminContenu);
 
         ?>
-
-        <!--Contenu Projet-->
-        <!--
-        <p>Je suis parti du <a href="cv-pdf.html" target="_blank">CV print</a>, et de l'identité visuelle qui en résultait, que j'avais réalisés pour ma recherche de stage, puis l'ai décliné en page Web. Auquel j'ai rajouté mon portfolio : ça n'as pas de sens pour un apprenti développeur web d'utiliser un outils no-code ! Le site est plus ou moins responsive. J'ai utilisé HTML & CSS, avec PHP et MySQL pour gérer le contenu. J'ai également utilisé l'outil GitHub.</p>
-        <p>Normalement, vous avez déjà découvert ce <a href="index.html">site</a>, si vous souhaitez voir son code, voici le dépôt GitHub : <a href="https://github.com/BaptisteCtldWbr/cv-ctldwbr" target="_blank">https://github.com/BaptisteCtldWbr/cv-ctldwbr</a></p>
-        <h3>Header - Présentation</h3>
-        <figure>
-            <img src="cv-ressources/img-projets/cv-header.png" alt="Header du CV">
-            <figcaption>Le header du site est conçu comme un réel "à côté" du CV, avec nom, prénom, photo, intitulé, contacts, compétences et centres d'intéret.</figcaption>
-        </figure>
-        <h3>Formations et expériences</h3>
-        <figure>
-            <img src="cv-ressources/img-projets/cv-exp.png" alt="La partie expériences">
-            <figcaption>Toujours en suivant les standards d'un CV, mes expériences et mes formations.</figcaption>
-        </figure>
-        <h3>Projets</h3>
-        <figure>
-            <img src="cv-ressources/img-projets/cv-portfolio.png" alt="Et mes projets">
-            <figcaption>Et finalement : mes projets et différentes réalisations. Ce sont des liens qui redirigent vers la page du projet en question.</figcaption>
-        </figure>-->
     </main>
-    <?php require_once('cv-ressources/includes/footer.php') ?>
+    <?php
+        require_once('cv-ressources/includes/footer.php');
+        mysqli_free_result($result);
+        mysqli_close($lien);
+    ?>
 </body>
 </html>
