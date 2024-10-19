@@ -145,9 +145,7 @@ div#scroll p{
     transform: rotate(90deg);
 }
 
-meter{
-    margin-left: 10px;
-    border: none;
-    border-radius: 2px;
-}
 
+span.niveau-langue{
+    font-style: italic;
+}

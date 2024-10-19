@@ -65,10 +65,9 @@
                     <section id="langues">
                         <h3>Langues</h3>
                         <ul>
-                            <li>&#x1F1EB;&#x1F1F7; Français<meter min="0" max="100" low="33" high="66" optimum="80" value="100">Langue maternelle</meter>
-                            </li>
-                            <li>&#x1F1EC;&#x1F1E7; Anglais<meter min="0" max="100" low="33" high="66" optimum="80" value="70">Langue maternelle</meter></li>
-                            <li>&#x1F1EA;&#x1F1F8; Espagnol<meter min="0" max="100" low="33" high="66" optimum="80" value="34">Niveau débutant</meter></li>
+                            <li>&#x1F1EB;&#x1F1F7; Français - <span class="niveau-langue">Langue maternelle</span></li>
+                            <li>&#x1F1EC;&#x1F1E7; Anglais - <span class="niveau-langue">Niveau correct</span></li>
+                            <li>&#x1F1EA;&#x1F1F8; Espagnol - <span class="niveau-langue">Niveau débutant</span></li>
                         </ul>
                     </section>
                 </div>
