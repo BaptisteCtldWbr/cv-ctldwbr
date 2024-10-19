@@ -1,16 +1,19 @@
 <?php
 
-require_once('cv-ressources/includes/connexion-bdd.php');
+require_once('cv-ressources/includes/connexion-bdd.php');                       //inclure la connexion au SGBDR
 
-$url= $_GET['p'];
+$url= $_GET['p'];                                                               //récupération du projet par l'url
 
-$query = "SELECT * FROM portfolio WHERE `url` = \"{$url}\"";
-echo $query;
+$query = "SELECT * FROM portfolio WHERE `url` = \"{$url}\"";                    //définition de la requête pour avoir les données du projet
+//echo $query;
 
-$result = mysqli_query($lien, $query);
-if($result){
+$result = mysqli_query($lien, $query);                                          //exection de la requête
+
+if($result){                                                                    //si c'est ok,
     $nb_ligne = mysqli_num_rows($result);
-    printf("SELECT a retourné %d de lignes. <br>", $nb_ligne);
+    printf("SELECT a retourné %d de lignes. <br>", $nb_ligne);                  //on écrit le nombre de lignes 
+} else {
+    die();                                                                      //sinon, on arrête les frais
 }
 
 /*if($nb_ligne=0){
@@ -23,11 +26,18 @@ $projet = mysqli_fetch_assoc($result);
 
 echo "<pre>";
 print_r($projet);
-echo "<pre>";
+echo "</pre>";
 
-require_once('cv-ressources/includes/contexte.php');
-$contexte = contexte($contextes, $projet['contexte']);
+require_once('cv-ressources/includes/contexte-tags.php');
+
+$contexte = contexte($contexteTableau, $projet['contexte']);
 echo "contexte = {$contexte}";
+
+$tags = tagsEtOutils($tagsTableau, $projet['tags']);
+
+echo "<pre>";
+print_r($tags);
+echo "</pre>";
 
 ?>
 
@@ -48,18 +58,10 @@ echo "contexte = {$contexte}";
     <meta property="og:image" content="http://catelandwambre.alwaysdata.net/cv-ressources/meta-miniature.png">                  <!--Image Projet, URL complète-->
 </head>
 <body>
-    <!---<header>
-        <a href="../" class="sans"><h1 class="nom">Baptiste<br>Cateland Wambre</h1></a>
-        <nav>
-            <ul>
-                <li class="nav"><a class="sans" href="/#formations">Expériences</a></li>
-                <li class="nav"><a class="sans" href="/#projets">Projets</a></li>
-                <li class="nav"><a class="sans" href="/#portfolio">Portfolio</a></li>
-            </ul>
-        </nav>
-    </header>-->
     <?php include_once('cv-ressources/includes/header.php'); ?>
+
     <main>
+
         <div class="pres">
             <div class="pres-texte">
                 <h2><?php echo($projet['nom-complet']); ?></h2>                                                                                    <!--Nom Projet-->
@@ -75,6 +77,7 @@ echo "contexte = {$contexte}";
             </div>
             <img src="cv-ressources/img-portfolio/cv-portfolio.png" alt="Un bout de code du portfolio / CV">                    <!--Image Projet-->
         </div>
+
         <!--Contenu Projet-->
         <p>Je suis parti du <a href="cv-pdf.html" target="_blank">CV print</a>, et de l'identité visuelle qui en résultait, que j'avais réalisés pour ma recherche de stage, puis l'ai décliné en page Web. Auquel j'ai rajouté mon portfolio : ça n'as pas de sens pour un apprenti développeur web d'utiliser un outils no-code ! Le site est plus ou moins responsive. J'ai utilisé HTML & CSS, avec PHP et MySQL pour gérer le contenu. J'ai également utilisé l'outil GitHub.</p>
         <p>Normalement, vous avez déjà découvert ce <a href="index.html">site</a>, si vous souhaitez voir son code, voici le dépôt GitHub : <a href="https://github.com/BaptisteCtldWbr/cv-ctldwbr" target="_blank">https://github.com/BaptisteCtldWbr/cv-ctldwbr</a></p>
