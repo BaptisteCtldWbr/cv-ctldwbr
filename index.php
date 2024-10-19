@@ -1,19 +1,30 @@
 <?php
 
+require_once('cv-ressources/includes/connexion-bdd.php');
+
 $mailEnvoi = "baptiste.catelandwambre@gmail.com";                                               //l'adresse à qui envoyer le message
+
+date_default_timezone_set("Europe/Paris");
 
 if (isset($_POST['envoi'])) {                                                                   //si le bouton envoyé est appuyé, on commence le traitement.
     if (isset($_POST['nom']) || isset($_POST['mail']) || isset($_POST['msg'])) {                //si toutes les données sont saisies
         $nom = $_POST['nom'];
         $mail = $_POST['mail'];
         $message = $_POST['msg'];
+        $date = date("Y-m-d G:i:s");
         if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {                                        //et que le mail est valide
             $msgErreur = "Email non valide, veuillez réessayer.";
         } else {                                                                                //on envoie le message :
-            $sujet = printf("Nouveau message de %s", $nom);                                     //définition du sujet
+            $sujet = printf("[Portfolio CtldWbr] Nouveau message de %s à %s", $nom, $date);     //définition du sujet
+            echo $sujet;
             $headers = "Reply-To: $mail" . "\r\n" . "FROM: $nom <catelandwambre@alwaysdata.net>" . "\r\n" . "cc:$mail";
-            $validation = mail($mailEnvoi, $sujet, $message, $headers);                         //envoie du mail /!\ pas possible en local
-            if ($validation == true) {
+
+            //$mailOk = mail($mailEnvoi, $sujet, $message, $headers);                              //envoie du mail /!\ pas possible en local
+            $query = "INSERT INTO message (`date-heure`, `nom`, `mail`, `message`) VALUES ('{$date}', '{$nom}', '{$mail}', '{$message}');";
+            echo $query;
+            $queryOk = mysqli_query($lien, $query);
+
+            if (/*$mailOk == true && */$queryOk == true){
                 $msgOk = "Message envoyé ! vous avez reçu une copie.";                          //message de validation.
             } else {
                 $msgErreur = "Problème avec l'envoi du message, veuillez réessayer plus tard.";
