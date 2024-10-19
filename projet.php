@@ -2,56 +2,48 @@
 
 require_once('cv-ressources/includes/connexion-bdd.php');                       //inclure la connexion au SGBDR
 
-if(!isset($_GET['p'])){
-    header("Location: index.php");
+if(!isset($_GET['p']) || empty($_GET['p'])){                                    //verification de l'URL
+    header("Location: 404.php?erreur=aucun-selectionne");
     die("Aucun projet sélectionné.");
 }
 
 $url= $_GET['p'];                                                               //récupération du projet par l'url
 
 $query = "SELECT * FROM portfolio WHERE `url` = \"{$url}\"";                    //définition de la requête pour avoir les données du projet
-//echo $query;
 
 $result = mysqli_query($lien, $query);                                          //exection de la requête
 
 if($result){                                                                    //si c'est ok,
     $nb_ligne = mysqli_num_rows($result);
-    //printf("SELECT a retourné %d de lignes. <br>", $nb_ligne);                //on écrit le nombre de lignes retournée
 } else {
-    die("Problème avec la requête.");                                           //sinon, on arrête les frais.
+    header("Location: 404.php?erreur=pb-requete");
+    die("Problème avec la requête.");                                           //sinon, on arrête les frais et on redirige vers la 404
 }
 
-if($nb_ligne=0){
-    header("Location: index.php");
-} else if ($nb_ligne>1){
-    header('Location: projets.php');
+if($nb_ligne == 0){                                                             //s'il n'y pas de projets
+    header("Location: 404.php?erreur=projet-n-existe-pas");                     //on redirige vers la 404
+    die("Aucun projet retourné.");
+} else if ($nb_ligne>1){                                                        //s'il y a trop de projets
+    header('Location: 404.php?erreur=trop-de-projet');                          //on redirige vers la 404
+    die("{$nb_ligne} projets retournés. Il doit y en avoir qu'un.");
 }
 
 $projet = mysqli_fetch_assoc($result);                                          //on assigne le résultat de la requête au tableau $projet.
 
-/*echo "<pre>";
-print_r($projet);
-echo "</pre>";*/
-
 if($projet['public'] == 0){                                                     //si le projet n'est pas public, on arrête le script.
+    header("Location: 404.php?erreur=projet-non-public");
     die();
 }
 
 $cheminCompletMiniature = __DIR__ . "/cv-ressources/img-portfolio/" . $projet['miniature'] ;
-//echo $cheminCompletMiniature . "<br>";
 $cheminMiniature = "cv-ressources/img-portfolio/" . $projet['miniature'] ;
-//echo $cheminMiniature . "<br>";
 $cheminContenu = "projets/" . $projet['contenu'];
 
 require_once('cv-ressources/includes/contexte-tags.php');                       //tableau contextes et tags, avec leurs fonctions
 
 $contexte = contexte($contexteTableau, $projet['contexte']);                    //on récupère le texte associé au contexte
-//echo "contexte = {$contexte}";
 
 $tags = tagsEtOutils($tagsTableau, $projet['tags']);                            //on récupère les tags et leurs id bootstrap
-/*echo "<pre>";
-print_r($tags);
-echo "</pre>";*/
 
 ?>
 
