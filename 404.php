@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +10,7 @@
 <body>
     <?php require_once('cv-ressources/includes/header.php') ?>
     <main>
-        <h2>404</h2>
+        <h2>erreur 404</h2>
         <p><a href="/">Retour à l'accueil</a></p>
     </main>
 </body>
