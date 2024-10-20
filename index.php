@@ -108,9 +108,17 @@ if (isset($_POST['envoi'])) {                                                   
                     <section id="langues">
                         <h3>Langues</h3>
                         <ul>
-                            <li>&#x1F1EB;&#x1F1F7; Français - <span class="niveau-langue">Langue maternelle</span></li>
-                            <li>&#x1F1EC;&#x1F1E7; Anglais - <span class="niveau-langue">Niveau correct</span></li>
-                            <li>&#x1F1EA;&#x1F1F8; Espagnol - <span class="niveau-langue">Niveau débutant</span></li>
+                            <?php
+
+                            $queryLangue = "SELECT * FROM `langue` WHERE `valide` = 1;";                           //requête : tous les hobbys, publics
+                            $resultLangue = mysqli_query($lien, $queryLangue);                                    //envoi de la reqûete au SGBDR
+
+                            while ($ligne = mysqli_fetch_assoc($resultLangue)){                                    //affichage de tous les hobbys avec la structure HTML
+                                printf("<li>%s %s - <span class=\"niveau-langue\">%s</span></li>", $ligne['emoji'], $ligne['langue'], $ligne['niveau']);
+                            }
+                            mysqli_free_result($resultLangue);
+
+                            ?>
                         </ul>
                     </section>
                 </div>
