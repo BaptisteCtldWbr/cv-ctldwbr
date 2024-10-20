@@ -172,7 +172,7 @@ if (isset($_POST['envoi'])) {                                                   
             <h2>Expériences et Formations</h2>
             <?php
 
-            $queryExp = "SELECT * FROM `experiences` WHERE `valide` = 1;";                                      //requête : toutes les expériences publiques
+            $queryExp = "SELECT * FROM `experiences` WHERE `valide` = 1 ORDER BY `date-debut` DESC;";           //requête : toutes les expériences publiques
             $resultExp = mysqli_query($lien, $queryExp);
 
             while ($ligne = mysqli_fetch_assoc($resultExp)){                                                    //on les affiche 
@@ -181,13 +181,13 @@ if (isset($_POST['envoi'])) {                                                   
                     echo "<img src=\"{$cheminIcnExp}\" alt=\"{$ligne['alt-icone']}\" class=\"exp-img\">";        //icone
                     echo "<div class=\"exp-text\">";
                         echo "<h4>" . $ligne['titre'];                                                          //titre
-                        if (isset($ligne['titre-detail'])){                                                     //s'il y a des détails
+                        if ($ligne['titre-detail'] != null){                                                     //s'il y a des détails
                             echo "<span class=\"exp-det\">{$ligne['titre-detail']}</span>";                     //détails
                         }
                         echo "</h4>";
                         echo "<p class=\"exp-date\">{$ligne['periode']}</p>";                                   //période
                         echo "<p class=\"exp-desc\">{$ligne['description']}</p>";                               //description
-                        if (isset($ligne['competences'])){                                                      //s'il y a des compétences
+                        if ($ligne['competences'] != null){                                                      //s'il y a des compétences
                             echo "<p class=\"exp-comp\">{$ligne['competences']}</p>";                           //compétences
                         }
                     echo "</div>";
