@@ -11,10 +11,8 @@
             $resultContact = mysqli_query($lien, $queryContact);                                  //envoi de la reqûete au SGBDR
 
             while ($ligne = mysqli_fetch_assoc($resultContact)){                                 //affichage de toutes les technos avec la structure HTML
-                if (isset($ligne['lien'])){
+                if ($ligne['lien'] != null){
                     printf("<li><a href=\"%s\" target=\"_blank\"><i class=\"bi-%s\"></i></a></li>", $ligne['lien'], $ligne['id-bootstrap']);
-                } else {
-                    printf("<li><i class=\"bi-%s\"></i> %s</li>", $ligne['id-bootstrap'], $ligne['texte']);
                 }
             }
             mysqli_free_result($resultContact);
