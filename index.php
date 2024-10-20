@@ -15,17 +15,17 @@ if (isset($_POST['envoi'])) {                                                   
         if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {                                        //et que le mail est valide
             $msgErreur = "Email non valide, veuillez réessayer.";
         } else {                                                                                //on envoie le message :
-            $sujet = sprintf("[Portfolio CtldWbr] Nouveau message de %s à %s", $nom, $date);     //définition du sujet
-            echo $sujet;
+            $sujet = sprintf("[Portfolio CtldWbr] Nouveau message de %s à %s", $nom, $date);    //définition du sujet
+            //echo $sujet;
             $headers = "Reply-To: $mail" . "\r\n" . "FROM: $nom <catelandwambre@alwaysdata.net>" . "\r\n" . "cc:$mail";
 
-            //$mailOk = mail($mailEnvoi, $sujet, $message, $headers);                              //envoie du mail /!\ pas possible en local
+            $mailOk = mail($mailEnvoi, $sujet, $message, $headers);                             //envoie du mail /!\ pas possible en local
             $query = "INSERT INTO message (`date-heure`, `nom`, `mail`, `message`) VALUES ('{$date}', '{$nom}', '{$mail}', '{$message}');";
-            echo $query;
+            //echo $query;
             $queryOk = mysqli_query($lien, $query);
 
-            if (/*$mailOk == true && */$queryOk == true){
-                $msgOk = "Message envoyé ! vous avez reçu une copie.";                          //message de validation.
+            if ($mailOk == true && $queryOk == true){
+                $msgOk = "Message envoyé ! vous avez reçu une copie. $sujet";                   //message de validation.
             } else {
                 $msgErreur = "Problème avec l'envoi du message, veuillez réessayer plus tard.";
             }
