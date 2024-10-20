@@ -22,8 +22,8 @@ article.exp{
 }
 
 article.exp span.exp-det{font-style: italic;    color: #444444;}
-article.exp span.exp-det::before{content: "\003c";}
-article.exp span.exp-det::after{content: "\003e";}
+article.exp span.exp-det::before{content: "\0020\003c";}
+article.exp span.exp-det::after{content: " \003e";}
 
 article.exp img.exp-img{
     width: 30px;

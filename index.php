@@ -72,7 +72,7 @@ if (isset($_POST['envoi'])) {                                                   
                     <p id="moi-titre">Étudiant en développement web</p>
                     <p id="moi-stage">En recherche de <strong>stage en développement web</strong> à partir du 14 avril
                         2025 pour une durée minimale de 10 semaines​</p>
-                    <p id="moi-valeurs">Polyvalent • Rigoureux • Ambitieux • Responsable</p>
+                    <!--<p id="moi-valeurs">Polyvalent • Rigoureux • Ambitieux • Responsable</p>-->
                 </div>
             </section>
             <div id="moi-details">
@@ -93,27 +93,16 @@ if (isset($_POST['envoi'])) {                                                   
                         <div id="techno-flex">
                             <?php
 
-                                $queryTechno = "SELECT * FROM `techno` WHERE `valide` = 1;";
-                                $resultTechno = mysqli_query($lien, $queryTechno);
+                                $queryTechno = "SELECT * FROM `techno` WHERE `valide` = 1;";                        //requête : toutes les technologies, publiques
+                                $resultTechno = mysqli_query($lien, $queryTechno);                                  //envoi de la reqûete au SGBDR
 
-                                while ($ligne = mysqli_fetch_assoc($resultTechno)){
+                                while ($ligne = mysqli_fetch_assoc($resultTechno)){                                 //affichage de toutes les technos avec la structure HTML
                                     $cheminIcnTechno = "cv-ressources/techno/".$ligne['icone'];
                                     printf("<img src=\"%s\" alt=\"%s\">", $cheminIcnTechno, $ligne['alt-icone']);
                                 }
+                                mysqli_free_result($resultTechno);
 
                             ?>
-                            <!--<img src="cv-ressources/techno/html.png" alt="HTML">
-                            <img src="cv-ressources/techno/css.png" alt="CSS">
-                            <img src="cv-ressources/techno/js.png" alt="JS">
-                            <img src="cv-ressources/techno/php.png" alt="PHP ">
-                            <img src="cv-ressources/techno/github.png" alt="Github">
-                            <img src="cv-ressources/techno/wp.png" alt="WordPress">
-                            <img src="cv-ressources/techno/davinci.png" alt="Davinci Resolve">
-                            <img src="cv-ressources/techno/figma.png" alt="Figma">
-                            <img src="cv-ressources/techno/drive.png" alt="Google Drive et sa suite">
-                            <img src="cv-ressources/techno/id.png" alt="Adobe InDesign">
-                            <img src="cv-ressources/techno/ai.png" alt="Adobe Illustrator">
-                            <img src="cv-ressources/techno/ps.png" alt="Photoshop">-->
                         </div>
                     </section>
                     <section id="langues">
@@ -128,11 +117,17 @@ if (isset($_POST['envoi'])) {                                                   
                 <section id="interets">
                     <h3>Centres d'intérêt</h3>
                     <ul>
-                        <li>&#x1F6F8; Drone (Stabilisé et FPV)</li>
-                        <li>&#x1F3AC; Audiovisuel / Court-métrages</li>
-                        <li>&#x1F4F7; Photographie</li>
-                        <li>&#x2328;&#xFE0F; Montage</li>
-                        <li>&#x1F9ED; Voyage</li>
+                        <?php
+
+                        $queryInteret = "SELECT * FROM `interet` WHERE `valide` = 1;";                          //requête : tous les hobbys, publics
+                        $resultInteret = mysqli_query($lien, $queryInteret);                                    //envoi de la reqûete au SGBDR
+
+                        while ($ligne = mysqli_fetch_assoc($resultInteret)){                                    //affichage de tous les hobbys avec la structure HTML
+                            printf("<li>%s %s</li>", $ligne['emoji'], $ligne['texte']);
+                        }
+                        mysqli_free_result($resultInteret);
+
+                        ?>
                     </ul>
                 </section>
             </div>
@@ -154,36 +149,36 @@ if (isset($_POST['envoi'])) {                                                   
 
         <section id="formations">
             <h2>Expériences et Formations</h2>
-            <article class="exp">
-                <img src="cv-ressources/exp/cyiut.png" alt="Logo IUT de Cergy Pontoise" class="exp-img">
-                <div class="exp-text">
-                    <h4>BUT Métiers du Multimédia et de l'Internet <span class="exp-det">IUT de Cergy Pontoise</span>
-                    </h4>
-                    <p class="exp-date">Septembre 2023 à juillet 2026</p>
-                    <p class="exp-desc">Bachelor Universitaire de Technologie - Multimédia et Métiers de l’Internet, parcours <strong>Développement Web et Dispositifs Interactifs</strong> à l’IUT de Cergy Pontoise – En cours de préparation.</p>
-                    <p class="exp-comp">Développement Web, Création numérique, Audiovisuel et Communication avec Gestion de projet...</p>
-                </div>
-            </article>
-            <article class="exp">
-                <img src="cv-ressources/exp/llg.png" alt="Logo Lycée Louis le Grand" class="exp-img">
-                <div class="exp-text">
-                    <h4>Baccalauréat STI2D <span class="exp-det">Lycée Louis le Grand</span></h4>
-                    <p class="exp-date">Septembre 2021 à juillet 2023, Paris 5</p>
-                    <p class="exp-desc">Baccalauréat Sciences et Technologie de l’Ingénierie et du Développement Durable au Lycée Louis le Grand option Systèmes Informatiques et Numériques – Mention très bien</p>
-                    <p class="exp-comp">Ingénieurie, Informatique, Mathématiques, Physique</p>
-                </div>
-            </article>
-            <article class="exp">
-                <img src="cv-ressources/exp/taf.png" alt="Travail" class="exp-img">
-                <div class="exp-text">
-                    <h4>Travail en indépendant</h4>
-                    <p class="exp-date">Septembre 2021 à Aujourd'hui</p>
-                    <p class="exp-desc">Service à la personne, du babysitting, de l’événementiel ou de la vente, déménagement</p>
-                </div>
-            </article>
+            <?php
+
+            $queryExp = "SELECT * FROM `experiences` WHERE `valide` = 1;";                                      //requête : toutes les expériences publiques
+            $resultExp = mysqli_query($lien, $queryExp);
+
+            while ($ligne = mysqli_fetch_assoc($resultExp)){                                                    //on les affiche 
+                $cheminIcnExp = "cv-ressources/exp/".$ligne['icone'];                                           //définition du chemin d'accès à l'icone
+                echo "<article class=\"exp\">";
+                    echo "<img src=\"{$cheminIcnExp}\" alt=\"{$ligne['alt-icone']}\" class=\"exp-img\">";        //icone
+                    echo "<div class=\"exp-text\">";
+                        echo "<h4>" . $ligne['titre'];                                                          //titre
+                        if (isset($ligne['titre-detail'])){                                                     //s'il y a des détails
+                            echo "<span class=\"exp-det\">{$ligne['titre-detail']}</span>";                     //détails
+                        }
+                        echo "</h4>";
+                        echo "<p class=\"exp-date\">{$ligne['periode']}</p>";                                   //période
+                        echo "<p class=\"exp-desc\">{$ligne['description']}</p>";                               //description
+                        if (isset($ligne['competences'])){                                                      //s'il y a des compétences
+                            echo "<p class=\"exp-comp\">{$ligne['competences']}</p>";                           //compétences
+                        }
+                    echo "</div>";
+                echo "</article>";
+            }
+
+            mysqli_free_result($resultExp);
+
+            ?>
         </section>
 
-        <section id="projet">
+        <!--<section id="projet">
             <h2 id="projets">Expériences et projets</h2>
             <article class="exp">
                 <img src="cv-ressources/exp/cv-web.png" alt="CV sur le web" class="exp-img">
@@ -243,7 +238,7 @@ if (isset($_POST['envoi'])) {                                                   
                         de communication et Affiches (Behance)</a>
                 </div>
             </article>
-        </section>
+        </section>-->
 
         <section id="portfolio">
             <h2>Portflio</h2>
