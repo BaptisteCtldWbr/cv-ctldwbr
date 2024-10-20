@@ -15,7 +15,7 @@ if (isset($_POST['envoi'])) {                                                   
         if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {                                        //et que le mail est valide
             $msgErreur = "Email non valide, veuillez réessayer.";
         } else {                                                                                //on envoie le message :
-            $sujet = printf("[Portfolio CtldWbr] Nouveau message de %s à %s", $nom, $date);     //définition du sujet
+            $sujet = sprintf("[Portfolio CtldWbr] Nouveau message de %s à %s", $nom, $date);     //définition du sujet
             echo $sujet;
             $headers = "Reply-To: $mail" . "\r\n" . "FROM: $nom <catelandwambre@alwaysdata.net>" . "\r\n" . "cc:$mail";
 
