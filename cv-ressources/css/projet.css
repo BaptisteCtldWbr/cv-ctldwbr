@@ -51,3 +51,21 @@ iframe {
     ;
     margin: 50px 0;
 }
+
+p.projet-statut{
+    margin: 100px 0px;
+    background-color: #ffdfa4;
+    padding: 15px 40px 15px 15px;
+    border-radius: 10px;
+    border: #714a00 1px solid;
+    color: #714a00;
+    font-family: 'Roboto Mono';
+    font-size: 0.9em;
+    i{
+        margin-right: 15px;
+    }
+    i.bi-arrow-right-short{
+        margin: 0;
+        font-size: 0.9em;
+    }
+}

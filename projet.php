@@ -30,10 +30,11 @@ if($nb_ligne == 0){                                                             
 
 $projet = mysqli_fetch_assoc($result);                                          //on assigne le résultat de la requête au tableau $projet.
 
+/* NOUVEAU : avec visibilité et statut.
 if($projet['public'] == 0){                                                     //si le projet n'est pas public, on arrête le script.
     header("Location: 404.php?erreur=projet-non-public");
     die();
-}
+}*/
 
 $cheminCompletMiniature = __DIR__ . "/cv-ressources/img-portfolio/" . $projet['miniature'] ;
 $cheminMiniature = "cv-ressources/img-portfolio/" . $projet['miniature'] ;
@@ -66,10 +67,48 @@ $tags = tagsEtOutils($tagsTableau, $projet['tags']);                            
 
     <main>
 
+        <?php
+
+        switch ($projet['statut']) {
+            case "cons" :
+                echo "<p class=\"projet-statut\"><i class=\"bi bi-cone-striped\"></i>Projet en cours, revenez plus tard !</p>";
+                break;
+            case "cach" :
+                echo "<p class=\"projet-statut\"><i class=\"bi bi-eye-slash-fill\"></i>Projet non public, n'hésitez à découvir les autres ! <a href=\"index.php#portfolio\"><i class=\"bi bi-arrow-right-short\"></i>Mes projets</a></p>";
+                die();
+                break;
+            case "cans" :
+                echo "<p class=\"projet-statut\"><i class=\"bi bi-cone-striped\"></i>Projet en cours, revenez plus tard !</p>";
+                echo "<p class=\"projet-statut\"><i class=\"bi bi-eye-slash-fill\"></i>Projet non public, n'hésitez à découvir les autres ! <a href=\"index.php#portfolio\"><i class=\"bi bi-arrow-right-short\"></i>Mes projets</a></p>";
+                die();
+                break;
+            case "term" :
+                break;
+            case "visi" :
+                break;
+            default :
+                die("problème avec le statut du projet, revenez plus tard, désolé.");
+                break;
+        }
+        
+        ?>
         <div class="pres">
             <div class="pres-texte">
                 <h2><?php echo($projet['nom-complet']); ?></h2>                                                                 <!--Nom Projet-->
-                <p class="cadre-date"><?php echo($contexte); ?> <span class="chevron">></span> <?php echo($projet['periode']); ?></p>  <!--cadre et date Projet-->
+                <p class="cadre-date">                          <!--cadre et date Projet-->
+                    <?php echo($contexte); ?> 
+                    <span class="chevron"> > </span> 
+                    <?php
+                    
+                    echo($projet['periode']); 
+                    
+                    if($projet['statut']=="term"){
+                        echo "<span class=\"chevron\"> > </span>";
+                        echo "Projet terminé";
+                    }
+                    
+                    ?>
+                </p>
                 <ul>
                 <?php                                                                                                           //Tags
                 foreach($tags as $key => $value){
@@ -82,7 +121,7 @@ $tags = tagsEtOutils($tagsTableau, $projet['tags']);                            
             </div>
             <img src="<?php echo $cheminMiniature ?>" alt="<?php echo $projet['alt-miniature']; ?>">                            <!--Image Projet-->
         </div>
-
+        
         <?php
 
         require_once($cheminContenu);
