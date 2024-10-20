@@ -11,21 +11,21 @@ if (isset($_POST['envoi'])) {                                                   
         $nom = $_POST['nom'];
         $mail = $_POST['mail'];
         $message = $_POST['msg'];
-        $date = date("Y-m-d G:i:s");
+        $dateSQL = date("Y-m-d G:i:s");
+        //$date = date("Y-m-d G:i");
         if (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {                                        //et que le mail est valide
             $msgErreur = "Email non valide, veuillez réessayer.";
         } else {                                                                                //on envoie le message :
-            $sujet = printf("[Portfolio CtldWbr] Nouveau message de %s à %s", $nom, $date);     //définition du sujet
-            echo $sujet;
+            $sujet = printf("[Portfolio CtldWbr] Nouveau message de %s", $nom);                 //définition du sujet
             $headers = "Reply-To: $mail" . "\r\n" . "FROM: $nom <catelandwambre@alwaysdata.net>" . "\r\n" . "cc:$mail";
+            //echo $sujet ."<br>" . $headers . "<br>" . $message;
 
-            //$mailOk = mail($mailEnvoi, $sujet, $message, $headers);                              //envoie du mail /!\ pas possible en local
-            $query = "INSERT INTO message (`date-heure`, `nom`, `mail`, `message`) VALUES ('{$date}', '{$nom}', '{$mail}', '{$message}');";
-            echo $query;
+            $mailOk = mail($mailEnvoi, $sujet, $message, $headers);                              //envoie du mail /!\ pas possible en local
+            $query = "INSERT INTO message (`date-heure`, `nom`, `mail`, `message`) VALUES ('{$dateSQL}', '{$nom}', '{$mail}', '{$message}');";
             $queryOk = mysqli_query($lien, $query);
 
-            if (/*$mailOk == true && */$queryOk == true){
-                $msgOk = "Message envoyé ! vous avez reçu une copie.";                          //message de validation.
+            if ($mailOk == true && $queryOk == true){
+                $msgOk = "Message envoyé ! vous avez reçu une copie." . $sujet;                  //message de validation.
             } else {
                 $msgErreur = "Problème avec l'envoi du message, veuillez réessayer plus tard.";
             }
@@ -34,6 +34,9 @@ if (isset($_POST['envoi'])) {                                                   
         $msgErreur = "Veuillez remplir tous les champs.";
     }
 }
+
+//mysqli_free_result($queryOk);
+mysqli_close($lien);
 
 ?>
 
@@ -45,13 +48,11 @@ if (isset($_POST['envoi'])) {                                                   
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV - Baptiste Cateland Wambre</title>
-    <link rel="stylesheet" href="cv-ressources/css/reset.css">
-    <link rel="stylesheet" href="cv-ressources/css/style.css">
+    <?php require_once('cv-ressources/includes/head.php'); ?>
     <link rel="stylesheet" href="cv-ressources/css/index-header.css">
     <link rel="stylesheet" href="cv-ressources/css/index-main.css">
     <link rel="stylesheet" href="cv-ressources/css/index-portfolio.css">
     <link rel="stylesheet" href="cv-ressources/css/index-contact.css">
-    <link rel="shortcut icon" href="cv-ressources/favicon.png" type="image/x-icon">
     <meta property="og:title" content="CV - Baptiste Cateland Wambre">
     <meta property="og:description" content="Découvrez mon profil à travers mon CV et mes expériences">
     <meta property="og:type" content="website">
@@ -280,7 +281,7 @@ if (isset($_POST['envoi'])) {                                                   
             
             ?>
             
-            <form action="#" method="post">
+            <form action="#contact-form" method="post">
                 <div class="contact-champs" id="div-nom">
                     <label for="nom" class="required">Votre nom</label>
                     <input type="text" name="nom" id="nom" placeholder="Prénom Nom..." required>
@@ -291,7 +292,7 @@ if (isset($_POST['envoi'])) {                                                   
                 </div>
                 <div class="contact-champs" id="div-msg">
                     <label for="msg" class="required">Votre message</label>
-                    <textarea name="msg" id="msg" placeholder="Bonjour, je souhaite vous contacter pour ..." required></textarea>
+                    <textarea name="msg" id="msg" placeholder="Bonjour..." required></textarea>
                 </div>
                 <button type="submit" name="envoi">Envoyer</button>
             </form>
