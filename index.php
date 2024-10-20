@@ -4,7 +4,7 @@ require_once('cv-ressources/includes/connexion-bdd.php');
 
 $mailEnvoi = "baptiste.catelandwambre@gmail.com";                                               //l'adresse à qui envoyer le message
 
-date_default_timezone_set("Europe/Paris");
+date_default_timezone_set("Europe/Paris");                                                      //pour que l'heure soit soit l'heure française
 
 if (isset($_POST['envoi'])) {                                                                   //si le bouton envoyé est appuyé, on commence le traitement.
     if (isset($_POST['nom']) || isset($_POST['mail']) || isset($_POST['msg'])) {                //si toutes les données sont saisies
@@ -29,11 +29,13 @@ if (isset($_POST['envoi'])) {                                                   
             } else {
                 $msgErreur = "Problème avec l'envoi du message, veuillez réessayer plus tard.";
             }
+            mysqli_free_result($queryOk);
         }
     } else {
         $msgErreur = "Veuillez remplir tous les champs.";
     }
 }
+
 
 ?>
 
@@ -89,7 +91,18 @@ if (isset($_POST['envoi'])) {                                                   
                     <section id="technologies">
                         <h3>Technologies</h3>
                         <div id="techno-flex">
-                            <img src="cv-ressources/techno/html.png" alt="HTML">
+                            <?php
+
+                                $queryTechno = "SELECT * FROM `techno` WHERE `valide` = 1;";
+                                $resultTechno = mysqli_query($lien, $queryTechno);
+
+                                while ($ligne = mysqli_fetch_assoc($resultTechno)){
+                                    $cheminIcnTechno = "cv-ressources/techno/".$ligne['icone'];
+                                    printf("<img src=\"%s\" alt=\"%s\">", $cheminIcnTechno, $ligne['alt-icone']);
+                                }
+
+                            ?>
+                            <!--<img src="cv-ressources/techno/html.png" alt="HTML">
                             <img src="cv-ressources/techno/css.png" alt="CSS">
                             <img src="cv-ressources/techno/js.png" alt="JS">
                             <img src="cv-ressources/techno/php.png" alt="PHP ">
@@ -100,7 +113,7 @@ if (isset($_POST['envoi'])) {                                                   
                             <img src="cv-ressources/techno/drive.png" alt="Google Drive et sa suite">
                             <img src="cv-ressources/techno/id.png" alt="Adobe InDesign">
                             <img src="cv-ressources/techno/ai.png" alt="Adobe Illustrator">
-                            <img src="cv-ressources/techno/ps.png" alt="Photoshop">
+                            <img src="cv-ressources/techno/ps.png" alt="Photoshop">-->
                         </div>
                     </section>
                     <section id="langues">
