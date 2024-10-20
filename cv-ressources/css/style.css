@@ -120,6 +120,23 @@ a{
     color: inherit;
 }
 
+a[target="_blank"]::after{
+    content: "\f1c5";
+    margin-left: 5px;
+    display: inline-block;
+    font-family: bootstrap-icons !important;
+    font-style: normal;
+    font-weight: 400 !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: -.125em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 0.7em;
+    color: var(--bleu);
+}
+
 a.sans{
     text-decoration: none;
     margin: 0;
@@ -181,23 +198,6 @@ nav ul li a:hover{
     /*position: relative;
     top: 3px;
     left: 3px;*/
-}
-
-a[target="_blank"]::after{
-    content: "\f1c5";
-    margin-left: 5px;
-    display: inline-block;
-    font-family: bootstrap-icons !important;
-    font-style: normal;
-    font-weight: 400 !important;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    vertical-align: -.125em;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-size: 0.7em;
-    color: var(--bleu);
 }
 
 a.haut{
