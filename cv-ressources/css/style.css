@@ -218,6 +218,24 @@ a.haut{
     }
 }
 
+footer{
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    ul{
+        display: flex;
+        gap: 10px;
+        color: var(--bleu);
+    }
+}
+
+ul#contact a[target="_blank"]::after{
+    content: "";
+    margin-left: 0;
+}
+
 @media screen and (max-width: 1000px) {
     div#header-couleur{
         padding: 50px 10%;

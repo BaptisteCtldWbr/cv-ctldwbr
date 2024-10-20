@@ -145,12 +145,6 @@ div#scroll p{
     transform: rotate(90deg);
 }
 
-header ul#contact a[target="_blank"]::after{
-    content: "";
-    margin-left: 0;
-}
-
-
 span.niveau-langue{
     font-style: italic;
 }

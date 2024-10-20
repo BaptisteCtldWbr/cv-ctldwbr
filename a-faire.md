@@ -1,6 +1,6 @@
 # à faire
 
-- mention fait avec ❤️ par moi
+- mention fait avec ❤️ par moi footer
 - ~~suppr les a::after du contact~~
 - rajouter tout les projets
     - actualiser le portfolio

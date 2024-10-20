@@ -45,5 +45,6 @@
         <h2 style="font-size: 2em;">Erreur</h2>
         <p  style="font-size: 1.3em;"><?php echo $msg; ?> <a href="index.php">Retour à l'accueil</a></p>
     </main>
+    <?php require_once('cv-ressources/includes/footer.php'); ?>
 </body>
 </html>

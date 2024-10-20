@@ -2,6 +2,10 @@
 
 require_once('cv-ressources/includes/connexion-bdd.php');
 
+//---------------------------
+//- TRAITEMENT FORM CONTACT -
+//---------------------------
+
 $mailEnvoi = "baptiste.catelandwambre@gmail.com";                                               //l'adresse à qui envoyer le message
 
 date_default_timezone_set("Europe/Paris");                                                      //pour que l'heure soit soit l'heure française
