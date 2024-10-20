@@ -79,12 +79,21 @@ if (isset($_POST['envoi'])) {                                                   
                 <section id="contact">
                     <h3>Contact</h3>
                     <ul id="contact">
-                        <li id="contact-mail"><a href="mailto:baptiste.catelandwambre@gmail.com" target="_blank"><i class="bi-envelope-fill"></i> baptiste.cateland&ZeroWidthSpace;wambre@gmail.com</a></li>
-                        <li><a href="https://www.linkedin.com/in/baptiste-ctldwbr/" target="_blank"><i class="bi-linkedin"></i> /baptiste-ctldwbr</a></li>
-                        <li><a href="https://github.com/BaptisteCtldWbr" target="_blank"><i class="bi-github"></i> / BaptisteCtldWbr</a></li>
-                        <li><a href="https://www.youtube.com/@baptistedrone" target="_blank"><i class="bi-youtube"></i> @baptistedrone</a></li>
-                        <li><a href="https://www.instagram.com/baptiste.drone/" target="_blank"><i class="bi-instagram"></i> @baptiste.drone</a></li>
-                        <li><i class="bi-geo-alt-fill"></i> Paris 13<sup>e</sup></li>
+                        <?php
+
+                        $queryContact = "SELECT * FROM `contact` WHERE `valide` = 1;";                        //requête : tous les contacts, publics
+                        $resultContact = mysqli_query($lien, $queryContact);                                  //envoi de la reqûete au SGBDR
+
+                        while ($ligne = mysqli_fetch_assoc($resultContact)){                                 //affichage de toutes les technos avec la structure HTML
+                            if (isset($ligne['lien'])){
+                                printf("<li><a href=\"%s\" target=\"_blank\"><i class=\"bi-%s\"></i> %s</a></li>", $ligne['lien'], $ligne['id-bootstrap'], $ligne['texte']);
+                            } else {
+                                printf("<li><i class=\"bi-%s\"></i> %s</li>", $ligne['id-bootstrap'], $ligne['texte']);
+                            }
+                        }
+                        mysqli_free_result($resultContact);
+
+                        ?>
                     </ul>
                 </section>
                 <div id="competences">
