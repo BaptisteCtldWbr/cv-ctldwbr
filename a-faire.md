@@ -1,0 +1,23 @@
+# à faire
+
+- mention fait avec ❤️ par moi
+- ~~suppr les a::after du contact~~
+- rajouter tout les projets
+    - actualiser le portfolio
+    - SAE 102 - 202 (pastilles et affiches notamment)
+    - SAE 105 - 203
+    - Baptiste Drone
+    - Andina Rumicruz 
+    - Projet scout de solidarité international
+    - Préparer pour les SAE du S3
+        - SAE 301 - agence immobilière
+        - SAE 302 - ??
+        - SAE 303 - cinémas d'île de France JS
+        - SAE 303 - broderie
+    - photos paralympiques
+    - photos suisse
+    - photos dump qqonque
+    - photos croatie / bosnie
+- faire la liste des projets
+    - inclure la redirection, quand c'est pas valide.
+- refaire le cv pdf
