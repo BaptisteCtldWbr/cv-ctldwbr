@@ -1,7 +1,5 @@
 # à faire
 
-- mention fait avec ❤️ par moi footer
-- ~~suppr les a::after du contact~~
 - rajouter tout les projets
     - actualiser le portfolio
     - SAE 102 - 202 (pastilles et affiches notamment)
@@ -21,3 +19,5 @@
 - faire la liste des projets
     - inclure la redirection, quand c'est pas valide.
 - refaire le cv pdf
+- ~~mention fait par moi footer~~
+- ~~suppr les a::after du contact~~
