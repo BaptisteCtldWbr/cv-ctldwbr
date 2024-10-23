@@ -112,8 +112,12 @@ $tags = tagsEtOutils($tagsTableau, $projet['tags']);                            
                 <ul>
                 <?php                                                                                                           //Tags
                 foreach($tags as $key => $value){
-                    printf("<li><i class=\"bi-%s\"></i>%s</li>", $value, $key);                                                 //impression avec la structure Front
-                }                
+                    if(substr($value, 0, 3) == "bi-"){                                                                          //si c'est une icone Bootstrap
+                        printf("<li><i class=\"%s\"></i>%s</li>", $value, $key);                                                //Affiche l'icone
+                    } else {
+                        printf("<li><img src=\"%s\" alt=\"%s\">%s</li>", $value, $key, $key);                                         //Ou affiche le logo image
+                    }
+                }
                 ?>
                 </ul>
                 <p class="desc"><?php echo $projet['description'] ?></p>                                                        <!--Descirption Projet-->

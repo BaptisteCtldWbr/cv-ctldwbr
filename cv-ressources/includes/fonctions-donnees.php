@@ -26,11 +26,12 @@ function contexte(array $tableau, string $classe) : string{                     
 //--------
 
 $tagsTableau = array(                                       //définition du tableau avec le texte du tags et son identifiant bootstrap
-    "HTML" => 'filetype-html',
-    "CSS" => 'filetype-css',
-    'PHP' => 'filetype-php',
-    "SQL" => 'filetype-sql',
-    "GitHub" =>'github'
+    "HTML" => 'bi-filetype-html',
+    "CSS" => 'bi-filetype-css',
+    'PHP' => 'bi-filetype-php',
+    "SQL" => 'bi-filetype-sql',
+    "GitHub" =>'bi-github',
+    "Davinci" => 'cv-ressources/techno/davinci.png'
 );
 
 function tagsEtOutils(array $tableau, string $tags) : array{                     //définition de la fonction créant un tableau avec les tags et leurs id bootstrap
