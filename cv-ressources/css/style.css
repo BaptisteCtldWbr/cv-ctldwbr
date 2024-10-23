@@ -227,8 +227,20 @@ footer{
     ul{
         display: flex;
         gap: 10px;
-        color: var(--bleu);
     }
+}
+
+footer ul#contact a i::before{
+    color: var(--bleu);
+    padding: 5px;
+    border-radius: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+footer ul#contact a i:hover::before{
+    color: #FFFFFF;
+    background-color: var(--bleu);
+    transition: all 0.3s ease-in-out;
 }
 
 ul#contact a[target="_blank"]::after{

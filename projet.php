@@ -95,7 +95,7 @@ $tags = tagsEtOutils($tagsTableau, $projet['tags']);                            
         <div class="pres">
             <div class="pres-texte">
                 <h2><?php echo($projet['nom-complet']); ?></h2>                                                                 <!--Nom Projet-->
-                <p class="cadre-date">                          <!--cadre et date Projet-->
+                <p class="cadre-date">                                                                                          <!--cadre et date Projet-->
                     <?php echo($contexte); ?> 
                     <span class="chevron"> > </span> 
                     <?php
