@@ -1,5 +1,6 @@
 # À faire
 
+- [ ] refaire la photo
 - [ ] rajouter tout les projets
     - [ ] actualiser le portfolio
     - [ ] SAE 102 - 202 (pastilles et affiches notamment)

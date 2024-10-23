@@ -1,4 +1,4 @@
-<div style="height: 200px;" id="bas"></div>
+<div style="height: 100px;" id="bas"></div>
 <footer>
     <p>Portfolio fait par mes propres soins !</p>
     <ul id="contact">

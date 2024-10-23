@@ -61,7 +61,7 @@ if (isset($_POST['envoi'])) {                                                   
     <meta property="og:title" content="CV - Baptiste Cateland Wambre">
     <meta property="og:description" content="Découvrez mon profil à travers mon CV et mes expériences">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="http://catelandwambre.alwaysdata.net/cv-ressources/meta-miniature.png">
+    <meta property="og:image" content="http://catelandwambre.alwaysdata.net/cv-ressources/img/meta-miniature.png">
 </head>
 
 <body>
@@ -69,7 +69,7 @@ if (isset($_POST['envoi'])) {                                                   
         <div id="header-couleur">
             <section id="moi">
                 <div id="moi-pp">
-                    <img src="cv-ressources/photo.png" alt="">
+                    <img src="cv-ressources/img/photo.png" alt="">
                 </div>
                 <div id="moi-texte">
                     <h1>Baptiste Cateland--Wambre</h1>
