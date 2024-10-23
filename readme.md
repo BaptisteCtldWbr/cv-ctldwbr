@@ -1,7 +1,7 @@
 # À faire
 
 - [ ] refaire la photo
-- [ ] possibilité de d'avoir des images dans les tags
+- [x] possibilité de d'avoir des images dans les tags
 - [ ] rajouter tout les projets
     - [ ] actualiser le portfolio
     - [ ] SAE 102 - 202 (pastilles et affiches notamment)
