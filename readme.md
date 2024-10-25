@@ -18,9 +18,11 @@
     - [ ] photos dump qqonque
     - [ ] photos croatie / bosnie
 - [ ] refaire le cv pdf
+- [ ] suggestions projets depuis une page projet
 - [x] faire la liste des projets
     - [x] inclure la redirection, quand c'est pas valide.
 - [x] réaligner les images et le nom de l'expérience
 - [x] suppr les a::after du contact
 - [x] possibilité de d'avoir des images dans les tags
 - [x] mention fait par moi footer
+- [x] déplacer images des projets
