@@ -199,102 +199,58 @@ if (isset($_POST['envoi'])) {                                                   
             ?>
         </section>
 
-        <!--<section id="projet">
-            <h2 id="projets">Expériences et projets</h2>
-            <article class="exp">
-                <img src="cv-ressources/exp/cv-web.png" alt="CV sur le web" class="exp-img">
-                <div class="exp-text">
-                    <h4>Mon CV en HTML</h4>
-                    <p class="exp-desc">Développement de mon CV en HTML CSS</p>
-                    <p class="exp-comp">HTML - CSS - GitHub - Hébergement</p>
-                </div>
-            </article>
-            <article class="exp">
-                <img src="cv-ressources/exp/sae105.png" alt="Illustration de ce site" class="exp-img">
-                <div class="exp-text">
-                    <h4>Développement en équipe d'un site web <span class="exp-det">Projet universitaire</span></h4>
-                    <p class="exp-date">Décembre 2023 et mai 2024</p>
-                    <p class="exp-desc">Développement en équipe d'un site web dans le cadre d'un projet universitaire
-                    </p>
-                    <p class="exp-comp">HTML - CSS - PHP - MySql - GitHub - Hébergement - Travail en équipe</p>
-                    <p class="exp-lien"><a href="https://asaf-font.alwaysdata.net/sae203/code" target="_blank">Site web
-                            hébergé</a> - <a href="https://github.com/BaptisteCtldWbr/SAE203" target="_blank">Dépôt
-                            Github</a></p>
-                </div>
-            </article>
-            <article class="exp">
-                <img src="cv-ressources/exp/ahuana.png" alt="Logo " class="exp-img">
-                <div class="exp-text">
-                    <h4>Protectyo Andina Rumicruz <span class="exp-det">Scouts et Guides de France</span></h4>
-                    <p class="exp-date">Été 2024, préparation depuis septembre 2023, témoignage jusqu'en 2025</p>
-                    <p class="exp-desc">Projet scout de solidarité et rencontre internationale en Équateur, en partenariat avec <a href="https://ahuana.com" target="_blank">Ahuana</a>, avec le soutien de <a href="https://france-volontaires.org" target="_blank">France Volontaires</a>, dans le cadre de la proposition <a href="https://compagnons.sgdf.fr/experiments-a-letranger/" target="_blank">compagnons</a>.</p>
-                    <p class="exp-comp">Gestion de projet et d'équipe - Recherche de financements - Gestion et suivi de budget - Rédaction d'un dossier de camp<br>Mise en place de partenariat - Solidarité internationale - Rencontre internationale - Réalisation d'un documentaire</p>
-                    <p class="exp-lien"><a href="https://drive.google.com/file/d/1BYYX7KkHGxkjYFnbCGxCnruPDGyg1EVy/view?usp=drive_link" target="_blank">Dossier d'information - subvention</a> - <a href="https://compart-ou.alwaysdata.net/ahuana" target="_blank">Page de présentation</a></p>
-                </div>
-            </article>
-            <article class="exp">
-                <img src="cv-ressources/exp/drone.png" alt="Logo baptiste.drone" class="exp-img">
-                <div class="exp-text">
-                    <h4>Réalisation de cinématiques au drone</h4>
-                    <p class="exp-date">2022 à Aujourd'hui</p>
-                    <p class="exp-desc">Par passion, je réalise des cinématiques avec mon drone. Majoritairement de par moi-même, mais aussi pour des court-métrages.</p>
-                    <p class="exp-comp">Pilotage de drone stabilisé - Pilotage de drone FPV - Montage Vidéo (DaVinci
-                        Resolve) - Étalonnage - Sound Design</p>
-                    <p class="exp-lien"><a href="https://www.youtube.com/@baptistedrone" target="_blank">Chaîne
-                            YouTube</a> - <a href="https://www.instagram.com/baptiste.drone/" target="_blank">Compte
-                            Instagram</a> - <a
-                            href="https://www.behance.net/gallery/199966985/baptistedrone-cinmatiques"
-                            target="_blank">Projet Behance</a></p>
-                </div>
-            </article>
-            <article class="exp">
-                <img src="cv-ressources/exp/talents.png" alt="Logo du festival des talents de l'IUT" class="exp-img">
-                <div class="exp-text">
-                    <h4>Communication pour un festival <span class="exp-det">Projet universitaire</span></h4>
-                    <p class="exp-date">Novembre 2023 à mai 2024</p>
-                    <p class="exp-desc">Élaboration et mise en place d’une stratégie de communication</p>
-                    <p class="exp-comp">Bases de la communication - Gestion de projet - Réalisation de pastilles de
-                        communication - Réalisation d'affiches - Rédaction de contenus</p>
-                    <a href="https://www.behance.net/gallery/199938091/Promotion-dun-festival" target="_blank">Pastilles
-                        de communication et Affiches (Behance)</a>
-                </div>
-            </article>
-        </section>-->
-
         <section id="portfolio">
             <h2>Portflio</h2>
+
+            <?php
+
+            $query = "SELECT `url`, `nom-court`, `miniature`, `alt-miniature`, `contexte`, `periode`, `tags`, `description`, `statut` FROM portfolio WHERE statut = 'visi' OR statut = 'term' OR statut = 'cons' ORDER BY `date`;";
+
+            $result = mysqli_query($lien, $query);
+
+            if($result){
+                $nb_lignes = mysqli_num_rows($result);
+            } else {
+                echo "<p>Problème avec la requête - Veuillez revenir bientôt, désolé.</p>";
+            }
+
+            if($nb_lignes == 0){
+                echo "<p>Aucun projet public - Veuillez revenir bientôt, désolé.</p>";
+            } else if ($nb_lignes == 1) {
+                echo "<p>{$nb_lignes} projet.</p>";
+            } else {
+                echo "<p>{$nb_lignes} projets.</p>";
+            }
+            
+            ?>
             <div class="cont-projet">
-                <article class="projet univ" style="background-image: url('cv-ressources/img-portfolio/cv-portfolio.png');" title="CV / Portflio : Afin de présenter mon profil et mes atouts, j'ai conçu et développé ce petit site web. Vous pouvez retrouver dessus mon CV : mes expériences et mon contact, avec mon portfolio : les projets que j'ai réalisé récemment."><!--cadre du projet ///// image projet ///// {Titre} : {Description} ({Date})--><a class="sans" href="projet.php"><!--Lien Projet-->
-                        <h4 class="titre-projet">CV / Portfolio</h4> <!--Nom Projet-->
-                        <ul> <!--Tags Projet-->
-                            <li><i class="bi-filetype-html"></i></li>
-                            <li><i class="bi-filetype-css"></i></li>
-                            <li><i class="bi-filetype-php"></i></li>
-                            <li><i class="bi-filetype-sql"></i></li>
-                            <li><i class="bi-github"></i></li>
-                        </ul>
-                    </a></article>
-                <article class="projet scout" style="background-image: url('cv-ressources/img-portfolio/cv-portfolio.png');" title="CV / Portflio : Afin de présenter mon profil et mes atouts, j'ai conçu et développé ce petit site web. Vous pouvez retrouver dessus mon CV : mes expériences et mon contact, avec mon portfolio : les projets que j'ai réalisé récemment."><!--image projet ///// {Titre} : {Description} ({Date})--><a class="sans" href="projets.html"><!--Lien Projet-->
-                        <h4 class="titre-projet">CV / Portfolio</h4> <!--Nom Projet-->
-                        <ul> <!--Tags Projet-->
-                            <li><i class="bi-filetype-html"></i></li>
-                            <li><i class="bi-filetype-css"></i></li>
-                            <li><i class="bi-filetype-php"></i></li>
-                            <li><i class="bi-filetype-sql"></i></li>
-                            <li><i class="bi-github"></i></li>
-                        </ul>
-                    </a></article>
-                <article class="projet audiovisuel" style="background-image: url('cv-ressources/img-portfolio/cv-portfolio.png');" title="CV / Portflio : Afin de présenter mon profil et mes atouts, j'ai conçu et développé ce petit site web. Vous pouvez retrouver dessus mon CV : mes expériences et mon contact, avec mon portfolio : les projets que j'ai réalisé récemment."><!--image projet ///// {Titre} : {Description} ({Date})--><a class="sans" href="projets.html"><!--Lien Projet-->
-                        <h4 class="titre-projet">CV / Portfolio</h4> <!--Nom Projet-->
-                        <ul> <!--Tags Projet-->
-                            <li><i class="bi-filetype-html"></i></li>
-                            <li><i class="bi-filetype-css"></i></li>
-                            <li><i class="bi-filetype-php"></i></li>
-                            <li><i class="bi-filetype-sql"></i></li>
-                            <li><i class="bi-github"></i></li>
-                        </ul>
-                    </a></article>
-            </div>
+            <?php
+            require_once('cv-ressources/includes/fonctions-donnees.php');
+            while($projet = mysqli_fetch_assoc($result)){
+                if ($projet['statut'] == "cach" || $projet['statut'] == "cans"){
+                } else {
+                    echo "<article
+                    class=\"projet {$projet['contexte']}\"
+                    style=\"background-image: url('cv-ressources/img-portfolio/{$projet['miniature']}');\"
+                    title=\"{$projet['nom-court']} : {$projet['description']}\">
+                    <a class=\"sans\" href=\"projet.php?p={$projet['url']}\">";
+                    echo "<h4 class=\"titre-projet\">{$projet['nom-court']}</h4>";
+                    echo "<ul>";
+                        $tags = tagsEtOutils($tagsTableau, $projet['tags']);
+                        foreach($tags as $key => $value){
+                            if(substr($value, 0, 3) == "bi-"){
+                                echo "<li><i class=\"{$value}\"></i></li>";
+                            } else {
+                                echo "<li><img src=\"{$value}\" alt=\"{$key}\"></li>";
+                            }
+                        }
+                    echo "</ul>";
+                }
+            }
+
+            echo "</div>"
+
+            ?>
         </section>
         <section id="contact-form">
             <h2>Me contacter</h2>

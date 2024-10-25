@@ -50,10 +50,14 @@ article.projet ul{
     li{
         margin: 0;
         line-height: normal;
+        line-height: 0;
         i{
             color: #FFFFFF;
             margin: 0;
             font-size: 1.1em;
+        }
+        img{
+            height: 1.1em;
         }
     }
 }
