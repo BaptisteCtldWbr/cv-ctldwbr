@@ -27,7 +27,7 @@ article.exp span.exp-det::after{content: "\003e";}
 
 article.exp img.exp-img{
     width: 30px;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 article.exp p.exp-date{

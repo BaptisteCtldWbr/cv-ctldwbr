@@ -1,7 +1,6 @@
 # À faire
 
 - [ ] refaire la photo
-- [x] possibilité de d'avoir des images dans les tags
 - [ ] rajouter tout les projets
     - [ ] actualiser le portfolio
     - [ ] SAE 102 - 202 (pastilles et affiches notamment)
@@ -21,5 +20,7 @@
 - [ ] faire la liste des projets
     - [ ] inclure la redirection, quand c'est pas valide.
 - [ ] refaire le cv pdf
-- [x] mention fait par moi footer
+- [x] réaligner les images et le nom de l'expérience
 - [x] suppr les a::after du contact
+- [x] possibilité de d'avoir des images dans les tags
+- [x] mention fait par moi footer
