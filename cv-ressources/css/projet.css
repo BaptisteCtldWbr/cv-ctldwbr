@@ -7,11 +7,13 @@ div.pres {
     ul {
         display: flex;
         gap: 20px;
+        line-height: 0;
         li i {
             color: var(--bleu);
             margin-right: 5px;
         }
         li img{
+            margin-right: 5px;
             height: 16px;
             border-radius: 0px;
             object-fit: cover;
@@ -53,8 +55,7 @@ h3{
 iframe {
     width: 100%;
     aspect-ratio: 1920 / 1080;
-    border: 2px var(--bleu) dashed
-    ;
+    border: 2px var(--bleu) dashed;
     margin: 50px 0;
 }
 
