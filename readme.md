@@ -17,9 +17,9 @@
     - [ ] photos suisse
     - [ ] photos dump qqonque
     - [ ] photos croatie / bosnie
-- [x] faire la liste des projets
-    - [ ] inclure la redirection, quand c'est pas valide.
 - [ ] refaire le cv pdf
+- [x] faire la liste des projets
+    - [x] inclure la redirection, quand c'est pas valide.
 - [x] réaligner les images et le nom de l'expérience
 - [x] suppr les a::after du contact
 - [x] possibilité de d'avoir des images dans les tags

@@ -21,7 +21,7 @@ if($result){                                                                    
 }
 
 if($nb_ligne == 0){                                                             //s'il n'y pas de projets
-    header("Location: 404.php?erreur=projet-n-existe-pas");                     //on redirige vers la 404
+    header("Location: index.php#portfolio");                                    //on redirige vers la 404
     die("Aucun projet retourné.");
 } else if ($nb_ligne>1){                                                        //s'il y a trop de projets
     header('Location: 404.php?erreur=trop-de-projet');                          //on redirige vers la 404
