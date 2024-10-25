@@ -69,6 +69,14 @@ $tags = tagsEtOutils($tagsTableau, $projet['tags']);                            
 
         <?php
 
+        /*
+        cons = en contruction
+        cach = caché - non public
+        cans = en construction et caché
+        term = terminé
+        visi = visible
+        */
+
         switch ($projet['statut']) {
             case "cons" :
                 echo "<p class=\"projet-statut\"><i class=\"bi bi-cone-striped\"></i>Projet en cours, revenez plus tard !</p>";
