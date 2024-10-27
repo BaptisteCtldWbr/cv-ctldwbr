@@ -1,17 +1,58 @@
-<p>Je suis parti du <a href="cv-pdf.html" target="_blank">CV print</a>, et de l'identité visuelle qui en résultait, que j'avais réalisés pour ma recherche de stage, puis l'ai décliné en page Web. Auquel j'ai rajouté mon portfolio : ça n'as pas de sens pour un apprenti développeur web d'utiliser un outils no-code ! Le site est plus ou moins responsive. J'ai utilisé HTML & CSS, avec PHP et MySQL pour gérer le contenu. J'ai également utilisé l'outil GitHub.</p>
-<p>Normalement, vous avez déjà découvert ce <a href="index.html">site</a>, si vous souhaitez voir son code, voici le dépôt GitHub : <a href="https://github.com/BaptisteCtldWbr/cv-ctldwbr" target="_blank">https://github.com/BaptisteCtldWbr/cv-ctldwbr</a></p>
-<h3>Header - Présentation</h3>
+<h3>CV front</h3>
+<p>
+    J'ai voulu proposé mon CV en version Web, logique, j'aspire à être développeur web !
+    <br>
+    Pour cela, je suis parti de mon <a href="cv-pdf.html" target="_blank">CV print</a>, et de son identité visuelle. J'ai fait en sorte de mettre toutes les informations qui était sur le côté du CV dans une première partie, et le reste à la suite.</p>
+<ul>
+    <li>Le header du site est conçu comme un réel "à côté" du CV avec les informations principales, les détails</li>
+    <li>Puis, toujours en suivant les standards d'un CV, on retrouve mes expériences et mes formations.</li>
+</ul>
 <figure>
-    <img src="projets/cv-portfolio/cv-header.png" alt="Header du CV">
-    <figcaption>Le header du site est conçu comme un réel "à côté" du CV, avec nom, prénom, photo, intitulé, contacts, compétences et centres d'intéret.</figcaption>
+    <img src="projets/cv-portfolio/1-pdf-vers-html.png" alt="De mon CV PDF à mon CV HTML">
+    <figcaption>De mon CV PDF à mon CV HTML</figcaption>
+    <figcaption style="font-size: 0.6em;">*Visuel non contractuel, le site à changé entre temps...</figcaption>
 </figure>
-<h3>Formations et expériences</h3>
+<p>J'ai également fait en sorte que tout puisse être "responsive", c'est à dire que cela s'adapte à l'écran.</p>
+
+<h3>CV/Portfolio back</h3>
+<p>Puis, je me suis aperçu qu'il manquait quelque chose : des preuves de mes compétences (c'est toujours mieux que des lignes de CV). J'ai donc inventé un truc tout nouveau : le &#x2728; Portfolio &#x2728;. Il existe plein d'outils "no-code" pour en faire un soi-même, en quelques instant. Mais je suis apprenti développeur web, je vais donc le développé.</p>
+<p>Initialement, c'était juste pour mes projets : après mes expériences, je voulais mettre une sorte de galerie, assez simple, de ce que j'avais pu réaliser. Mais, je me suis chauffé : plutôt que de le faire simplement en front (HTML - CSS), je l'ai développé de manière à ce qu'il soit "connecté" à une base de données (avec PHP et MySQL), qui contient mes projets. J'en ai également profité pour faire en sorte que TOUT le reste dépende de cette base de données : contacts, technologies maitrisées, langues, centres d'intêrets avec mes différentes expériences. Et parce que "jamais deux sans trois", j'ai rajouté un formulaire de contact par mail et base de données !</p>
+
+<h4>Portfolio</h4>
+<p>J'ai donc imaginé une table, contenant les informations de tous mes projets.</p>
 <figure>
-    <img src="projets/cv-portfolio/cv-exp.png" alt="La partie expériences">
-    <figcaption>Toujours en suivant les standards d'un CV, mes expériences et mes formations.</figcaption>
+    <img src="projets/cv-portfolio/2-portfolio-structure-bdd.png" alt="La struture de la base de données de la table dans PHPMyAdmin">
+    <figcaption>La structure de la base de données de la table dans PHPMyAdmin</figcaption>
 </figure>
-<h3>Projets</h3>
+<p>Puis, tout simplement j'affiche tous les projets, dans un conteneur grid, avec l'image du projet, son nom court, ses tags et son contexte (le petit émoji). Et j'ai aussi fait en sorte de pouvoir cacher certains projets, s'ils sont en cours de rédation, ou juste nul...</p>
 <figure>
-    <img src="projets/cv-portfolio/cv-portfolio.png" alt="Et mes projets">
-    <figcaption>Et finalement : mes projets et différentes réalisations. Ce sont des liens qui redirigent vers la page du projet en question.</figcaption>
+    <img src="" alt="Grille des projets">
+    <figcaption>Tous mes projets</figcaption>
+</figure>
+
+<h4>Projets</h4>
+<p>C'est bien beau d'afficher plein de projets, mais encore faut-il faire les présentations ! Pour cela, chaque projet redirige vers sa propre page. Comme vous pouvez le remarquer, tout ce passe au niveau des paramètres d'URL, j'ai codé une page en PHP qui prend le paramètre d'URL, cherche dans la base de données quel projet a se nom, et l'affiche.</p>
+<p>On commence avec une présentation rapide : nom, miniature, contexte et date du projet, tags et courte description, avec les liens permettant de voir les réalisations en question.</p>
+<figure>
+    <img src="projets/cv-portfolio/4-description-projet.png" alt="La présentation du projet">
+    <figcaption>La présentation du projet</figcaption>
+</figure>
+<p>Et, ce que vous êtes en train de lire : le contenu du projet. Pour cela, rien de bien technique : dans la base de données, une chaîne de caractères qui pointe vers un fichier HTML, que j'inclus ensuite.</p>
+
+<h4>CV - BDD</h4>
+<p>J'avais déjà fait une base de données, donc autant en profiter : tout gérer avec ça ! Mes liens de contacts, les technologies ect...</p>
+<figure>
+    <img src="projets/cv-portfolio/5-tables.png" alt="Les 5 tables gérant la partie header du CV">
+    <figcaption>Les 5 tables gérant la partie header du CV</figcaption>
+</figure>
+<p>J'ai également transformé le code statique de mes expériences en dynamique, évidemment c'est toujours géré par une base de données !</p>
+<figure>
+    <img src="projets/cv-portfolio/6-experiences.png" alt="Mes expériences">
+    <figcaption>Une partie de mes expériences</figcaption>
+</figure>
+
+<h4>Formulaire de contact</h4>
+<p>J'en ai également profité pour développer un formulaire de contact. A la soumission, il m'envoie un mail (avec vous en copie) et enregistre le message dans une table dédiée de la base de données.</p>
+<figure>
+    <img src="projets/cv-portfolio/7-formulaire-contact.png" alt="">
 </figure>

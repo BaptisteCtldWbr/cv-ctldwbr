@@ -2,7 +2,7 @@
 
 - [ ] refaire la photo
 - [ ] rajouter tout les projets
-    - [ ] actualiser le portfolio
+    - [x] actualiser le portfolio
         - [ ] pas oublier la photo de la galerie de projets
     - [ ] SAE 102 - 202 (pastilles et affiches notamment)
     - [ ] SAE 105 - 203
