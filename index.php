@@ -11,7 +11,7 @@ $mailEnvoi = "baptiste.catelandwambre@gmail.com";                               
 date_default_timezone_set("Europe/Paris");                                                      //pour que l'heure soit soit l'heure française
 
 if (isset($_POST['envoi'])) {                                                                   //si le bouton envoyé est appuyé, on commence le traitement.
-    if (isset($_POST['nom']) || isset($_POST['mail']) || isset($_POST['msg'])) {                //si toutes les données sont saisies
+    if (isset($_POST['nom']) && isset($_POST['mail']) && isset($_POST['msg'])) {                //si toutes les données sont saisies
         $nom = $_POST['nom'];
         $mail = $_POST['mail'];
         $message = $_POST['msg'];
@@ -29,11 +29,10 @@ if (isset($_POST['envoi'])) {                                                   
             $queryOk = mysqli_query($lien, $query);
 
             if ($mailOk == true && $queryOk == true){
-                $msgOk = "Message envoyé ! vous avez reçu une copie. $sujet";                   //message de validation.
+                $msgOk = "Message envoyé ! vous avez reçu une copie par mail avec le sujet : $sujet";   //message de validation.
             } else {
                 $msgErreur = "Problème avec l'envoi du message, veuillez réessayer plus tard.";
             }
-            mysqli_free_result($queryOk);
         }
     } else {
         $msgErreur = "Veuillez remplir tous les champs.";
@@ -244,7 +243,7 @@ if (isset($_POST['envoi'])) {                                                   
                                 echo "<li><img src=\"{$value}\" alt=\"{$key}\"></li>";
                             }
                         }
-                    echo "</ul>";
+                    echo "</ul></a>";
                 }
             }
 
@@ -265,7 +264,7 @@ if (isset($_POST['envoi'])) {                                                   
             
             ?>
             
-            <form action="#" method="post">
+            <form action="#contact-form" method="post">
                 <div class="contact-champs" id="div-nom">
                     <label for="nom" class="required">Votre nom</label>
                     <input type="text" name="nom" id="nom" placeholder="Prénom Nom..." required>
