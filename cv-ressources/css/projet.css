@@ -59,6 +59,30 @@ iframe {
     margin: 50px 0;
 }
 
+div.content ul{
+    padding: 30px;
+    list-style: "-   ";
+}
+
+figure{
+    width: 70%;
+    margin: 0 15%;
+    img{
+        border: var(--bleu) 1px dashed;
+    }
+    figcaption{
+        font-style: italic;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    figure{
+        width: 100%;
+        margin: 0;
+    }
+}
+
 p.projet-statut{
     margin: 100px 0px;
     background-color: #ffdfa4;

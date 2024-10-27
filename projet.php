@@ -133,12 +133,13 @@ $tags = tagsEtOutils($tagsTableau, $projet['tags']);                            
             </div>
             <img src="<?php echo $cheminMiniature ?>" alt="<?php echo $projet['alt-miniature']; ?>">                            <!--Image Projet-->
         </div>
-        
+        <div class="content">
         <?php
 
         require_once($cheminContenu);
 
         ?>
+        </div>
     </main>
     <?php
         require_once('cv-ressources/includes/footer.php');
