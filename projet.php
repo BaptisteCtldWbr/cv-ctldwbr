@@ -129,7 +129,18 @@ $tags = tagsEtOutils($tagsTableau, $projet['tags']);                            
                 ?>
                 </ul>
                 <p class="desc"><?php echo $projet['description'] ?></p>                                                        <!--Descirption Projet-->
-                <?php $projet['alt-miniature'] ?>
+                <?php 
+                
+                if($projet['lien1-nom'] != null && $projet['lien1-lien'] != null){
+                    echo "<ul class=\"lien\">";
+                    echo "<li><a href=\"{$projet['lien1-lien']}\" target=\"_blank\">{$projet['lien1-nom']}</a></li>";
+                    if($projet['lien2-nom'] != null && $projet['lien2-lien'] != null){
+                        echo "<li><a href=\"{$projet['lien2-lien']}\" target=\"_blank\">{$projet['lien2-nom']}</a></li>";
+                    }
+                    echo "</ul>";
+                }
+                
+                ?>
             </div>
             <img src="<?php echo $cheminMiniature ?>" alt="<?php echo $projet['alt-miniature']; ?>">                            <!--Image Projet-->
         </div>
