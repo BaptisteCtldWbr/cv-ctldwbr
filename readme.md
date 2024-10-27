@@ -3,6 +3,7 @@
 - [ ] refaire la photo
 - [ ] rajouter tout les projets
     - [ ] actualiser le portfolio
+        - [ ] pas oublier la photo de la galerie de projets
     - [ ] SAE 102 - 202 (pastilles et affiches notamment)
     - [ ] SAE 105 - 203
     - [ ] Baptiste Drone
@@ -15,7 +16,7 @@
         - [ ] SAE 303 - broderie
     - [ ] photos paralympiques
     - [ ] photos suisse
-    - [ ] photos dump qqonque
+    - [ ] photos dump qqonque ??
     - [ ] photos croatie / bosnie
 - [ ] refaire le cv pdf
 - [ ] suggestions projets depuis une page projet
