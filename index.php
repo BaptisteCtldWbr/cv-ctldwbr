@@ -50,13 +50,11 @@ if (isset($_POST['envoi'])) {                                                   
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV - Baptiste Cateland Wambre</title>
-    <link rel="stylesheet" href="cv-ressources/css/reset.css">
-    <link rel="stylesheet" href="cv-ressources/css/style.css">
+    <?php require_once('cv-ressources/includes/head.php'); ?>
     <link rel="stylesheet" href="cv-ressources/css/index-header.css">
     <link rel="stylesheet" href="cv-ressources/css/index-main.css">
     <link rel="stylesheet" href="cv-ressources/css/index-portfolio.css">
     <link rel="stylesheet" href="cv-ressources/css/index-contact.css">
-    <link rel="shortcut icon" href="cv-ressources/favicon.png" type="image/x-icon">
     <meta property="og:title" content="CV - Baptiste Cateland Wambre">
     <meta property="og:description" content="Découvrez mon profil à travers mon CV et mes expériences">
     <meta property="og:type" content="website">
