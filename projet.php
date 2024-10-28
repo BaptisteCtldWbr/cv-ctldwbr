@@ -36,11 +36,11 @@ if($projet['public'] == 0){                                                     
     die();
 }*/
 
-$cheminCompletMiniature = __DIR__ . "/cv-ressources/img-portfolio/" . $projet['miniature'] ;
-$cheminMiniature = "cv-ressources/img-portfolio/" . $projet['miniature'] ;
+$cheminMiniature = "projets/miniature/" . $projet['miniature'] ;                //Récupération des chemins des médias
+$cheminCompletMiniature = __DIR__ . "/" . $cheminMiniature ;                    //Pour la miniature "meta", qui a besoin d'être un chemin absolu
 $cheminContenu = "projets/" . $projet['contenu'];
 
-require_once('cv-ressources/includes/fonctions-donnees.php');                       //tableau contextes et tags, avec leurs fonctions
+require_once('cv-ressources/includes/fonctions-donnees.php');                   //tableau contextes et tags, avec leurs fonctions
 
 $contexte = contexte($contexteTableau, $projet['contexte']);                    //on récupère le texte associé au contexte
 
@@ -70,6 +70,7 @@ $tags = tagsEtOutils($tagsTableau, $projet['tags']);                            
         <?php
 
         /*
+        Vérfication du status du projet
         cons = en contruction
         cach = caché - non public
         cans = en construction et caché
@@ -123,7 +124,7 @@ $tags = tagsEtOutils($tagsTableau, $projet['tags']);                            
                     if(substr($value, 0, 3) == "bi-"){                                                                          //si c'est une icone Bootstrap
                         printf("<li><i class=\"%s\"></i>%s</li>", $value, $key);                                                //Affiche l'icone
                     } else {
-                        printf("<li><img src=\"%s\" alt=\"%s\">%s</li>", $value, $key, $key);                                         //Ou affiche le logo image
+                        printf("<li><img src=\"%s\" alt=\"%s\">%s</li>", $value, $key, $key);                                   //Ou affiche le logo image
                     }
                 }
                 ?>
