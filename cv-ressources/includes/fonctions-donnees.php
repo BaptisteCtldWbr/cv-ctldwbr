@@ -40,6 +40,12 @@ $tagsTableau = array(                                       //définition du tab
     "Illustrator" => 'cv-ressources/techno/ai.png'
 );
 
+/*
+-----------------------------
+-      ANCIENNE  VERSION      -
+- qui ne met pas dans l'ordre -
+-----------------------------
+
 function tagsEtOutils(array $tableau, string $tags) : array{                     //définition de la fonction créant un tableau avec les tags et leurs id bootstrap
     $array = explode("," , $tags);                          //séparation des tags en un tableau
     $nb_tags = count($array);                               //nombre de tags dans le tableau
@@ -53,6 +59,21 @@ function tagsEtOutils(array $tableau, string $tags) : array{                    
     }
 
     return $tagsEtId;                                       //retourne les tags et leurs id bootstrap.
+}*/
+
+function tagsEtOutils(array $tableau, string $tags){
+    $array = explode(",", $tags);
+    $nb_tags = count($array);
+
+    for($i=0; $i<$nb_tags; $i++){
+        foreach($tableau as $key => $value){
+            if($array[$i] == $key){
+                $tagsEtId[$key] = $value;
+            }
+        }
+    }
+
+    return $tagsEtId;
 }
 
 ?>
