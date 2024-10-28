@@ -142,7 +142,15 @@ $tags = tagsEtOutils($tagsTableau, $projet['tags']);                            
                 
                 ?>
             </div>
-            <img src="<?php echo $cheminMiniature ?>" alt="<?php echo $projet['alt-miniature']; ?>">                            <!--Image Projet-->
+            <div
+                class="miniature"
+                style="background-image: url('<?php echo $cheminMiniature;?>');"
+                >
+                <img 
+                    src="<?php echo $cheminMiniature; ?>"
+                    alt="<?php echo $projet['alt-miniature']; ?>"
+                >
+            </div>
         </div>
         <div class="content">
         <?php
