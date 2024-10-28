@@ -4,7 +4,7 @@
 - [ ] rajouter tout les projets
     - [x] actualiser le portfolio
         - [ ] pas oublier la photo de la galerie de projets
-    - [ ] SAE 102 - 202 (pastilles et affiches notamment)
+    - [x] SAE 102 - 202 (pastilles et affiches notamment)
     - [ ] SAE 105 - 203
     - [ ] Baptiste Drone
     - [ ] Andina Rumicruz 
@@ -20,6 +20,7 @@
     - [ ] photos croatie / bosnie
 - [ ] refaire le cv pdf
 - [ ] suggestions projets depuis une page projet
+- [ ] statistiques de vue
 - [x] faire la liste des projets
     - [x] inclure la redirection, quand c'est pas valide.
 - [x] réaligner les images et le nom de l'expérience
