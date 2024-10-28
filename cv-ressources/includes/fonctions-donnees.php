@@ -35,7 +35,7 @@ $tagsTableau = array(                                       //définition du tab
     "Tournage" => 'bi-camera-reels-fill',
     "Marketing" => 'bi-shop',
     "Communication" => 'bi-chat-right-fill',
-    "Gestion de projet" => 'bi-kanban',
+    "Gestion de projet" => 'bi-kanban-fill',
     "InDesign" => 'cv-ressources/techno/id.png',
     "Illustrator" => 'cv-ressources/techno/ai.png'
 );
