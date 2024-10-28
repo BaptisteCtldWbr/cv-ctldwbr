@@ -67,13 +67,6 @@ h3{
     color: var(--bleu);
 }
 
-h3::before{
-    content: ">";
-    font-family: "Montserrat";
-    font-weight: 500;
-    margin-right: 10px;
-    color: var(--bleu);
-}
 
 h4{
     font-family: 'Roboto Mono';
@@ -83,7 +76,23 @@ h4{
     color: var(--bleu);
 }
 
-p, a, li, figcaption, label {
+h5{
+    font-family: 'Roboto Mono';
+    font-weight: 400;
+    font-size: 1em;
+    margin: 20px 0px;
+    color: var(--bleu);
+}
+
+h3::before, h4::before, h5::before{
+    content: ">";
+    font-family: "Montserrat";
+    font-weight: 500;
+    margin-right: 10px;
+    color: var(--bleu);
+}
+
+p, a, li, figcaption, label, blockquote{
     font-family: "Montserrat";
     margin: 7px 0px;
     font-weight: 300;
@@ -150,6 +159,23 @@ strong{
 
 img{
     max-width: 100%;
+}
+
+blockquote{
+    font-style: italic;
+    padding: 0 5%;
+    &::before{
+        content: "<<";
+        padding-right: 5px;
+        font-weight: 500;
+        color: #00265F;
+    }
+    &::after{
+        content: ">>";
+        padding-left: 5px;
+        font-weight: 500;
+        color: #00265F;
+    }
 }
 
 nav ul{
