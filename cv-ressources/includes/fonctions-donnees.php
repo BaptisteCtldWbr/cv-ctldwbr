@@ -31,7 +31,13 @@ $tagsTableau = array(                                       //définition du tab
     'PHP' => 'bi-filetype-php',
     "SQL" => 'bi-filetype-sql',
     "GitHub" =>'bi-github',
-    "Davinci" => 'cv-ressources/techno/davinci.png'
+    "Davinci" => 'cv-ressources/techno/davinci.png',
+    "Tournage" => 'bi-camera-reels-fill',
+    "Marketing" => 'bi-shop',
+    "Communication" => 'bi-chat-right-fill',
+    "Gestion de projet" => 'bi-kanban',
+    "InDesign" => 'cv-ressources/techno/id.png',
+    "Illustrator" => 'cv-ressources/techno/ai.png'
 );
 
 function tagsEtOutils(array $tableau, string $tags) : array{                     //définition de la fonction créant un tableau avec les tags et leurs id bootstrap
