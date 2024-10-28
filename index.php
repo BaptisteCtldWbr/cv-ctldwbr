@@ -2,9 +2,9 @@
 
 require_once('cv-ressources/includes/connexion-bdd.php');
 
-//---------------------------
-//- TRAITEMENT FORM CONTACT -
-//---------------------------
+//---------------------------------
+//- TRAITEMENT FORMULAIRE CONTACT -
+//---------------------------------
 
 $mailEnvoi = "baptiste.catelandwambre@gmail.com";                                               //l'adresse à qui envoyer le message
 
@@ -203,7 +203,7 @@ if (isset($_POST['envoi'])) {                                                   
 
             <?php
 
-            $query = "SELECT `url`, `nom-court`, `miniature`, `alt-miniature`, `contexte`, `periode`, `tags`, `description`, `statut` FROM portfolio WHERE statut = 'visi' OR statut = 'term' OR statut = 'cons' ORDER BY `date`;";
+            $query = "SELECT `url`, `nom-court`, `miniature`, `alt-miniature`, `contexte`, `periode`, `tags`, `description`, `statut` FROM portfolio WHERE statut = 'visi' OR statut = 'term' OR statut = 'cons' ORDER BY `date` DESC;";
 
             $result = mysqli_query($lien, $query);
 
@@ -230,7 +230,7 @@ if (isset($_POST['envoi'])) {                                                   
                 } else {
                     echo "<article
                     class=\"projet {$projet['contexte']}\"
-                    style=\"background-image: url('cv-ressources/img-portfolio/{$projet['miniature']}');\"
+                    style=\"background-image: url('projets/miniature/{$projet['miniature']}');\"
                     title=\"{$projet['nom-court']} : {$projet['description']}\">
                     <a class=\"sans\" href=\"projet.php?p={$projet['url']}\">";
                     echo "<h4 class=\"titre-projet\">{$projet['nom-court']}</h4>";
@@ -243,7 +243,7 @@ if (isset($_POST['envoi'])) {                                                   
                                 echo "<li><img src=\"{$value}\" alt=\"{$key}\"></li>";
                             }
                         }
-                    echo "</ul></a>";
+                    echo "</ul></a></article>";
                 }
             }
 
