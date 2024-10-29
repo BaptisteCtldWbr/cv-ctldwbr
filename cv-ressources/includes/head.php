@@ -21,7 +21,9 @@ if(isset($_GET['l'])){
     $par = null;
 }
 
-$ip = date("i") * date("s") . "prout";                                  //si tests en local, activer ça
+if(isset($_GET['ip'])){                                                 //Si tests en local, mettre en paramètre d'url ça
+    $ip = $_GET['ip'];
+}
 
 //- RECUPERATION DE LA DERNIERE CONNEXION -
 
