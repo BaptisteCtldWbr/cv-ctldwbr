@@ -37,7 +37,8 @@ $tagsTableau = array(                                       //définition du tab
     "Communication" => 'bi-chat-right-fill',
     "Gestion de projet" => 'bi-kanban-fill',
     "InDesign" => 'cv-ressources/techno/id.png',
-    "Illustrator" => 'cv-ressources/techno/ai.png'
+    "Illustrator" => 'cv-ressources/techno/ai.png',
+    "Drone" => 'cv-ressources/techno/drone.png'
 );
 
 /*

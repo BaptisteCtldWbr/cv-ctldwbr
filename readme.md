@@ -20,6 +20,7 @@
     - [ ] photos croatie / bosnie
 - [ ] refaire le cv pdf
 - [ ] suggestions projets depuis une page projet
+- [ ] faire attention à la couleur des icones de projets
 - [x] statistiques de vue
 - [x] faire la liste des projets
     - [x] inclure la redirection, quand c'est pas valide.
