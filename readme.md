@@ -5,10 +5,10 @@
     - [x] actualiser le portfolio
         - [ ] pas oublier la photo de la galerie de projets
     - [x] SAE 102 - 202 (pastilles et affiches notamment)
-    - [ ] SAE 105 - 203
+    - [x] SAE 105 - 203
     - [ ] Baptiste Drone
-    - [ ] Andina Rumicruz 
-    - [ ] Projet scout de solidarité international
+    - [ ] Andina Rumicruz
+    - [ ] Projet scout de solidarité internationale
     - [ ] Préparer pour les SAE du S3
         - [ ] SAE 301 - agence immobilière
         - [ ] SAE 302 - ??

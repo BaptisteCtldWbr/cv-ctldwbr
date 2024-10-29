@@ -66,7 +66,8 @@ if (isset($_POST['envoi'])) {                                                   
         <div id="header-couleur">
             <section id="moi">
                 <div id="moi-pp">
-                    <img src="https://placehold.co/167x250?text=PHOTO" alt="">
+                    <!-- <img src="https://placehold.co/167x250?text=PHOTO" alt=""> -->
+                    <img src="cv-ressources/img/DSCF0339.jpg" alt="Photo">
                 </div>
                 <div id="moi-texte">
                     <h1>Baptiste Cateland--Wambre</h1>
