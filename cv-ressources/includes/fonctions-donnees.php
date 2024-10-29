@@ -10,12 +10,14 @@ $contexteTableau = array(                                         //définition 
     'studio195' => "Projet audiovisuel avec Studio195"
 );
 
-function contexte(array $tableau, string $classe) : string{                       //définition de la fonction comparant les clés du tableau au contexte (class) fourni
+function contexte(array $tableau, string $classe) : string{ //définition de la fonction comparant les clés du tableau au contexte (class) fourni
+    $contexte = "";
     foreach($tableau as $key => $value){                    //parcourt du tableau
         if($classe == $key){                                //comparaison entre la clé du tableau et le contexte initial
-            return $value;                                  //retourne le contexte à écrire.
+            $contexte = $value;                             //retourne le contexte à écrire.
         }
     }
+    return $contexte;
 }
 
 ?>

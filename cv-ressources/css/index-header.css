@@ -32,7 +32,8 @@ header section#moi, div#moi-details{
 
 header section#moi{
     display: flex;
-    gap: 80px;
+    column-gap: 80px;
+    row-gap: 20px;
     justify-content: flex-start;
     flex-wrap: wrap;
     align-items: center;
