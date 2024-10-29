@@ -20,7 +20,7 @@
     - [ ] photos croatie / bosnie
 - [ ] refaire le cv pdf
 - [ ] suggestions projets depuis une page projet
-- [ ] statistiques de vue
+- [x] statistiques de vue
 - [x] faire la liste des projets
     - [x] inclure la redirection, quand c'est pas valide.
 - [x] réaligner les images et le nom de l'expérience
