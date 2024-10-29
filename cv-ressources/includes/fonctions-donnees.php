@@ -4,10 +4,11 @@
 //------------
 
 $contexteTableau = array(                                         //définition du tableau
-    'univ'  => "Projet universitaire",
-    'scout' => "Projet scout",
-    'drone' => "Projet audiovisuel",
-    'studio195' => "Projet audiovisuel avec Studio195"
+    'univ'          => "Projet universitaire",
+    'scout'         => "Projet scout",
+    'drone'         => "Projet audiovisuel",
+    'studio195'     => "Projet audiovisuel avec Studio195",
+    'photo'         => "Projet photo"
 );
 
 function contexte(array $tableau, string $classe) : string{ //définition de la fonction comparant les clés du tableau au contexte (class) fourni
