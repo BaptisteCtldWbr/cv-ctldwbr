@@ -29,19 +29,24 @@ function contexte(array $tableau, string $classe) : string{ //définition de la 
 //--------
 
 $tagsTableau = array(                                       //définition du tableau avec le texte du tags et son identifiant bootstrap
-    "HTML" => 'bi-filetype-html',
-    "CSS" => 'bi-filetype-css',
-    'PHP' => 'bi-filetype-php',
-    "SQL" => 'bi-filetype-sql',
-    "GitHub" =>'bi-github',
-    "Davinci" => 'cv-ressources/techno/davinci.png',
-    "Tournage" => 'bi-camera-reels-fill',
-    "Marketing" => 'bi-shop',
-    "Communication" => 'bi-chat-right-fill',
-    "Gestion de projet" => 'bi-kanban-fill',
-    "InDesign" => 'cv-ressources/techno/id.png',
-    "Illustrator" => 'cv-ressources/techno/ai.png',
-    "Drone" => 'cv-ressources/techno/drone.png'
+    "HTML"                  => 'bi-filetype-html',
+    "CSS"                   => 'bi-filetype-css',
+    'PHP'                   => 'bi-filetype-php',
+    "SQL"                   => 'bi-filetype-sql',
+    "GitHub"                =>'bi-github',
+    "Tournage"              => 'bi-camera-reels-fill',
+    "Marketing"             => 'bi-shop',
+    "Communication"         => 'bi-chat-right-fill',
+    "Gestion de projet"     => 'bi-kanban-fill',
+    "Budget"                => 'bi-piggy-bank-fill',
+    "International"         => 'bi-globe-americas',
+    "Photo"                 => 'bi-camera-fill',
+    "Davinci"               => 'cv-ressources/techno/davinci.png',
+    "InDesign"              => 'cv-ressources/techno/id.png',
+    "Illustrator"           => 'cv-ressources/techno/ai.png',
+    "Lightroom"             => 'cv-ressources/techno/lr.png',
+    "Drone"                 => 'cv-ressources/techno/drone.png',
+    "Figma"                 => 'cv-ressources/techno/figma.png'
 );
 
 /*

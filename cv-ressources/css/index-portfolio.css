@@ -72,5 +72,6 @@ article.projet ul{
 article.projet.univ             h4::after{content: "\01F468 \200D \01F393";}
 article.projet.scout            h4::after{content: "\26FA";}
 article.projet.audiovisuel      h4::after{content: "\01F4F7";}
-article.projet.studio195        h4::after{content: "\01F4F7";}
-article.projet.photo            h4::after{content: "\01F4F7";}
+article.projet.drone            h4::after{content: "\01F681";}
+article.projet.studio195        h4::after{content: "\01F39E \FE0F";}
+article.projet.photo            h4::after{content: "\01F4F8";}
