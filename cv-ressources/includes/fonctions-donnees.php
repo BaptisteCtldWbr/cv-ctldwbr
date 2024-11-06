@@ -49,27 +49,6 @@ $tagsTableau = array(                                       //définition du tab
     "Figma"                 => 'cv-ressources/techno/figma.png'
 );
 
-/*
------------------------------
--      ANCIENNE  VERSION      -
-- qui ne met pas dans l'ordre -
------------------------------
-
-function tagsEtOutils(array $tableau, string $tags) : array{                     //définition de la fonction créant un tableau avec les tags et leurs id bootstrap
-    $array = explode("," , $tags);                          //séparation des tags en un tableau
-    $nb_tags = count($array);                               //nombre de tags dans le tableau
-
-    foreach($tableau as $key => $value){
-        for($i=0; $i<$nb_tags; $i++){
-            if($array[$i] == $key){                         //comparaison du nom de chaque tags au nom de chaque tags possible, défini dans le tableau 
-                $tagsEtId[$key] = $value;                   //création d'un tableau avec tous les tags du projet et leur id bootstrap
-            }
-        }
-    }
-
-    return $tagsEtId;                                       //retourne les tags et leurs id bootstrap.
-}*/
-
 function tagsEtOutils(array $tableau, string $tags){
     $array = explode(",", $tags);
     $nb_tags = count($array);
@@ -89,9 +68,25 @@ function tagsEtOutils(array $tableau, string $tags){
 
 <?php
 
-//---------------------
-//- LISTE DES PROJETS -
-//---------------------
+//-------------------------------------------
+//- AFFICHER LES PHOTOS DANS UNE GALERIE JS -
+//-------------------------------------------
+
+function afficherGaleriePhoto(array $images, string $dossier) { 
+    /*echo "<pre>";
+    print_r($images);
+    echo "<pre>";*/
+
+    echo "<ul>";
+    
+    foreach($images as $fichier => $alt){
+        $chemin = $dossier . $fichier;
+        //echo "<li>{$chemin}</li>";
+        echo "<li><img src=\"{$chemin}\" alt=\"{$alt}\"></li>";
+    }
+
+    echo "<ul>";
+}
 
 
 ?>
