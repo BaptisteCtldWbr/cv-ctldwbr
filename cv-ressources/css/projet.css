@@ -4,7 +4,10 @@
     }
 }
 
-
+@font-face {
+    font-family: 'Paris2024';
+    src: url("../fonts/Paris2024-Variable.ttf") format("truetype");
+}
 
 div.pres {
     display: grid;
@@ -151,4 +154,8 @@ p.projet-statut{
         margin: 0;
         font-size: 0.9em;
     }
+}
+
+.jop{
+    font-family: 'Paris2024', sans-serif;
 }
