@@ -3,59 +3,28 @@
 <h3 class="jop">JOP 2024 : Para PingPong</h3>
 <p>Pour les Jeux Paralympiques, je suis allé voir plusieurs matchs de para PingPong le 1<sup>er</sup> septembre, de 8<sup>e</sup> et de 16<sup>e</sup> de finale.</p>
 
+<?php
 
-<div class="galerie" id="para-pingpong">
-    <figure class="photo-galerie">
-        <img src="projets/photos/jo-para-pingpong/240901-ParaPingPong-01.jpg" alt="Photo 1">
-        <figcaption>Photo 1</figcaption>
-        <p class="cliquer-photo">Cliquez sur une des photos pour l'afficher.</p>
-    </figure>
-    <ul class="galerie-mini">
-        <li>
-            <a data-chemin_photo="projets/photos/jo-para-pingpong/240901-ParaPingPong-01.jpg" title="Photo 1">
-                <img src="projets/photos/jo-para-pingpong/mini/240901-ParaPingPong-01.jpg" alt="Photo 1" class="actif">
-            </a>
-        </li>
-        <li>
-            <a data-chemin_photo="projets/photos/jo-para-pingpong/240901-ParaPingPong-02.jpg" title="Photo 2">
-                <img src="projets/photos/jo-para-pingpong/mini/240901-ParaPingPong-02.jpg" alt="Photo 2">
-            </a>
-        </li>
-        <li>
-            <a data-chemin_photo="projets/photos/jo-para-pingpong/240901-ParaPingPong-03.jpg" title="Photo 3">
-                <img src="projets/photos/jo-para-pingpong/mini/240901-ParaPingPong-03.jpg" alt="Photo 3">
-            </a>
-        </li>
-        <li>
-            <a data-chemin_photo="projets/photos/jo-para-pingpong/240901-ParaPingPong-04.jpg" title="Photo 4">
-                <img src="projets/photos/jo-para-pingpong/mini/240901-ParaPingPong-04.jpg" alt="Photo 4">
-            </a>
-        </li>
-        <li>
-            <a data-chemin_photo="projets/photos/jo-para-pingpong/240901-ParaPingPong-05.jpg" title="Photo 5">
-                <img src="projets/photos/jo-para-pingpong/mini/240901-ParaPingPong-05.jpg" alt="Photo 5">
-            </a>
-        </li>
-        <li>
-            <a data-chemin_photo="projets/photos/jo-para-pingpong/240901-ParaPingPong-06.jpg" title="Photo 6">
-                <img src="projets/photos/jo-para-pingpong/mini/240901-ParaPingPong-06.jpg" alt="Photo 6">
-            </a>
-        </li>
-        <li>
-            <a data-chemin_photo="projets/photos/jo-para-pingpong/240901-ParaPingPong-07.jpg" title="Photo 7">
-                <img src="projets/photos/jo-para-pingpong/mini/240901-ParaPingPong-07.jpg" alt="Photo 7">
-            </a>
-        </li>
-        <li>
-            <a data-chemin_photo="projets/photos/jo-para-pingpong/240901-ParaPingPong-08.jpg" title="Photo 8">
-                <img src="projets/photos/jo-para-pingpong/mini/240901-ParaPingPong-08.jpg" alt="Photo 8">
-            </a>
-        </li>
-    </ul>
-</div>
+$photos = [
+    "240901-ParaPingPong-01.jpg" =>  "Le stade de l'Arena Bercy pour le Ping Pong",
+    "240901-ParaPingPong-02.jpg" =>  "Flaura Vautier fait son service, face à Nada Matic",
+    "240901-ParaPingPong-03.jpg" =>  "Le duel Faith Obazuaye vs Tian Chiau Wen",
+    "240901-ParaPingPong-04.jpg" =>  "Mateo Boheas face à Ivan Karpov",
+    "240901-ParaPingPong-05.jpg" =>  "Claudio Massad face à Krisztian Gardos",
+    "240901-ParaPingPong-06.jpg" =>  "Igor Mistzal fait son service face à Bunpot Sillapakong",
+    "240901-ParaPingPong-07.jpg" =>  "Luka Bakic fait son service contre Funamaya Mahiro",
+    "240901-ParaPingPong-08.jpg" =>  "Jose Manuel Ruiz fait son service face à Manuel Echaveguren",
+    "240901-ParaPingPong-09.jpg" =>  "Ivan Karpov face à Mateo Boheas",
+    "240901-ParaPingPong-10.jpg" =>  "Le drapeau des supporters",
+    "240901-ParaPingPong-11.jpg" =>  "Mateo Boheas fait (encore) son service face à Ivan Karpov",
+    "240901-ParaPingPong-12.jpg" =>  "Borna Zohil face à Victor Farinloye",
+    "240901-ParaPingPong-13.jpg" =>  "Claudio Massad face à Krisztian Gardos",
+    "240901-ParaPingPong-14.jpg" =>  "Lucie Hautiere face à Tomono Yuri"
+];
+$cheminSrc = "projets/photos/jo-para-pingpong/";
+$cheminMinia = "projets/photos/jo-para-pingpong/mini/";
 
-<script>
-    let galeriePingPong = document.getElementById("para-pingpong")
-    console.log(galeriePingPong)
-    galeriephoto(galeriePingPong)
-</script>
+afficherGalerie("Parapingpong", $photos, $cheminSrc, $cheminMinia);
+afficherGalerie("Parapingpong2", $photos, $cheminSrc, $cheminMinia);
+
+?>
