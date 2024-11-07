@@ -1,0 +1,2 @@
+Photos en grand     : height max = 1080px (ImageResizer = "Grand")
+Photos miniature    : height max = 480px  (ImageResizer = "Téléphone")
