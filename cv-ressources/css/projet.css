@@ -161,11 +161,12 @@ p.projet-statut{
 }
 
 div.galerie{
+    margin: 20px 0px;
     figure {
         width: 100%;
         padding: 0;
         margin: 0;
-        margin-bottom: 50px;
+        margin-bottom: 20px;
         img{
             border: none;
             max-height: 500px;
