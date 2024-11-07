@@ -6,7 +6,7 @@
 <?php
 
 $photos = [
-    "240901-ParaPingPong-01.jpg" =>  "Le stade de l'Arena Bercy pour le Ping Pong",
+    "240901-ParaPingPong-01.jpg" =>  "Le stade de l'Arena Bercy pour le Para Ping Pong",
     "240901-ParaPingPong-02.jpg" =>  "Flaura Vautier fait son service, face à Nada Matic",
     "240901-ParaPingPong-03.jpg" =>  "Le duel Faith Obazuaye vs Tian Chiau Wen",
     "240901-ParaPingPong-04.jpg" =>  "Mateo Boheas face à Ivan Karpov",
@@ -25,6 +25,5 @@ $cheminSrc = "projets/photos/jo-para-pingpong/";
 $cheminMinia = "projets/photos/jo-para-pingpong/mini/";
 
 afficherGalerie("Parapingpong", $photos, $cheminSrc, $cheminMinia);
-afficherGalerie("Parapingpong2", $photos, $cheminSrc, $cheminMinia);
 
 ?>
