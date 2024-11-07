@@ -159,3 +159,44 @@ p.projet-statut{
 .jop{
     font-family: 'Paris2024', sans-serif;
 }
+
+div.galerie{
+    figure {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        img{
+            border: none;
+            max-height: 400px;
+        }
+        figcaption{
+            font-style: normal;
+            font-weight: 500;
+            font-size: 1.3em;
+        }
+    }
+    ul.galerie-mini{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 10px;
+        a{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            img{
+                height: 100px;
+                filter: grayscale(0%);
+                &.actif{
+                    filter: grayscale(50%);
+                }
+            }
+        }
+    }
+}

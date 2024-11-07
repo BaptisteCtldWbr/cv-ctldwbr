@@ -65,28 +65,3 @@ function tagsEtOutils(array $tableau, string $tags){
 }
 
 ?>
-
-<?php
-
-//-------------------------------------------
-//- AFFICHER LES PHOTOS DANS UNE GALERIE JS -
-//-------------------------------------------
-
-function afficherGaleriePhoto(array $images, string $dossier) { 
-    /*echo "<pre>";
-    print_r($images);
-    echo "<pre>";*/
-
-    echo "<ul>";
-    
-    foreach($images as $fichier => $alt){
-        $chemin = $dossier . $fichier;
-        //echo "<li>{$chemin}</li>";
-        echo "<li><img src=\"{$chemin}\" alt=\"{$alt}\"></li>";
-    }
-
-    echo "<ul>";
-}
-
-
-?>
