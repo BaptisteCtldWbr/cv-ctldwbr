@@ -1,4 +1,4 @@
 Photos en grand     : height max = 1080px (ImageResizer = "Grand")
-Photos miniature    : height max = 480px  (ImageResizer = "Téléphone")
+Photos miniature    : height max = 200px  (ImageResizer = "Personnalisé")
 
 NB : Les deux séries doivent dans des dossiers qui doivent avoir les mêmes photos avec le même nom mais la minia avec une tailles plus petite.
