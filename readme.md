@@ -8,19 +8,16 @@
     - [x] SAE 105 - 203
     - [ ] Baptiste Drone
     - [ ] Andina Rumicruz
-    - [ ] Projet scout de solidarité internationale
     - [ ] Préparer pour les SAE du S3
         - [ ] SAE 301 - agence immobilière
         - [ ] SAE 302 - ??
-        - [ ] SAE 303 - cinémas d'île de France JS
-        - [ ] SAE 303 - broderie
-    - [ ] photos paralympiques
-    - [ ] photos suisse
-    - [ ] photos dump qqonque ??
-    - [ ] photos croatie / bosnie
+        - [ ] SAE 303 - datavisualisation
+    - [ ] photos 
 - [ ] refaire le cv pdf
 - [ ] suggestions projets depuis une page projet
 - [ ] faire attention à la couleur des icones de projets
+- [x] Faire galerie JS
+    - [x] Génére par PHP
 - [x] statistiques de vue
 - [x] faire la liste des projets
     - [x] inclure la redirection, quand c'est pas valide.
