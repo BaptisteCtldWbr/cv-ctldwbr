@@ -1,11 +1,11 @@
 <script src="cv-ressources/js/galerie.js"></script>
 
 <h3 class="jop">JOP 2024 : Para PingPong</h3>
-<p>Pour les Jeux Paralympiques, je suis allé voir plusieurs matchs de para PingPong le 1<sup>er</sup> septembre, de 8<sup>e</sup> et de 16<sup>e</sup> de finale.</p>
+<p>Pour les Jeux Paralympiques, je suis allé voir plusieurs matchs de para PingPong le 1<sup>er</sup> septembre, de 8<sup>e</sup> et de 16<sup>e</sup> de finale. J'y suis allé avec mon appareil photo :</p>
 
 <?php
 
-$photos = [
+$parapingpong = [
     "240901-ParaPingPong-01.jpg" =>  "Le stade de l'Arena Bercy pour le Para Ping Pong",
     "240901-ParaPingPong-02.jpg" =>  "Flaura Vautier fait son service, face à Nada Matic",
     "240901-ParaPingPong-03.jpg" =>  "Le duel Faith Obazuaye vs Tian Chiau Wen",
@@ -21,9 +21,43 @@ $photos = [
     "240901-ParaPingPong-13.jpg" =>  "Claudio Massad face à Krisztian Gardos",
     "240901-ParaPingPong-14.jpg" =>  "Lucie Hautiere face à Tomono Yuri"
 ];
-$cheminSrc = "projets/photos/jo-para-pingpong/";
-$cheminMinia = "projets/photos/jo-para-pingpong/mini/";
 
-afficherGalerie("Parapingpong", $photos, $cheminSrc, $cheminMinia);
+afficherGalerie(
+    "Parapingpong", 
+    $parapingpong, 
+    "projets/photos/jo-para-pingpong/", 
+    "projets/photos/jo-para-pingpong/mini/"
+);
+
+?>
+
+<h3>90 ans de l'armée de l'air</h3>
+<p>À l'improviste, je suis allé voir le show qu'à fait l'armée de l'air et de l'espace au-dessus de Versailles. Bon, on était très mal placé mais j'y suis allé avec mon appareil photo :</p>
+
+<?php
+
+$armeeDeLair = [
+    "90-ans-armee-de-l-air-01.png" => "L'inscription \"Armée de l'air\" sur un avion de la patrouille de France",
+    "90-ans-armee-de-l-air-02.png" => "Haute voltige",
+    "90-ans-armee-de-l-air-03.png" => "Parachutiste",
+    "90-ans-armee-de-l-air-04.png" => "L'avion monte",
+    "90-ans-armee-de-l-air-05.png" => "Patrouille de France 1",
+    "90-ans-armee-de-l-air-06.png" => "Patrouille de France 2",
+    "90-ans-armee-de-l-air-07.png" => "Patrouille de France 3",
+    "90-ans-armee-de-l-air-08.png" => "Trainée de la Patrouille de France sur Versailles",
+    "90-ans-armee-de-l-air-09.png" => "Un rafale.",
+    "90-ans-armee-de-l-air-10.png" => "Encore un rafale",
+    "90-ans-armee-de-l-air-11.png" => "Les sièges d'un avion de la Patrouille de France",
+    "90-ans-armee-de-l-air-12.png" => "La queue d'un avion de la Patrouille de France",
+    "90-ans-armee-de-l-air-13.png" => "Le cockpit d'un rafale",
+    "90-ans-armee-de-l-air-14.png" => "Le cockpit d'un rafale"
+];
+
+afficherGalerie(
+    "armeeDeLair", 
+    $armeeDeLair, 
+    "projets/photos/90-armee-de-l-air/", 
+    "projets/photos/90-armee-de-l-air/mini/"
+);
 
 ?>
