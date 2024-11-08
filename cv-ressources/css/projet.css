@@ -169,7 +169,7 @@ div.galerie{
         margin-bottom: 20px;
         img{
             border: none;
-            max-height: 500px;
+            height: 500px;
         }
         figcaption{
             font-style: normal;
