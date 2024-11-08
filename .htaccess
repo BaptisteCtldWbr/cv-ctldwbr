@@ -1,1 +1,2 @@
-ErrorDocument 404 https://catelandwambre.alwaysdata.net/404.php
+ErrorDocument 404 https://ctldwbr.alwaysdata.net/404.php
+SetEnv TZ Europe/Paris
