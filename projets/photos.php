@@ -61,3 +61,34 @@ afficherGalerie(
 );
 
 ?>
+
+<h3>Photo Dump à Paris</h3>
+<p>Quelques photos prises à Paris...</p>
+
+<?php
+
+$paris = [
+    "paris-01.jpg" => "Le haut du Sénat",
+    "paris-02.jpg" => "Le devant du Sénat",
+    "paris-03.jpg" => "Le soleil à travers un arbre",
+    "paris-04.jpg" => "Une statue au Luxembourg",
+    "paris-05.jpg" => "Une statue au Luxembourg 2",
+    "paris-06.jpg" => "Un canard",
+    "paris-07.jpg" => "Un bateau",
+    "paris-08.jpg" => "Le Panthéon et la rue Soufflot",
+    "paris-09.jpg" => "Les tours Duo de loin...",
+    "paris-10.jpg" => "La BNF au coucher du soleil",
+    "paris-11.jpg" => "Une tour de la BNF",
+    "paris-12.jpg" => "Les tours Duo avec la lune",
+    "paris-13.jpg" => "Des lampes.",
+    "paris-14.jpg" => "Des reflets dans la Seine",
+];
+
+afficherGalerie(
+    "paris", 
+    $paris, 
+    "projets/photos/paris/", 
+    "projets/photos/paris/mini/"
+);
+
+?>
