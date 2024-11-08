@@ -1,5 +1,39 @@
 <script src="cv-ressources/js/galerie.js"></script>
 
+<h3 class="jop">JOP 2024 : Basket Fauteuil</h3>
+<p>Pour les Jeux Paralympiques, je suis allé voir France - Grande-Bretagne, match de poule, on a salement perdu (50 - 85).</p>
+
+<?php
+
+$basketfauteuil = [
+    "jo-basketfauteuil-01.jpg" => "Le stade de l'Arena Bercy pour le basket fauteuil",
+    "jo-basketfauteuil-02.jpg" => "Chritophe Carlier ",
+    "jo-basketfauteuil-03.jpg" => "Alexis Ramonet face au panier",
+    "jo-basketfauteuil-04.jpg" => "Ben Fox face au panier",
+    "jo-basketfauteuil-05.jpg" => "Panier !",
+    "jo-basketfauteuil-06.jpg" => "Christophe Carlier face à Gregg Warburton",
+    "jo-basketfauteuil-07.jpg" => "Les supporters",
+    "jo-basketfauteuil-08.jpg" => "Pratt Philip James",
+    "jo-basketfauteuil-09.jpg" => "L'arbitre",
+    "jo-basketfauteuil-10.jpg" => "Christopje Carlier (encore)",
+    "jo-basketfauteuil-11.jpg" => "Gregg Warburton frappe la balle",
+    "jo-basketfauteuil-12.jpg" => "Panier ?",
+    "jo-basketfauteuil-13.jpg" => "Jordan Luce face au panier",
+    "jo-basketfauteuil-14.jpg" => "...",
+    "jo-basketfauteuil-15.jpg" => "Fin de match",
+    "jo-basketfauteuil-16.jpg" => "Ibrahim Guirassy face au panier",
+    "jo-basketfauteuil-17.jpg" => "Alexis Ramonet",
+];
+
+afficherGalerie(
+    "basketfauteuil", 
+    $basketfauteuil, 
+    "projets/photos/jo-basketfauteuil/", 
+    "projets/photos/jo-basketfauteuil/mini/"
+);
+
+?>
+
 <h3 class="jop">JOP 2024 : Para PingPong</h3>
 <p>Pour les Jeux Paralympiques, je suis allé voir plusieurs matchs de para PingPong le 1<sup>er</sup> septembre, de 8<sup>e</sup> et de 16<sup>e</sup> de finale. J'y suis allé avec mon appareil photo :</p>
 
