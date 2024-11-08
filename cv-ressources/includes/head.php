@@ -4,7 +4,7 @@
 
 <?php
 
-//----------------------------------------
+/* //----------------------------------------
 //- ENREGISTREMENT DES INFOS UTILISATEUR -
 //----------------------------------------
 
@@ -52,17 +52,6 @@ if($resultIP){                                                          //S'il y
 
 //- TOUTES LES INFORMATIONS RECOLTEES -
 
-
-/* POUR LE DEBBUGAGE
-echo "DATETIME :".$date."<br>";
-echo "IP : ".$ip."<br>";
-echo "URI : ".$uri."<br>";
-echo "Détails clients : ".$client."<br>";
-echo "Par : ".$par."<br>";
-echo "Régulier : ".$regulier."<br>";
-echo "Dernière connexion il y a : ".$il_y_a."<br>";
-*/
-
 //- AJOUT DANS LA BDD -
 
 $queryINSERT = "INSERT INTO `connexions` 
@@ -72,5 +61,5 @@ $queryINSERT = "INSERT INTO `connexions`
 $resultINSERT = mysqli_query($lien, $queryINSERT);                      //Ajout de la connexion à la BDD
 
 
-//mysqli_close($lien);
+//mysqli_close($lien); */
 ?>
