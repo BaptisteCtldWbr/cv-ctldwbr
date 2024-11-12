@@ -1,7 +1,7 @@
 <script src="cv-ressources/js/galerie.js"></script>
 
 <h3 class="jop">JOP 2024 : Basket Fauteuil</h3>
-<p>Pour les Jeux Paralympiques, je suis allé voir France - Grande-Bretagne, match de poule, on a salement perdu (50 - 85).</p>
+<p>Pour les Jeux Paralympiques, je suis allé voir France - Grande-Bretagne, match de poule, on a salement perdu (50 - 85). J'y suis allé avec mon appareil photo.</p>
 
 <?php
 
@@ -71,7 +71,7 @@ afficherGalerie(
 <?php
 
 $armeeDeLair = [
-    "90-ans-armee-de-l-air-01.png" => "L'inscription \"Armée de l'air\" sur un avion de la patrouille de France",
+    "90-ans-armee-de-l-air-01.png" => "L'inscription 'Armée de l'air' sur un avion de la patrouille de France",
     "90-ans-armee-de-l-air-02.png" => "Haute voltige",
     "90-ans-armee-de-l-air-03.png" => "Parachutiste",
     "90-ans-armee-de-l-air-04.png" => "L'avion monte",

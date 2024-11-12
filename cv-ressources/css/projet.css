@@ -167,9 +167,11 @@ div.galerie{
         padding: 0;
         margin: 0;
         margin-bottom: 20px;
+        position: relative;
         img{
             border: none;
             height: 500px;
+            object-fit: contain;
         }
         figcaption{
             font-style: normal;
@@ -182,6 +184,19 @@ div.galerie{
             font-size: 0.9em;
             font-style: italic;
             margin: 0;
+        }
+        i.caret{
+            position: absolute;
+            top: 42%;
+            font-size: 2em;
+            color: var(--bleu);
+            filter: drop-shadow(1px 1px 5px white);
+            &.bi-caret-right-fill{
+                right: 4px;
+            }
+            &.bi-caret-left-fill{
+                left: 4px;
+            }
         }
     }
     ul.galerie-mini{

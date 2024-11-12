@@ -86,6 +86,8 @@ function afficherGalerie(string $idGalerie, array $images, string $cheminSrc, st
     echo        "<img src=\"{$src1}\" alt=\"{$titre1}\">";
     echo        "<figcaption>{$titre1}</figcaption>";
     echo        "<p class=\"cliquer-photo\">Cliquez sur une des {$taille} photos pour l'afficher.</p>";
+    echo        "<i class=\"bi bi-caret-left-fill  caret\"></i>";   //Boutons suivant et précédents 
+    echo        "<i class=\"bi bi-caret-right-fill caret\"></i>";
     echo    '</figure>';
     echo    '<ul class="galerie-mini">';
     foreach($images as $key => $val){
