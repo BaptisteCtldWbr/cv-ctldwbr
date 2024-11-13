@@ -105,17 +105,22 @@
 
 <h4>Productions graphiques</h4>
 <p>Nous avons été aussi chargés de produire trois supports graphiques : deux pour le print (un calicot et une affiche A3) et un pour le web (une bannière digitale). Le travail a été fait sur Illustrator et InDesign, individuellement.</p>
-<figure>
-    <div>
-        <img src="projets/sae102-202/6a-afficheA3.jpg" alt="L'affiche A3">
-    </div>
-    <figcaption>L'affiche A3</figcaption>
-    <div>
-        <img src="projets/sae102-202/6b-kakemono.jpg" alt="Le Kakémono">
-    </div>
-    <figcaption>Le Kakémono</figcaption>
-</figure>
-<figure>
-    <img src="projets/sae102-202/6c-banniere-web.jpg" alt="La bannière web">
-    <figcaption>La bannière web</figcaption>
-</figure>
+
+<script src="cv-ressources/js/galerie.js"></script>
+
+<?php
+
+$prodGraphiques = [
+    "6a-afficheA3.jpg"      => "L'affiche A3",
+    "6b-kakemono.jpg"       => "Le kakemono",
+    "6c-banniere-web.jpg"   => "La bannière web"
+];
+
+afficherGalerie(
+    "productionsGraphiques",
+    $prodGraphiques,
+    "projets/sae102-202/",
+    "projets/sae102-202/mini/"
+);
+
+?>
