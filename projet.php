@@ -57,6 +57,7 @@ $tags = tagsEtOutils($tagsTableau, $projet['tags']);                            
     <title><?php echo $projet['nom-court']; ?> - BaptisteCtldWbr</title>
     <?php require_once('cv-ressources/includes/head.php'); ?>
     <link rel="stylesheet" href="cv-ressources/css/projet.css">
+    <link rel="stylesheet" href="cv-ressources/css/projets.css">
     <meta property="og:title" content="<?php echo $projet['nom-complet']; ?> - Baptiste Cateland Wambre">                       <!--Nom projet-->
     <meta property="og:description" content="<?php echo $projet['description'] ?>">                                             <!--Description Projet-->
     <meta property="og:type" content="article">
@@ -160,6 +161,44 @@ $tags = tagsEtOutils($tagsTableau, $projet['tags']);                            
 
         ?>
         </div>
+        <?php
+
+        if ($projet['suggestions']!=null){
+            echo "<section class=\"projet-similaires\">";
+            echo "<h2>Projets similaires</h2>";
+            $suggestions = explode(",", $projet['suggestions']);
+
+            echo "<div class=\"cont-projet\">";
+            
+            foreach($suggestions as $IDsuggestion){
+                $selectSuggestions = "SELECT * FROM portfolio WHERE `id` = {$IDsuggestion}";
+                $resultSuggestions = mysqli_query($lien, $selectSuggestions);
+                $suggestion = mysqli_fetch_assoc($resultSuggestions);
+                if ($suggestion['statut'] != "cans" AND $suggestion['statut'] != "cach"){
+                    echo "<article
+                            class=\"projet {$suggestion['contexte']}\"
+                            style=\"background-image: url('projets/miniature/{$suggestion['miniature']}');\"
+                            title=\"{$suggestion['nom-court']} : {$suggestion['description']}\">
+                            <a class=\"sans\" href=\"projet.php?p={$suggestion['url']}\">";
+                            echo "<h4 class=\"titre-projet\">{$suggestion['nom-court']}</h4>";
+                            echo "<ul>";
+                            $tags = tagsEtOutils($tagsTableau, $suggestion['tags']);
+                            foreach($tags as $key => $value){
+                                if(substr($value, 0, 3) == "bi-"){
+                                    echo "<li><i class=\"{$value}\"></i></li>";
+                                } else {
+                                    echo "<li><img src=\"{$value}\" alt=\"{$key}\"></li>";
+                            }
+                        }
+                        echo "</ul></a></article>";
+                    }
+                }
+                echo "<div>";
+                echo "</section>";
+            }
+        
+            
+            ?>
     </main>
     <?php
         require_once('cv-ressources/includes/footer.php');

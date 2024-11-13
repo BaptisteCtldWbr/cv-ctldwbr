@@ -53,7 +53,7 @@ if (isset($_POST['envoi'])) {                                                   
     <?php require_once('cv-ressources/includes/head.php'); ?>
     <link rel="stylesheet" href="cv-ressources/css/index-header.css">
     <link rel="stylesheet" href="cv-ressources/css/index-main.css">
-    <link rel="stylesheet" href="cv-ressources/css/index-portfolio.css">
+    <link rel="stylesheet" href="cv-ressources/css/projets.css">
     <link rel="stylesheet" href="cv-ressources/css/index-contact.css">
     <meta property="og:title" content="CV - Baptiste Cateland Wambre">
     <meta property="og:description" content="Découvrez mon profil à travers mon CV et mes expériences">
