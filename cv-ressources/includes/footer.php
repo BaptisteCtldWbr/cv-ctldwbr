@@ -12,7 +12,7 @@
 
             while ($ligne = mysqli_fetch_assoc($resultContact)){                                 //affichage de toutes les technos avec la structure HTML
                 if ($ligne['lien'] != null){
-                    printf("<li><a href=\"%s\" target=\"_blank\"><i class=\"bi-%s\"></i></a></li>", $ligne['lien'], $ligne['id-bootstrap']);
+                    printf("<li><a href=\"%s\" target=\"_blank\" title=\"%s\"><i class=\"bi-%s\"></i></a></li>", $ligne['lien'], $ligne['texte'], $ligne['id-bootstrap']);
                 }
             }
             mysqli_free_result($resultContact);
