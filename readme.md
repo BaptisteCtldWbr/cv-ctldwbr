@@ -14,8 +14,8 @@
         - [ ] SAE 303 - datavisualisation
     - [ ] photos 
 - [ ] refaire le cv pdf
-- [ ] suggestions projets depuis une page projet
 - [ ] faire attention à la couleur des icones de projets
+- [x] suggestions projets depuis une page projet
 - [x] Faire galerie JS
     - [x] Génére par PHP
 - [x] statistiques de vue
