@@ -6,13 +6,13 @@
         - [ ] pas oublier la photo de la galerie de projets
     - [x] SAE 102 - 202 (pastilles et affiches notamment)
     - [x] SAE 105 - 203
-    - [ ] Baptiste Drone
+    - [x] Baptiste Drone
     - [ ] Andina Rumicruz
     - [ ] Préparer pour les SAE du S3
         - [ ] SAE 301 - agence immobilière
         - [ ] SAE 302 - ??
         - [ ] SAE 303 - datavisualisation
-    - [ ] photos 
+    - [x] photos 
 - [ ] refaire le cv pdf
 - [ ] faire attention à la couleur des icones de projets
 - [x] suggestions projets depuis une page projet

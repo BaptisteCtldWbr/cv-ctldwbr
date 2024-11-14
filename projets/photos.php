@@ -126,3 +126,10 @@ afficherGalerie(
 );
 
 ?>
+
+<h3>90 ans de l'armée de l'air</h3>
+<p>Deux jours avant, j'ai appris qu'il y avait les 90 ans de l'armée de l'air à Versailles. J'y suis allé avec mon appareil photo, mais cette photo au lieu de photographier, j'ai filmé !</p>
+<figure>
+    <iframe src="https://www.youtube-nocookie.com/embed/xKVFwK2ZoK4?si=nFnX3gHC9LGNrqVK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <figcaption><a href="https://youtu.be/xKVFwK2ZoK4?si=AgYtmUeYC2g5gLX_" target="_blank">90 ans de l'armée de l'air et de l'espace - Cinématique</a></figcaption>
+</figure>
