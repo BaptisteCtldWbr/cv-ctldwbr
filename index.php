@@ -237,9 +237,9 @@ if (isset($_POST['envoi'])) {                                                   
                         $tags = tagsEtOutils($tagsTableau, $projet['tags']);
                         foreach($tags as $key => $value){
                             if(substr($value, 0, 3) == "bi-"){
-                                echo "<li><i class=\"{$value}\"></i></li>";
+                                $listeTags .= "<li><i class=\"{$value}\" title=\"{$key}\"></i></li>";
                             } else {
-                                echo "<li><img src=\"{$value}\" alt=\"{$key}\"></li>";
+                                $listeTags .= "<li><img src=\"../{$value}\" alt=\"{$key}\" title=\"{$key}\"></li>";
                             }
                         }
                     echo "</ul></a></article>";

@@ -65,7 +65,7 @@ h4{
     color: var(--bleu);
 }
 
-h5{
+h5, th{
     font-family: 'Roboto Mono', sans-serif;
     font-weight: 400;
     font-size: 1em;
@@ -81,7 +81,7 @@ h3::before, h4::before, h5::before{
     color: var(--bleu);
 }
 
-p, a, li, figcaption, label, blockquote{
+p, a, li, figcaption, label, blockquote, td{
     font-family: "Montserrat", sans-serif;
     margin: 7px 0px;
     font-weight: 300;
