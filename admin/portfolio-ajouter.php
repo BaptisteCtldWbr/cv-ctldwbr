@@ -72,7 +72,8 @@ if(isset($_POST['btnAjout'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - CV CTLDWBR</title>
     <?php require_once('head.php') ?>
-    <link rel="stylesheet" href="css/ajouter.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/form-portoflio.css">
 </head>
 <body>
     <h1>Ajouter un nouveau projet</h1>
