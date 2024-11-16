@@ -13,15 +13,16 @@
             list-style: none;
             padding: 0;
             justify-content: center;
-            li{
+            li a{
+                text-align: center;
+                display: block;
+                width: max-content;
                 background-color: var(--gris1);
                 padding: 10px 20px;
                 text-align: center;
-                a{
-                    text-decoration: none;
-                    i{
-                        color: var(--bleu);
-                    }
+                text-decoration: none;
+                i{
+                    color: var(--bleu);
                 }
             }
         }
