@@ -13,6 +13,34 @@
         - [ ] SAE 302 - ??
         - [ ] SAE 303 - datavisualisation
     - [x] photos 
+- [ ] Partie administration
+    - [x] Connexion / Déconnexion / Verification
+    - [ ] Portfolio
+        -[x] Tableau
+        -[x] Ajout
+        -[x] Supression
+        -[ ] Modification
+    - [ ] Contacts
+        -[ ] Tableau
+        -[ ] Ajout
+        -[ ] Supression
+        -[ ] Modification
+    - [ ] Expériences
+        -[ ] Tableau
+        -[ ] Ajout
+        -[ ] Supression
+        -[ ] Modification
+    - [ ] Interets
+        -[ ] Tableau
+        -[ ] Ajout
+        -[ ] Supression
+        -[ ] Modification
+    - [ ] Messsages
+    - [ ] Techno
+        -[ ] Tableau
+        -[ ] Ajout
+        -[ ] Supression
+        -[ ] Modification
 - [ ] refaire le cv pdf
 - [ ] faire attention à la couleur des icones de projets
 - [x] suggestions projets depuis une page projet

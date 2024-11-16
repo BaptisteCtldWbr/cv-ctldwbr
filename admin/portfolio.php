@@ -14,13 +14,17 @@
             <i class="bi bi-person-fill-slash"></i>
               Se déconnecter
         </a>
+        <a href="portfolio-ajouter.php" class="button add">
+            <i class="bi bi-database-fill-add"></i>
+              Nouveau projet
+        </a>
         <a href="index.php" class="button">
             <i class="bi bi-house-fill"></i>
               Retour
         </a>
-        <a href="portfolio-ajouter.php" class="button add">
-            <i class="bi bi-database-fill-add"></i>
-              Nouveau projet
+        <a href="../index.php" class="button">
+            <i class="bi bi-file-earmark-person-fill"></i>
+              Site
         </a>
     </div>
     <?php

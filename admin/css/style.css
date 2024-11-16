@@ -19,7 +19,7 @@ html{
 }
 
 body {
-    margin: 20px 20vw;
+    margin: 20px 30vw;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -213,11 +213,11 @@ div#buttons{
         font-weight: 600;
         &.deconnect{
             background-color: var(--rouge);
-            color: var(--gris1);
+            color: white;
         }
         &.add{
             background-color: var(--vert);
-            color: var(--gris1);
+            color: white;
         }
     }
 }

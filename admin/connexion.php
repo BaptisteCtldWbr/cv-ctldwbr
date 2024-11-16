@@ -27,6 +27,12 @@ if(isset($_POST['id']) AND isset($_POST['m2p'])){
 </head>
 <body>
     <h1>Connexion</h1>
+    <div id="buttons">
+        <a href="../index.php" class="button">
+            <i class="bi bi-file-earmark-person-fill"></i>
+              Site
+        </a>
+    </div>
     <?php 
     if(isset($msg)){
         echo "<p>{$msg}</p>";

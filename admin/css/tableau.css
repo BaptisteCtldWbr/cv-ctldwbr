@@ -6,7 +6,7 @@ table{
     border-collapse: collapse;
     thead th{
         background-color: var(--bleu);
-        color: var(--gris1);
+        color: white;
     }
     td, th{
         border-left: 1px solid var(--gris1);
@@ -18,10 +18,12 @@ table{
             border-radius: 5px;
         }
         ul.tags{
+            min-width: 54px;
             list-style: none;
             padding: 0;
             display: flex;
             flex-wrap: wrap;
+            justify-content: center;
             gap: 3px;
             img{
                 max-width: 16px;
@@ -34,6 +36,7 @@ table{
     th{
         background-color: var(--gris1);
         padding: 5px 10px;
+        font-weight: 500;
     }
     tr:nth-child(even){
         background-color: var(--gris2);
