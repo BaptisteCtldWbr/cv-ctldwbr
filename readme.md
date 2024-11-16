@@ -15,11 +15,11 @@
     - [x] photos 
 - [ ] Partie administration
     - [x] Connexion / Déconnexion / Verification
-    - [ ] Portfolio
+    - [x] Portfolio
         -[x] Tableau
         -[x] Ajout
         -[x] Supression
-        -[ ] Modification
+        -[x] Modification
     - [ ] Contacts
         -[ ] Tableau
         -[ ] Ajout
