@@ -10,11 +10,24 @@
 <body>
     <h1>Portfolio</h1>
     <div id="buttons">
-        <a href="deconnexion.php" class="button deconnect"><i class="bi bi-person-fill-slash"></i>  Se déconnecter</a>
-        <a href="index.php" class="button"><i class="bi bi-backspace-fill"></i>  Retour</a>
-        <a href="portfolio-nouveau.php" class="button add"><i class="bi bi-database-fill-add"></i>  Nouveau projet</a>
+        <a href="deconnexion.php" class="button deconnect">
+            <i class="bi bi-person-fill-slash"></i>
+              Se déconnecter
+        </a>
+        <a href="index.php" class="button">
+            <i class="bi bi-house-fill"></i>
+              Retour
+        </a>
+        <a href="portfolio-ajouter.php" class="button add">
+            <i class="bi bi-database-fill-add"></i>
+              Nouveau projet
+        </a>
     </div>
     <?php
+
+    if(isset($_GET['msg'])){
+        echo "<p class=\"msg\">{$_GET['msg']}</p>";
+    }
 
     require_once('../cv-ressources/includes/connexion-bdd.php');
     require_once('../cv-ressources/includes/fonctions-donnees.php');
@@ -51,16 +64,20 @@
                 <?php
                 while($projet = mysqli_fetch_assoc($result)){
 
-                    $tags = tagsEtOutils($tagsTableau, $projet['tags']);
-                    $listeTags = "<ul class=\"tags\">";
-                    foreach($tags as $key => $value){
-                        if(substr($value, 0, 3) == "bi-"){
-                            $listeTags .= "<li><i class=\"{$value}\" title=\"{$key}\"></i></li>";
-                        } else {
-                            $listeTags .= "<li><img src=\"../{$value}\" alt=\"{$key}\" title=\"{$key}\"></li>";
+                    if($projet['tags'] != null){
+                        $tags = tagsEtOutils($tagsTableau, $projet['tags']);
+                        $listeTags = "<ul class=\"tags\">";
+                        foreach($tags as $key => $value){
+                            if(substr($value, 0, 3) == "bi-"){
+                                $listeTags .= "<li><i class=\"{$value}\" title=\"{$key}\"></i></li>";
+                            } else {
+                                $listeTags .= "<li><img src=\"../{$value}\" alt=\"{$key}\" title=\"{$key}\"></li>";
+                            }
                         }
+                        $listeTags .= "</ul>";
+                    } else {
+                        $listeTags = null;
                     }
-                    $listeTags .= "</ul>";
 
                     echo "<tr>
                             <td>{$projet['id']}</td>
@@ -78,9 +95,16 @@
                             <td>{$projet['suggestions']}</td>
                             <td><a href=\"{$projet['lien1-lien']}\" target=\"_blank\">{$projet['lien1-nom']}</a></td>
                             <td><a href=\"{$projet['lien2-lien']}\" target=\"_blank\">{$projet['lien2-nom']}</a></td>
-                            <td class=\"\">
-                                <a href=\"portfolio-modifier.php?id={$projet['id']}\"><i class=\"bi bi-pencil-fill\"></i></a> /
-                                <a href=\"portfolio-supprimer.php?id={$projet['id']}\"><i class=\"bi bi-trash3-fill\"></i></a>
+                            <td class=\"crud\">
+                                <a 
+                                    href=\"portfolio-modifier.php?id={$projet['id']}\">
+                                        <i class=\"bi bi-pencil-fill\"></i>
+                                </a> /
+                                <a 
+                                    href=\"portfolio-supprimer.php?id={$projet['id']}\" 
+                                    onclick=\"javascript:return confirm('Êtes vous sûr de vouloir supprimer le projet {$projet['nom-court']}');\">
+                                        <i class=\"bi bi-trash3-fill\"></i>
+                                </a>
                             </td>
                         </tr>
                     ";
