@@ -8,6 +8,10 @@
 
 *{
     --bleu : #00265F;
+    --gris1: #CCCCCC; 
+    --gris2: #EEEEEE;
+    --vert : #007700; 
+    --rouge: #770000; 
 }
 
 html{
@@ -48,7 +52,7 @@ h2::before{
     color: var(--bleu);
 }
 
-h3{
+h3, legend{
     font-family: 'Roboto Mono', sans-serif;
     font-weight: 400;
     font-size: 1.4em;
@@ -86,9 +90,10 @@ p, a, li, figcaption, label, blockquote, td{
     margin: 7px 0px;
     font-weight: 300;
     line-height: 1.3;
+    font-size: 1em;
 }
 
-input, textarea, button{
+input, textarea, button, option, select{
     font-family: 'Roboto Mono', sans-serif;
     margin: 7px 0px;
     font-weight: 300;
@@ -99,6 +104,10 @@ input, textarea, button{
     border-radius: 5px;
     box-sizing: border-box;
     background-color: #FFFFFF;
+    &[type="checkbox"]{
+        width: inherit;
+        margin: 0;
+    }
 }
 
 label{
@@ -187,5 +196,28 @@ sup {
     }
     header div#techno-flex{
         max-width: 250px;
+    }
+}
+
+div#buttons{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 30px;
+    margin: 30px 0;
+    .button{
+        display: block;
+        padding: 10px 30px;
+        background-color: var(--gris1);
+        text-decoration: none;
+        font-weight: 600;
+        &.deconnect{
+            background-color: var(--rouge);
+            color: var(--gris1);
+        }
+        &.add{
+            background-color: var(--vert);
+            color: var(--gris1);
+        }
     }
 }

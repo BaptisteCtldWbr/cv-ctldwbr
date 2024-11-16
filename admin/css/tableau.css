@@ -1,34 +1,4 @@
 body{
-    --gris1: #CCCCCC; 
-    --gris2: #EEEEEE;
-    --vert : #007700; 
-    --rouge: #770000; 
-}
-
-div#buttons{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    gap: 30px;
-    margin: 30px 0;
-    .button{
-        display: block;
-        padding: 10px 30px;
-        background-color: var(--gris1);
-        text-decoration: none;
-        font-weight: 600;
-        &.deconnect{
-            background-color: var(--rouge);
-            color: var(--gris1);
-        }
-        &.add{
-            background-color: var(--vert);
-            color: var(--gris1);
-        }
-    }
-}
-
-body{
     margin: 20px 2vw !important;
 }
 
@@ -68,15 +38,20 @@ table{
     tr:nth-child(even){
         background-color: var(--gris2);
     }
-    a i{
-        padding: 3px;
-        border-radius: 5px;
-        color: white;
-        &.bi-pencil-fill{
-            background-color: var(--vert);
-        }
-        &.bi-trash3-fill{
-            background-color: var(--rouge);
+    .crud {
+        a{
+            text-decoration: none;
+            i{
+                padding: 3px;
+                border-radius: 5px;
+                color: white;
+                &.bi-pencil-fill{
+                    background-color: var(--vert);
+                }
+                &.bi-trash3-fill{
+                    background-color: var(--rouge);
+                }
+            }
         }
     }
 }
