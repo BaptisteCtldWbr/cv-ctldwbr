@@ -2,10 +2,8 @@ body{
     margin: 20px 10vw !important;
 }
 
-form{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 30px;
+form {
+    max-width: 500px;
     label{
         font-weight: 500;
     }
@@ -14,6 +12,7 @@ form{
 fieldset{
     margin: 30px 0px;
     border: var(--bleu) solid 1px;
+    
     fieldset{
         margin: 15px 0px;
         border: var(--bleu) solid 0.5px;
