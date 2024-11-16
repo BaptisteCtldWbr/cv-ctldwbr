@@ -21,6 +21,14 @@ function contexte(array $tableau, string $classe) : string{ //définition de la 
     return $contexte;
 }
 
+$statutProjetsTableau = [
+    "visi" => "Visible",
+    "term" => "Terminé",
+    "cach" => "Caché",
+    "cons" => "En construction",
+    "cans" => "Caché et en construction"
+];
+
 ?>
 
 <?php
@@ -33,9 +41,9 @@ $tagsTableau = array(                                       //définition du tab
     "CSS"                   => 'bi-filetype-css',
     'PHP'                   => 'bi-filetype-php',
     "SQL"                   => 'bi-filetype-sql',
-    "JS"                   => 'bi-filetype-js',
-    "JSON"                   => 'bi-filetype-json',
-    "GitHub"                =>'bi-github',
+    "JS"                    => 'bi-filetype-js',
+    "JSON"                  => 'bi-filetype-json',
+    "GitHub"                => 'bi-github',
     "Tournage"              => 'bi-camera-reels-fill',
     "Marketing"             => 'bi-shop',
     "Communication"         => 'bi-chat-right-fill',
