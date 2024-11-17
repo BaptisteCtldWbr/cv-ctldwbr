@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - CV CTLDWBR</title>
+    <title>Expériences - CV CTLDWBR</title>
     <?php require_once('head.php') ?>
     <link rel="stylesheet" href="css/tableau.css">
 </head>
 <body>
-    <h1>Contacts</h1>
+    <h1>Expériences</h1>
     <div id="buttons">
         <a href="deconnexion.php" class="button deconnect">
             <i class="bi bi-person-fill-slash"></i>
@@ -35,7 +35,7 @@
 
     require_once('../cv-ressources/includes/connexion-bdd.php');
     require_once('../cv-ressources/includes/fonctions-donnees.php');
-    $select = "SELECT * FROM `contact`";
+    $select = "SELECT * FROM `experiences`";
 
     $result = mysqli_query($lien, $select);
 
@@ -48,35 +48,43 @@
     <table>
         <thead>
             <th scope="col">Id.</th>
-            <th scope="col">Lien</th>
-            <th scope="col">Texte</th>
-            <th scope="col">Id bootstrap</th>
-            <th scope="col">Valide</th>
-            <th scope="col">Modif.</th>
+            <th scope="col">Icône</th>
+            <th scope="col">Titre</th>
+            <th scope="col">Détails</th>
+            <th scope="col">Période</th>
+            <th scope="col">Date début</th>
+            <th scope="col">Description</th>
+            <th scope="col">Compétences</th>
+            <th scope="col">Visible</th>
+            <th scope="col">Modifier</th>
         </thead>
         <tbody>
                 <?php
-                while($contact = mysqli_fetch_assoc($result)){
-                    if($contact['valide'] == 1){
+                while($experiences = mysqli_fetch_assoc($result)){
+                    if($experiences['valide'] == 1){
                         $valide = "<i class=\"bi bi-eye-fill\"></i>";
                     } else {
                         $valide = "<i class=\"bi bi-eye-slash-fill\"></i>";
                     }
 
                     echo "<tr>
-                            <td>{$contact['id']}</td>
-                            <td><i class=\"bi bi-{$contact['id-bootstrap']}\" title=\"{$contact['id-bootstrap']}\"></i></td>
-                            <td>{$contact['lien']}</td>
-                            <td>{$contact['texte']}</td>
+                            <td>{$experiences['id']}</td>
+                            <td><img src=\"../cv-ressources/exp/{$experiences['icone']}\" alt=\"{$experiences['alt-icone']}\" title=\"{$experiences['alt-icone']}\"></td>
+                            <td>{$experiences['titre']}</td>
+                            <td>{$experiences['titre-detail']}</td>
+                            <td>{$experiences['periode']}</td>
+                            <td>{$experiences['date-debut']}</td>
+                            <td>{$experiences['description']}</td>
+                            <td>{$experiences['competences']}</td>
                             <td>{$valide}</td>
                             <td class=\"crud\">
                                 <a 
-                                    href=\"contact-modifier.php?id={$contact['id']}\">
+                                    href=\"experiences-modifier.php?id={$experiences['id']}\">
                                         <i class=\"bi bi-pencil-fill\"></i>
                                 </a> /
                                 <a 
-                                    href=\"contact-supprimer.php?id={$contact['id']}\" 
-                                    onclick=\"javascript:return confirm('Êtes vous sûr de vouloir supprimer le projet {$contact['lien']} - {$contact['texte']}');\">
+                                    href=\"experiences-supprimer.php?id={$experiences['id']}\" 
+                                    onclick=\"javascript:return confirm('Êtes vous sûr de vouloir supprimer l'expérience {$experiences['titre']}');\">
                                         <i class=\"bi bi-trash3-fill\"></i>
                                 </a>
                             </td>
@@ -88,7 +96,7 @@
             </tr>
         </tbody>
         <tfoot>
-            <th scope="row" colspan="5">Nombre de contacts :</th>
+            <th scope="row" colspan="9">Nombre de contacts :</th>
             <td><?php echo $nb_lignes ?></td>
         </tfoot>
     </table>

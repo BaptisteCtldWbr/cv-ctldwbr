@@ -57,4 +57,12 @@ table{
             }
         }
     }
+    tfoot{
+        background-color: var(--gris1);
+        padding: 5px 10px;
+        font-weight: 500;
+        th{
+            text-align: end;
+        }
+    }
 }
