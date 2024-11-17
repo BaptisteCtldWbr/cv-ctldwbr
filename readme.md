@@ -20,11 +20,11 @@
         -[x] Ajout
         -[x] Supression
         -[x] Modification
-    - [ ] Contacts
-        -[ ] Tableau
-        -[ ] Ajout
-        -[ ] Supression
-        -[ ] Modification
+    - [x] Contacts
+        -[x] Tableau
+        -[x] Ajout
+        -[x] Supression
+        -[x] Modification
     - [ ] Expériences
         -[ ] Tableau
         -[ ] Ajout
