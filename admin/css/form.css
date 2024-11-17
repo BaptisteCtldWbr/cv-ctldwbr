@@ -7,7 +7,14 @@ form {
     label{
         font-weight: 500;
     }
+    &.grid{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+        max-width: none;
+    }
 }
+
 
 fieldset{
     margin: 30px 0px;

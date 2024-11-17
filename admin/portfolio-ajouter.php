@@ -73,7 +73,6 @@ if(isset($_POST['btnAjout'])){
     <title>Portfolio - CV CTLDWBR</title>
     <?php require_once('head.php') ?>
     <link rel="stylesheet" href="css/form.css">
-    <link rel="stylesheet" href="css/form-portoflio.css">
 </head>
 <body>
     <h1>Ajouter un nouveau projet</h1>
@@ -109,7 +108,7 @@ if(isset($_POST['btnAjout'])){
     }
     ?>
 
-    <form action="#" method="post">
+    <form action="#" method="post" class="grid">
         <fieldset id="general">
             <legend>Général</legend>
             <div class="input">
