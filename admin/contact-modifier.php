@@ -1,34 +1,38 @@
 <?php
 
+$id = $_GET['id'];
+
 require_once('../cv-ressources/includes/connexion-bdd.php');
 
-if(isset($_POST['btnAjout'])){
+if(isset($_POST['btnModif'])){
     if($_POST['valide'] == 1){
         $valide = 1;
     } else {
         $valide = 0;
     }
-
-    $ajout = "INSERT INTO `contact` 
-        (`id`, `lien`, `texte`, `id-bootstrap`, `valide`) 
-        VALUES (
-            NULL, 
-            '{$_POST['lien']}', 
-            '{$_POST['texte']}',
-            '{$_POST['idBootstrap']}',
-            '{$valide}'
-        );
+    
+    $modif = "UPDATE `contact` 
+        SET 
+            `id-bootstrap`  = '{$_POST['idBootstrap']}', 
+            `lien`          = '{$_POST['lien']}', 
+            `texte`         = '{$_POST['texte']}', 
+            `valide`        = '{$valide}'
+        WHERE `contact`.`id` = {$id};
     ";
 
-    mysqli_query($lien, $ajout);
+    mysqli_query($lien, $modif);
 
     if($result){
-        header("Location: contact.php?msg=ajout-valide");
+        header("Location: contact.php?msg=modif-valide");
         die();
     } else {
-        header("Location: contact.php?msg=ajout-rate");
+        header("Location: contact.php?msg=modif-rate");
     }
 }
+
+$select = "SELECT * FROM `contact` WHERE id={$id};";
+$result = mysqli_query($lien, $select);
+$contact = mysqli_fetch_assoc($result);
 
 ?>
 
@@ -42,7 +46,7 @@ if(isset($_POST['btnAjout'])){
     <link rel="stylesheet" href="css/form.css">
 </head>
 <body>
-    <h1>Ajouter un nouveau contact</h1>
+    <h1>Modifier un contact</h1>
     <div id="buttons">
         <a href="deconnexion.php" class="button deconnect">
             <i class="bi bi-person-fill-slash"></i>
@@ -68,22 +72,31 @@ if(isset($_POST['btnAjout'])){
         <fieldset id="general">
             <div class="input">
                 <label for="idBootstrap">Id bootstrap</label>
-                <input type="text" name="idBootstrap" id="idBootstrap" required>
+                <input type="text" name="idBootstrap" id="idBootstrap" required value="<?php echo $contact['id-bootstrap'] ?>">
             </div>
             <div class="input">
                 <label for="lien">Lien</label>
-                <input type="url" name="lien" id="lien">
+                <input type="url" name="lien" id="lien" value="<?php echo $contact['lien'] ?>">
             </div>
             <div class="input">
                 <label for="texte">Texte</label>
-                <input type="text" name="texte" id="texte" required>
+                <input type="text" name="texte" id="texte" required value="<?php echo $contact['texte'] ?>">
             </div>
             <div class="input">
-                <input type="checkbox" name="valide" id="valide" value="1">
+                <?php
+
+                if($contact['valide'] == 1){
+                    echo "<input type=\"checkbox\" name=\"valide\" id=\"valide\" value=\"1\" checked>";
+                } else {
+                    echo "<input type=\"checkbox\" name=\"valide\" id=\"valide\" value=\"1\">";
+                }
+
+                ?>
                 <label for="valide">Valide</label>
             </div>
         </fieldset>
-        <button type="submit" name="btnAjout">Ajouter à la base de donnée</button>
+        <button type="submit" name="btnModif">Modifier le contact</button>
+        <button type="reset">Réinitialiser</button>
     </form>
 
 </body>

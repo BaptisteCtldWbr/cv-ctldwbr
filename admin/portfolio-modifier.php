@@ -36,8 +36,6 @@ if(isset($_POST['btnModif'])){
         WHERE `portfolio`.`id` = {$id};
     ";
 
-    echo $modif;
-
     $result = mysqli_query($lien, $modif);
 
     if($result){
@@ -87,15 +85,6 @@ $projet = mysqli_fetch_assoc($result);
     }
 
     require_once('../cv-ressources/includes/fonctions-donnees.php');
-    $select = "SELECT * FROM `portfolio`";
-
-    $result = mysqli_query($lien, $select);
-
-    if($result){
-        $nb_lignes = mysqli_num_rows($result);
-    } else {
-        die("<p>Problème avec la requête - Veuillez revenir bientôt, désolé.</p>");
-    }
     ?>
 
     <form action="#" method="post">
