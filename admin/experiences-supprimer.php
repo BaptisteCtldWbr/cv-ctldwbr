@@ -9,8 +9,8 @@ echo $delete;
 $result = mysqli_query($lien, $delete);
 
 if($result){
-    header("Location: contact.php?msg=experiences-validee");
+    header("Location: experiences.php?msg=suppression-validee");
 } else {
-    header("Location: contact.php?msg=experiences-ratee");
+    header("Location: experiences.php?msg=suppression-ratee");
 }
 ?>

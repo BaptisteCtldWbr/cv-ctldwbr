@@ -14,9 +14,9 @@
             <i class="bi bi-person-fill-slash"></i>
               Se déconnecter
         </a>
-        <a href="contact-ajouter.php" class="button add">
+        <a href="experiences-ajouter.php" class="button add">
             <i class="bi bi-database-fill-add"></i>
-              Nouveau contact
+              Nouvelle expérience
         </a>
         <a href="index.php" class="button">
             <i class="bi bi-house-fill"></i>
@@ -70,7 +70,7 @@
                     echo "<tr>
                             <td>{$experiences['id']}</td>
                             <td><img src=\"../cv-ressources/exp/{$experiences['icone']}\" alt=\"{$experiences['alt-icone']}\" title=\"{$experiences['alt-icone']}\"></td>
-                            <td>{$experiences['titre']}</td>
+                            <th>{$experiences['titre']}</th>
                             <td>{$experiences['titre-detail']}</td>
                             <td>{$experiences['periode']}</td>
                             <td>{$experiences['date-debut']}</td>
@@ -84,7 +84,7 @@
                                 </a> /
                                 <a 
                                     href=\"experiences-supprimer.php?id={$experiences['id']}\" 
-                                    onclick=\"javascript:return confirm('Êtes vous sûr de vouloir supprimer l'expérience {$experiences['titre']}');\">
+                                    onclick=\"javascript:return confirm('Êtes vous sûr de vouloir supprimer l\'expérience {$experiences['titre']}');\">
                                         <i class=\"bi bi-trash3-fill\"></i>
                                 </a>
                             </td>
