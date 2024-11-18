@@ -3,6 +3,8 @@
 $id = $_GET['id'];
 
 require_once('../cv-ressources/includes/connexion-bdd.php');
+require_once('../cv-ressources/includes/fonctions-donnees.php');
+NTUI();
 
 if(isset($_POST['btnModif'])){
     if($_POST['valide'] == 1){

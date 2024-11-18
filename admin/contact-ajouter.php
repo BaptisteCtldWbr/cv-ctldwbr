@@ -1,8 +1,10 @@
 <?php
 
 require_once('../cv-ressources/includes/connexion-bdd.php');
+require_once('../cv-ressources/includes/fonctions-donnees.php');
 
 if(isset($_POST['btnAjout'])){
+    NTUI();
     if($_POST['valide'] == 1){
         $valide = 1;
     } else {

@@ -1,8 +1,10 @@
 <?php
 
 require_once('../cv-ressources/includes/connexion-bdd.php');
+require_once('../cv-ressources/includes/fonctions-donnees.php');
 
 if(isset($_POST['btnAjout'])){
+    NTUI();
     if(isset($_POST['tags'])){
         if($_POST['tags'] != null){
             $chaineTags = implode(",", $_POST['tags']);
@@ -96,7 +98,6 @@ if(isset($_POST['btnAjout'])){
         echo "<p class=\"msg\">{$_GET['msg']}</p>";
     }
 
-    require_once('../cv-ressources/includes/fonctions-donnees.php');
     $select = "SELECT * FROM `portfolio`";
 
     $result = mysqli_query($lien, $select);

@@ -3,8 +3,10 @@
 $id = $_GET['id'];
 
 require_once('../cv-ressources/includes/connexion-bdd.php');
+require_once('../cv-ressources/includes/fonctions-donnees.php');
 
 if(isset($_POST['btnModif'])){
+    NTUI();
     if(isset($_POST['tags'])){
         if($_POST['tags'] != null){
             $chaineTags = implode(",", $_POST['tags']);
@@ -83,7 +85,6 @@ $projet = mysqli_fetch_assoc($result);
         echo "<p class=\"msg\">{$_GET['msg']}</p>";
     }
 
-    require_once('../cv-ressources/includes/fonctions-donnees.php');
     ?>
 
     <form action="#" method="post" class="grid">
