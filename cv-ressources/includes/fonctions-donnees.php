@@ -78,6 +78,10 @@ function tagsEtOutils(array $tableau, string $tags){
 
 <?php
 
+//--------------
+//- GALERIE JS -
+//--------------
+
 function afficherGalerie(string $idGalerie, array $images, string $cheminSrc, string $cheminMinia){
     /*Nécessite 
         - un tableau avec comme clé le nom du fichier et comme valeur son nom
@@ -112,5 +116,20 @@ function afficherGalerie(string $idGalerie, array $images, string $cheminSrc, st
     echo    '</script>';
     echo '</div>';
 }
+
+?>
+
+<?php 
+
+//-----------------------
+//- CONTRÔLE DE L'INPUT -
+//-----------------------
+
+function NTUI(){
+    foreach($_POST as $key => $val){
+        $_POST[$key] = htmlspecialchars($val);
+    }
+}
+
 
 ?>
