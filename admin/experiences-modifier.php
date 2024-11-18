@@ -7,7 +7,7 @@ require_once('../cv-ressources/includes/fonctions-donnees.php');
 
 if(isset($_POST['btnAjout'])){
     NTUI();
-    
+
     if($_POST['valide'] == 1){
         $valide = 1;
     } else {
@@ -25,7 +25,6 @@ if(isset($_POST['btnAjout'])){
         `valide`        = '{$valide}'
         WHERE `id` = '{$id}';
     ";
-    echo $modif;
 
     mysqli_query($lien, $modif);
 }
