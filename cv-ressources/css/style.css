@@ -168,13 +168,13 @@ blockquote{
         content: "<<";
         padding-right: 5px;
         font-weight: 500;
-        color: #00265F;
+        color: var(--bleu);
     }
     &::after{
         content: ">>";
         padding-left: 5px;
         font-weight: 500;
-        color: #00265F;
+        color: var(--bleu);
     }
 }
 
@@ -197,7 +197,7 @@ nav ul{
 }
 
 nav ul li a{
-    background-color: #00265F;
+    background-color: var(--bleu);
     padding: 7px 15px !important;
     color: #FFFFFF;
     border-radius: 30px;

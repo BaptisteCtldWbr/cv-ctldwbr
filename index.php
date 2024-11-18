@@ -202,7 +202,7 @@ if (isset($_POST['envoi'])) {                                                   
 
             <?php
 
-            $query = "SELECT `url`, `nom-court`, `miniature`, `alt-miniature`, `contexte`, `periode`, `tags`, `description`, `statut` FROM portfolio WHERE statut = 'visi' OR statut = 'term' OR statut = 'cons' ORDER BY `date` DESC;";
+            $query = "SELECT `url`, `nom-complet`, `nom-court`, `miniature`, `alt-miniature`, `contexte`, `periode`, `tags`, `description`, `statut`, `couleur` FROM portfolio WHERE statut = 'visi' OR statut = 'term' OR statut = 'cons' ORDER BY `date` DESC;";
 
             $result = mysqli_query($lien, $query);
 
@@ -227,14 +227,20 @@ if (isset($_POST['envoi'])) {                                                   
             while($projet = mysqli_fetch_assoc($result)){
                 if ($projet['statut'] == "cach" || $projet['statut'] == "cans"){
                 } else {
+                    if($projet['couleur'] != ""){
+                        $couleur = "#".$projet['couleur'];
+                    } else {
+                        $couleur = "var(--bleu)";
+                    }
                     echo "<article
                     class=\"projet {$projet['contexte']}\"
-                    style=\"background-image: url('projets/miniature/{$projet['miniature']}');\"
-                    title=\"{$projet['nom-court']} : {$projet['description']}\">
+                    style=\"background-image: url('projets/miniature/{$projet['miniature']}'); --bleu: {$couleur} !important;\"
+                    title=\"{$projet['nom-complet']} : {$projet['description']}\">
                     <a class=\"sans\" href=\"projet.php?p={$projet['url']}\">";
                     echo "<h4 class=\"titre-projet\">{$projet['nom-court']}</h4>";
                     echo "<ul>";
                         $tags = tagsEtOutils($tagsTableau, $projet['tags']);
+                        $listeTags= "";
                         foreach($tags as $key => $value){
                             if(substr($value, 0, 3) == "bi-"){
                                 $listeTags .= "<li><i class=\"{$value}\" title=\"{$key}\"></i></li>";
@@ -242,6 +248,7 @@ if (isset($_POST['envoi'])) {                                                   
                                 $listeTags .= "<li><img src=\"../{$value}\" alt=\"{$key}\" title=\"{$key}\"></li>";
                             }
                         }
+                        echo $listeTags;
                     echo "</ul></a></article>";
                 }
             }
