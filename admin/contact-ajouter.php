@@ -22,7 +22,7 @@ if(isset($_POST['btnAjout'])){
         );
     ";
 
-    mysqli_query($lien, $ajout);
+    $result = mysqli_query($lien, $ajout);
 
     if($result){
         header("Location: contact.php?msg=ajout-valide");

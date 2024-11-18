@@ -25,9 +25,6 @@ if(isset($_POST['btnAjout'])){
         $chaineSuggestion = null;
     }
 
-    echo $chaineTags;
-    echo $chaineSuggestion;
-
 
     $ajout = "INSERT INTO `portfolio` 
         (`id`, `url`, `nom-complet`, `nom-court`, `miniature`, `alt-miniature`, `contexte`, `periode`, `tags`, `description`, `contenu`, `statut`, `date`, `suggestions`, `lien1-nom`, `lien1-lien`, `lien2-nom`, `lien2-lien`) 
@@ -53,7 +50,7 @@ if(isset($_POST['btnAjout'])){
         );
     ";
 
-    mysqli_query($lien, $ajout);
+    $result = mysqli_query($lien, $ajout);
 
     if($result){
         header("Location: portfolio.php?msg=ajout-valide");

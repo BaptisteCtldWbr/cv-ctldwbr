@@ -22,7 +22,7 @@ if(isset($_POST['btnModif'])){
         WHERE `contact`.`id` = {$id};
     ";
 
-    mysqli_query($lien, $modif);
+    $result = mysqli_query($lien, $modif);
 
     if($result){
         header("Location: contact.php?msg=modif-valide");

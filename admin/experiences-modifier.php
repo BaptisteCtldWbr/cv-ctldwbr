@@ -26,7 +26,14 @@ if(isset($_POST['btnAjout'])){
         WHERE `id` = '{$id}';
     ";
 
-    mysqli_query($lien, $modif);
+    $result = mysqli_query($lien, $modif);
+
+    if($result){
+        header("Location: contact.php?msg=modif-valide");
+        die();
+    } else {
+        header("Location: contact.php?msg=modif-rate");
+    }
 }
 
 ?>

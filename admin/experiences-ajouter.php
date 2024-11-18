@@ -26,9 +26,8 @@ if(isset($_POST['btnAjout'])){
             '{$valide}'
         );
     ";
-    echo $ajout;
 
-    mysqli_query($lien, $ajout);
+    $result = mysqli_query($lien, $ajout);
 
     if($result){
         header("Location: experiences.php?msg=ajout-valide");
