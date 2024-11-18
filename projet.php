@@ -62,6 +62,18 @@ $tags = tagsEtOutils($tagsTableau, $projet['tags']);                            
     <meta property="og:description" content="<?php echo $projet['description'] ?>">                                             <!--Description Projet-->
     <meta property="og:type" content="article">
     <meta property="og:image" content="<?php echo $cheminCompletMiniature; ?>">                                                 <!--Image Projet, URL complète-->
+    <?php
+    if($projet['couleur'] != ""){
+        echo "<style>
+                *{
+                    --bleu: #{$projet['couleur']};
+                }
+            </style>";
+    } else {
+        
+    }
+    
+    ?>
 </head>
 <body>
     <?php include_once('cv-ressources/includes/header.php'); ?>
