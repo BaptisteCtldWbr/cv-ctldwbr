@@ -221,3 +221,32 @@ div#buttons{
         }
     }
 }
+
+td.crud-message form{
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: center;
+    gap: 10px;
+    button{
+        background-color: #FFFFFF00;
+        display: inline;
+        width: fit-content;
+        padding: 0;
+        margin: 0;
+        border: none;
+        &[value=""]{
+            color: var(--bleu);
+        }
+        &[value="lu"]{
+            color: white;
+            background-color: var(--vert);
+        }
+        &[value="rep"]{
+            color: white;
+            background-color: var(--vert);
+        }
+        i{
+            font-size: 1.2em;
+        }
+    }
+}

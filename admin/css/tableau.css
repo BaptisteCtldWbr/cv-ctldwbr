@@ -66,3 +66,10 @@ table{
         }
     }
 }
+
+td.crud-message form .msg-actif{
+    background-color: var(--bleu);
+    color: white;
+    padding: 3px;
+    border-radius: 10px;
+}
