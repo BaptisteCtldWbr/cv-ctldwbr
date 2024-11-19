@@ -1,6 +1,7 @@
 <?php
 
 require_once('cv-ressources/includes/connexion-bdd.php');
+require_once('cv-ressources/includes/fonctions-donnees.php');
 
 //---------------------------------
 //- TRAITEMENT FORMULAIRE CONTACT -
@@ -11,6 +12,7 @@ $mailEnvoi = "baptiste.catelandwambre@gmail.com";                               
 date_default_timezone_set("Europe/Paris");                                                      //pour que l'heure soit soit l'heure française
 
 if (isset($_POST['envoi'])) {                                                                   //si le bouton envoyé est appuyé, on commence le traitement.
+    NTUI();
     if (isset($_POST['nom']) && isset($_POST['mail']) && isset($_POST['msg'])) {                //si toutes les données sont saisies
         $nom = $_POST['nom'];
         $mail = $_POST['mail'];
@@ -21,7 +23,7 @@ if (isset($_POST['envoi'])) {                                                   
         } else {                                                                                //on envoie le message :
             $sujet = sprintf("[Portfolio CtldWbr] Nouveau message de %s à %s", $nom, $date);    //définition du sujet
             //echo $sujet;
-            $headers = "Reply-To: $mail" . "\r\n" . "FROM: $nom <catelandwambre@alwaysdata.net>" . "\r\n" . "cc:$mail";
+            $headers = "Reply-To: $mail" . "\r\n" . "FROM: $nom <ctldwbr@alwaysdata.net>" . "\r\n" . "cc:$mail";
 
             $mailOk = mail($mailEnvoi, $sujet, $message, $headers);                             //envoie du mail /!\ pas possible en local
             $query = "INSERT INTO message (`date-heure`, `nom`, `mail`, `message`) VALUES ('{$date}', '{$nom}', '{$mail}', '{$message}');";
@@ -223,7 +225,6 @@ if (isset($_POST['envoi'])) {                                                   
             ?>
             <div class="cont-projet">
             <?php
-            require_once('cv-ressources/includes/fonctions-donnees.php');
             while($projet = mysqli_fetch_assoc($result)){
                 if ($projet['statut'] == "cach" || $projet['statut'] == "cans"){
                 } else {
