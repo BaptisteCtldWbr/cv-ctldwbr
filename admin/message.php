@@ -6,14 +6,20 @@ if(isset($_POST['action'])){
     if(str_contains($_POST['action'], "lu")){
         $id = substr($_POST['action'], 3);
         $query = "UPDATE `message` SET `statut` = 'lu' WHERE `message`.`id` = '{$id}';";
+        $erreur = "Message {$id} : lu.";
     } else if (str_contains($_POST['action'], "rep")){
         $id = substr($_POST['action'], 4);
         $query = "UPDATE `message` SET `statut` = 'rep' WHERE `message`.`id` = '{$id}';";
+        $erreur = "Message {$id} : repondu.";
     } else {
         $id = $_POST['action'];
         $query = "UPDATE `message` SET `statut` = '' WHERE `message`.`id` = '{$id}';";
+        $erreur = "Message {$id} : rien.";
     }
     $result = mysqli_query($lien, $query);
+    if(!$result){
+        $erreur = "Message {$id} : erreur.";
+    }
 }
 
 ?>
@@ -46,8 +52,8 @@ if(isset($_POST['action'])){
     </div>
     <?php
 
-    if(isset($_GET['msg'])){
-        echo "<p class=\"msg\">{$_GET['msg']}</p>";
+    if(isset($erreur)){
+        echo "<p class=\"msg\">{$erreur}</p>";
     }
 
     $select = "SELECT * FROM `message`";
