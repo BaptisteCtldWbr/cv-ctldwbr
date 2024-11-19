@@ -30,11 +30,11 @@
         -[ ] Ajout
         -[ ] Supression
         -[ ] Modification
-    - [ ] Interets
-        -[ ] Tableau
-        -[ ] Ajout
-        -[ ] Supression
-        -[ ] Modification
+    - [x] Interets
+        -[x] Tableau
+        -[x] Ajout
+        -[x] Supression
+        -[x] Modification
     - [x] Messsages
     - [ ] Techno
         -[ ] Tableau

@@ -5,36 +5,35 @@ $id = $_GET['id'];
 require_once('../cv-ressources/includes/connexion-bdd.php');
 require_once('../cv-ressources/includes/fonctions-donnees.php');
 
-if(isset($_POST['btnModif'])){
-    NTUI();
+if(isset($_POST['btnAjout'])){
     if($_POST['valide'] == 1){
         $valide = 1;
     } else {
         $valide = 0;
     }
-    
-    $modif = "UPDATE `contact` 
+    $texte = htmlspecialchars($_POST['texte']);
+
+    $modif = "UPDATE `interet` 
         SET 
-            `id-bootstrap`  = '{$_POST['idBootstrap']}', 
-            `lien`          = '{$_POST['lien']}', 
-            `texte`         = '{$_POST['texte']}', 
+            `emoji`  = '{$_POST['emoji']}', 
+            `texte`         = '{$texte}', 
             `valide`        = '{$valide}'
-        WHERE `contact`.`id` = {$id};
+        WHERE `interet`.`id` = {$id};
     ";
 
     $result = mysqli_query($lien, $modif);
 
     if($result){
-        header("Location: contact.php?msg=modif-valide");
+        header("Location: interets.php?msg=modif-valide");
         die();
     } else {
-        header("Location: contact.php?msg=modif-rate");
+        header("Location: interets.php?msg=modif-rate");
     }
 }
 
-$select = "SELECT * FROM `contact` WHERE id={$id};";
+$select = "SELECT * FROM `interet` WHERE id={$id};";
 $result = mysqli_query($lien, $select);
-$contact = mysqli_fetch_assoc($result);
+$interet = mysqli_fetch_assoc($result);
 
 ?>
 
@@ -43,12 +42,12 @@ $contact = mysqli_fetch_assoc($result);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - CV CTLDWBR</title>
+    <title>Interets - CV CTLDWBR</title>
     <?php require_once('head.php') ?>
     <link rel="stylesheet" href="css/form.css">
 </head>
 <body>
-    <h1>Modifier un contact</h1>
+    <h1>Mofifier un interet</h1>
     <div id="buttons">
         <a href="deconnexion.php" class="button deconnect">
             <i class="bi bi-person-fill-slash"></i>
@@ -58,9 +57,9 @@ $contact = mysqli_fetch_assoc($result);
             <i class="bi bi-file-earmark-person-fill"></i>
               Site
         </a>
-        <a href="contact.php" class="button">
+        <a href="interets.php" class="button">
             <i class="bi bi-house-fill"></i>
-              Retour - Contacts
+              Retour - Interets
         </a>
     </div>
     <?php
@@ -73,21 +72,17 @@ $contact = mysqli_fetch_assoc($result);
     <form action="#" method="post">
         <fieldset id="general">
             <div class="input">
-                <label for="idBootstrap">Id bootstrap</label>
-                <input type="text" name="idBootstrap" id="idBootstrap" required value="<?php echo $contact['id-bootstrap'] ?>">
-            </div>
-            <div class="input">
-                <label for="lien">Lien</label>
-                <input type="url" name="lien" id="lien" value="<?php echo $contact['lien'] ?>">
+                <label for="emoji">Emoji<span>Liste des émojis : <a href="https://emojiterra.com/" target="_blank">emojiterra</a></span></label>
+                <input type="text" name="emoji" id="emoji" required value="<?php echo $interet['emoji'] ?>">
             </div>
             <div class="input">
                 <label for="texte">Texte</label>
-                <input type="text" name="texte" id="texte" required value="<?php echo $contact['texte'] ?>">
+                <input type="text" name="texte" id="texte" required value="<?php echo $interet['texte'] ?>">
             </div>
             <div class="input">
                 <?php
 
-                if($contact['valide'] == 1){
+                if($interet['valide'] == 1){
                     echo "<input type=\"checkbox\" name=\"valide\" id=\"valide\" value=\"1\" checked>";
                 } else {
                     echo "<input type=\"checkbox\" name=\"valide\" id=\"valide\" value=\"1\">";
@@ -97,8 +92,7 @@ $contact = mysqli_fetch_assoc($result);
                 <label for="valide">Valide</label>
             </div>
         </fieldset>
-        <button type="submit" name="btnModif">Modifier le contact</button>
-        <button type="reset">Réinitialiser</button>
+        <button type="submit" name="btnAjout">Ajouter à la base de donnée</button>
     </form>
 
 </body>
