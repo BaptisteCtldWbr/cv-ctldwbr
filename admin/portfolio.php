@@ -114,7 +114,6 @@
                     ";
                 }
                 ?>
-            </tr>
         </tbody>
         <tfoot>
             <th scope="row" colspan="15">Nombre de projets :</th>

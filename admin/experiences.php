@@ -93,7 +93,6 @@
                     
                 }
                 ?>
-            </tr>
         </tbody>
         <tfoot>
             <th scope="row" colspan="9">Nombre de contacts :</th>
