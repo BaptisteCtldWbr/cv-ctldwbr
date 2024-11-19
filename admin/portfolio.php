@@ -55,6 +55,7 @@
             <th scope="col">Contexte</th>
             <th scope="col">Période</th>
             <th scope="col">Tags</th>
+            <th scope="col">Couleurs</th>
             <th scope="col">Description</th>
             <th scope="col">Page contenu</th>
             <th scope="col">Statut</th>
@@ -83,6 +84,10 @@
                         $listeTags = null;
                     }
 
+                    if($projet['couleur'] == null){
+                        $projet['couleur'] = "00265F";
+                    }
+
                     echo "<tr>
                             <td>{$projet['id']}</td>
                             <td><img src=\"../projets/miniature/{$projet['miniature']}\" alt=\"{$projet['alt-miniature']}\" title=\"{$projet['alt-miniature']}\"></td>
@@ -92,6 +97,7 @@
                             <td>{$projet['contexte']}</td>
                             <td>{$projet['periode']}</td>
                             <td>{$listeTags}</td>
+                            <td><div class=\"cont-couleur\"><div class=\"couleur\" style=\"background-color:#{$projet['couleur']};\"><div></div></td>
                             <td>{$projet['description']}</td>
                             <td><a href=\"../projets/{$projet['contenu']}\" target=\"_blank\">{$projet['contenu']}</a></td>
                             <td>{$projet['statut']}</td>

@@ -6,7 +6,6 @@ require_once('../cv-ressources/includes/connexion-bdd.php');
 require_once('../cv-ressources/includes/fonctions-donnees.php');
 
 if(isset($_POST['btnModif'])){
-    NTUI();
     if(isset($_POST['tags'])){
         if($_POST['tags'] != null){
             $chaineTags = implode(",", $_POST['tags']);
@@ -16,6 +15,8 @@ if(isset($_POST['btnModif'])){
     } else {
         $chaineTags = null;
     }
+    NTUI();
+    $couleur = strtoupper(substr($_POST['couleur'], -6));
 
     $modif = "UPDATE `portfolio` 
         SET 
@@ -34,7 +35,8 @@ if(isset($_POST['btnModif'])){
             `lien1-nom`     = '{$_POST['lien1-texte']}', 
             `lien1-lien`    = '{$_POST['lien1-lien']}', 
             `lien2-nom`     = '{$_POST['lien2-texte']}', 
-            `lien2-lien`    = '{$_POST['lien2-lien']}'
+            `lien2-lien`    = '{$_POST['lien2-lien']}',
+            `couleur`       = '{$couleur}'
         WHERE `portfolio`.`id` = {$id};
     ";
 
@@ -285,6 +287,10 @@ $projet = mysqli_fetch_assoc($result);
 
                     ?>
                 </ul>
+            </div>
+            <div class="input">
+                <label for="couleur">Couleur du projet</label>
+                <input type="color" name="couleur" id="couleur" value="#<?php echo $projet['couleur']; ?>">
             </div>
         </fieldset>
         <button type="submit" name="btnModif" value="prout" onclick="javascript:return confirm('Êtes vous sûr de vouloir modifier le projet');">Modifier le projet</button>

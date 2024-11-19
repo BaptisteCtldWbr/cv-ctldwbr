@@ -52,3 +52,9 @@ div.input label span{
 fieldset#contenus{
     grid-column: 2 / 4;
 }
+
+input[type="color"]{
+    width: 70px;
+    height: 30px;
+    padding: 2px;
+}

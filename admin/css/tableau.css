@@ -73,3 +73,14 @@ td.crud-message form .msg-actif{
     padding: 3px;
     border-radius: 10px;
 }
+
+.cont-couleur{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .couleur{
+        width: 30px;
+        height: 30px;
+        border-radius: 25px;
+    }
+}

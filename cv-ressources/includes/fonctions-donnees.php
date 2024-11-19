@@ -127,7 +127,9 @@ function afficherGalerie(string $idGalerie, array $images, string $cheminSrc, st
 
 function NTUI(){
     foreach($_POST as $key => $val){
-        $_POST[$key] = htmlspecialchars($val);
+        if(gettype($val) == "string"){
+            $_POST[$key] = htmlspecialchars($val);
+        }
     }
 }
 

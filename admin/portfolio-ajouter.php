@@ -4,7 +4,6 @@ require_once('../cv-ressources/includes/connexion-bdd.php');
 require_once('../cv-ressources/includes/fonctions-donnees.php');
 
 if(isset($_POST['btnAjout'])){
-    NTUI();
     if(isset($_POST['tags'])){
         if($_POST['tags'] != null){
             $chaineTags = implode(",", $_POST['tags']);
@@ -14,6 +13,8 @@ if(isset($_POST['btnAjout'])){
     } else {
         $chaineTags = null;
     }
+    NTUI();
+    $couleur = strtoupper(substr($_POST['couleur'], -6));
 
     if(isset($_POST['suggestions'])){
         if($_POST['suggestions'] != null){
@@ -27,7 +28,7 @@ if(isset($_POST['btnAjout'])){
 
 
     $ajout = "INSERT INTO `portfolio` 
-        (`id`, `url`, `nom-complet`, `nom-court`, `miniature`, `alt-miniature`, `contexte`, `periode`, `tags`, `description`, `contenu`, `statut`, `date`, `suggestions`, `lien1-nom`, `lien1-lien`, `lien2-nom`, `lien2-lien`) 
+        (`id`, `url`, `nom-complet`, `nom-court`, `miniature`, `alt-miniature`, `contexte`, `periode`, `tags`, `description`, `contenu`, `statut`, `date`, `suggestions`, `lien1-nom`, `lien1-lien`, `lien2-nom`, `lien2-lien`, `couleur`) 
         VALUES (
             NULL, 
             '{$_POST['url']}', 
@@ -46,7 +47,8 @@ if(isset($_POST['btnAjout'])){
             '{$_POST['lien1-texte']}', 
             '{$_POST['lien1-lien']}', 
             '{$_POST['lien2-texte']}', 
-            '{$_POST['lien2-lien']}'
+            '{$_POST['lien2-lien']}',
+            '{$couleur}'
         );
     ";
 
@@ -279,6 +281,10 @@ if(isset($_POST['btnAjout'])){
 
                     ?>
                 </ul>
+            </div>
+            <div class="input">
+                <label for="couleur">Couleur du projet</label>
+                <input type="color" name="couleur" id="couleur" value="#00265F">
             </div>
         </fieldset>
         <button type="submit" name="btnAjout">Ajouter à la base de donnée</button>
