@@ -29,6 +29,7 @@ if(isset($_POST['btnModif'])){
             `periode`       = '{$_POST['periode']}', 
             `tags`          = '{$chaineTags}', 
             `description`   = '{$_POST['description']}', 
+            `statut`        = '{$_POST['statut']}', 
             `contenu`       = '{$_POST['contenu']}', 
             `date`          = '{$_POST['date']}', 
             `suggestions`   = '{$chaineSuggestion}', 
@@ -258,7 +259,7 @@ $projet = mysqli_fetch_assoc($result);
             </div>
             <div class="input">
                 <label for="description">Description</label>
-                <textarea name="description" id="description" rows="3" required value="<?php echo $projet['description']; ?>"></textarea>
+                <textarea name="description" id="description" rows="3" required><?php echo $projet['description']; ?></textarea>
             </div>
             <div class="input">
                 <label>

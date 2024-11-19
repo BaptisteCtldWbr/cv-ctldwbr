@@ -1,5 +1,6 @@
 # À faire
 
+- [ ] refaire le cv pdf
 - [ ] refaire la photo
 - [ ] rajouter tout les projets
     - [x] actualiser le portfolio
@@ -7,11 +8,7 @@
     - [x] SAE 102 - 202 (pastilles et affiches notamment)
     - [x] SAE 105 - 203
     - [x] Baptiste Drone
-    - [ ] Andina Rumicruz
-    - [ ] Préparer pour les SAE du S3
-        - [ ] SAE 301 - agence immobilière
-        - [ ] SAE 302 - ??
-        - [ ] SAE 303 - datavisualisation
+    - [x] Andina Rumicruz
     - [x] photos 
 - [ ] Partie administration
     - [x] Connexion / Déconnexion / Verification
@@ -35,14 +32,12 @@
         -[ ] Ajout
         -[ ] Supression
         -[ ] Modification
-    - [ ] Messsages
+    - [x] Messsages
     - [ ] Techno
         -[ ] Tableau
         -[ ] Ajout
         -[ ] Supression
         -[ ] Modification
-- [ ] refaire le cv pdf
-- [ ] faire attention à la couleur des icones de projets
 - [x] suggestions projets depuis une page projet
 - [x] Faire galerie JS
     - [x] Génére par PHP

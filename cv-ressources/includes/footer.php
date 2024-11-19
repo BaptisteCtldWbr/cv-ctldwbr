@@ -1,6 +1,7 @@
 <div style="height: 100px;" id="bas"></div>
 <footer>
     <p><a href="index.php" class="sans">&copy; Baptiste Cateland--Wambre</a></p>
+    <p><a href="admin/" class="sans">Administration</a></p>
     <ul id="contact">
         <?php
 
