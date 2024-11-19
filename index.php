@@ -12,7 +12,7 @@ $mailEnvoi = "baptiste.catelandwambre@gmail.com";                               
 date_default_timezone_set("Europe/Paris");                                                      //pour que l'heure soit soit l'heure française
 
 if (isset($_POST['envoi'])) {                                                                   //si le bouton envoyé est appuyé, on commence le traitement.
-    NTUI();
+    NTUI();                                                                                     //Never trust user input
     if (isset($_POST['nom']) && isset($_POST['mail']) && isset($_POST['msg'])) {                //si toutes les données sont saisies
         $nom = $_POST['nom'];
         $mail = $_POST['mail'];
@@ -61,6 +61,23 @@ if (isset($_POST['envoi'])) {                                                   
     <meta property="og:description" content="Découvrez mon profil à travers mon CV et mes expériences">
     <meta property="og:type" content="website">
     <meta property="og:image" content="http://catelandwambre.alwaysdata.net/cv-ressources/img/meta-miniature.png">
+    <style>
+        <?php
+        
+        $couleur = "SELECT `id`, `couleur` FROM portfolio WHERE statut = 'visi' OR statut = 'term' OR statut = 'cons' ORDER BY `date` DESC;";
+
+        $resultCouleurs = mysqli_query($lien, $couleur);
+        while($couleurs = mysqli_fetch_assoc($resultCouleurs)){
+            if($couleurs['couleur'] != null){
+                echo "#projet-{$couleurs['id']}, #projet-{$couleurs['id']} *{
+                        --bleu: #{$couleurs['couleur']} !important;
+                    }";
+            }
+            
+        }
+        
+        ?>
+    </style>
 </head>
 
 <body>
@@ -68,15 +85,13 @@ if (isset($_POST['envoi'])) {                                                   
         <div id="header-couleur">
             <section id="moi">
                 <div id="moi-pp">
-                    <!-- <img src="https://placehold.co/167x250?text=PHOTO" alt=""> -->
                     <img src="cv-ressources/img/DSCF0339.jpg" alt="Photo">
                 </div>
                 <div id="moi-texte">
                     <h1>Baptiste Cateland--Wambre</h1>
                     <p id="moi-titre">Étudiant en développement web</p>
                     <p id="moi-stage">En recherche de <strong>stage en développement web</strong> à partir du 14 avril
-                        2025 pour une durée minimale de 10 semaines​</p>
-                    <!--<p id="moi-valeurs">Polyvalent • Rigoureux • Ambitieux • Responsable</p>-->
+                        2025 pour une durée minimale de 10 semaines !​</p>
                 </div>
             </section>
             <div id="moi-details">
@@ -204,9 +219,9 @@ if (isset($_POST['envoi'])) {                                                   
 
             <?php
 
-            $query = "SELECT `url`, `nom-complet`, `nom-court`, `miniature`, `alt-miniature`, `contexte`, `periode`, `tags`, `description`, `statut`, `couleur` FROM portfolio WHERE statut = 'visi' OR statut = 'term' OR statut = 'cons' ORDER BY `date` DESC;";
+            $query = "SELECT `id`, `url`, `nom-complet`, `nom-court`, `miniature`, `alt-miniature`, `contexte`, `periode`, `tags`, `description`, `statut`, `couleur` FROM portfolio WHERE statut = 'visi' OR statut = 'term' OR statut = 'cons' ORDER BY `date` DESC;";
 
-            $result = mysqli_query($lien, $query);
+            $result = mysqli_query($lien, $query);                                              //Execution de la reqûete pour avoir les données
 
             if($result){
                 $nb_lignes = mysqli_num_rows($result);
@@ -214,7 +229,7 @@ if (isset($_POST['envoi'])) {                                                   
                 echo "<p>Problème avec la requête - Veuillez revenir bientôt, désolé.</p>";
             }
 
-            if($nb_lignes == 0){
+            if($nb_lignes == 0){                                                                //Gestion des erreurs, affichage du nombre de projet
                 echo "<p>Aucun projet public - Veuillez revenir bientôt, désolé.</p>";
             } else if ($nb_lignes == 1) {
                 echo "<p>{$nb_lignes} projet.</p>";
@@ -225,17 +240,14 @@ if (isset($_POST['envoi'])) {                                                   
             ?>
             <div class="cont-projet">
             <?php
-            while($projet = mysqli_fetch_assoc($result)){
-                if ($projet['statut'] == "cach" || $projet['statut'] == "cans"){
+            while($projet = mysqli_fetch_assoc($result)){                                       //affichage des projets
+                if ($projet['statut'] == "cach" || $projet['statut'] == "cans"){                //deuxième vérification du statut
                 } else {
-                    if($projet['couleur'] != ""){
-                        $couleur = "#".$projet['couleur'];
-                    } else {
-                        $couleur = "var(--bleu)";
-                    }
                     echo "<article
                     class=\"projet {$projet['contexte']}\"
-                    style=\"background-image: url('projets/miniature/{$projet['miniature']}'); --bleu: {$couleur} !important;\"
+                    id=\"projet-{$projet['id']}\"
+                    style=\"
+                        background-image: url('projets/miniature/{$projet['miniature']}');
                     title=\"{$projet['nom-complet']} : {$projet['description']}\">
                     <a class=\"sans\" href=\"projet.php?p={$projet['url']}\">";
                     echo "<h4 class=\"titre-projet\">{$projet['nom-court']}</h4>";
