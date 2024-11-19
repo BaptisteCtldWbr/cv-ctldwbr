@@ -1,13 +1,16 @@
 # À faire
 
-- [ ] refaire le cv pdf
-- [ ] refaire la photo
+- [x] refaire le cv pdf
+- [x] refaire la photo
 - [ ] rajouter tout les projets
     - [x] actualiser le portfolio
-        - [ ] pas oublier la photo de la galerie de projets
+        - [x] pas oublier la photo de la galerie de projets
     - [x] SAE 102 - 202 (pastilles et affiches notamment)
     - [x] SAE 105 - 203
-    - [x] Baptiste Drone
+    - [x] SAE 301
+    - [ ] SAE 302
+    - [ ] SAE 303
+    - [ ] Baptiste Drone
     - [x] Andina Rumicruz
     - [x] photos 
 - [ ] Partie administration
