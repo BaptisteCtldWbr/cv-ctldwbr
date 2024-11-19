@@ -83,7 +83,7 @@ $tags = tagsEtOutils($tagsTableau, $projet['tags']);                            
         <?php
 
         /*
-        Vérfication du status du projet
+        Vérfication du statut du projet
         cons = en contruction
         cach = caché - non public
         cans = en construction et caché
@@ -174,19 +174,19 @@ $tags = tagsEtOutils($tagsTableau, $projet['tags']);                            
         ?>
         </div>
         <?php
-
+        //affichage de des suggestions du projet
         if ($projet['suggestions']!=null){
             echo "<section class=\"projet-similaires\">";
             echo "<h2>Projets similaires</h2>";
-            $suggestions = explode(",", $projet['suggestions']);
+            $suggestions = explode(",", $projet['suggestions']);                                                //récupère les projets
 
             echo "<div class=\"cont-projet\">";
             
-            foreach($suggestions as $IDsuggestion){
-                $selectSuggestions = "SELECT * FROM portfolio WHERE `id` = {$IDsuggestion}";
+            foreach($suggestions as $IDsuggestion){                                                             //pour chaque projet
+                $selectSuggestions = "SELECT * FROM portfolio WHERE `id` = {$IDsuggestion}";                    //résupère les données du projet
                 $resultSuggestions = mysqli_query($lien, $selectSuggestions);
                 $suggestion = mysqli_fetch_assoc($resultSuggestions);
-                if ($suggestion['statut'] != "cans" AND $suggestion['statut'] != "cach"){
+                if ($suggestion['statut'] != "cans" AND $suggestion['statut'] != "cach"){                       //si le projet est visible
                     echo "<article
                             class=\"projet {$suggestion['contexte']}\"
                             style=\"background-image: url('projets/miniature/{$suggestion['miniature']}');\"
