@@ -8,15 +8,15 @@
     <link rel="stylesheet" href="css/tableau.css">
 </head>
 <body>
-    <h1>Interets</h1>
+    <h1>Technos</h1>
     <div id="buttons">
         <a href="deconnexion.php" class="button deconnect">
             <i class="bi bi-person-fill-slash"></i>
               Se déconnecter
         </a>
-        <a href="interets-ajouter.php" class="button add">
+        <a href="technos-ajouter.php" class="button add">
             <i class="bi bi-database-fill-add"></i>
-              Nouvel interet
+              Nouvelle techno
         </a>
         <a href="index.php" class="button">
             <i class="bi bi-house-fill"></i>
@@ -35,7 +35,7 @@
 
     require_once('../cv-ressources/includes/connexion-bdd.php');
     require_once('../cv-ressources/includes/fonctions-donnees.php');
-    $select = "SELECT * FROM `interet`";
+    $select = "SELECT * FROM `techno`";
 
     $result = mysqli_query($lien, $select);
 
@@ -48,33 +48,33 @@
     <table>
         <thead>
             <th scope="col">Id.</th>
-            <th scope="col">Texte</th>
-            <th scope="col">Emoji</th>
+            <th scope="col">Icone</th>
+            <th scope="col">Alt Icone</th>
             <th scope="col">Valide</th>
             <th scope="col">Modif.</th>
         </thead>
         <tbody>
                 <?php
-                while($interet = mysqli_fetch_assoc($result)){
-                    if($interet['valide'] == 1){
+                while($techno = mysqli_fetch_assoc($result)){
+                    if($techno['valide'] == 1){
                         $valide = "<i class=\"bi bi-eye-fill\"></i>";
                     } else {
                         $valide = "<i class=\"bi bi-eye-slash-fill\"></i>";
                     }
 
                     echo "<tr>
-                            <td>{$interet['id']}</td>
-                            <td>{$interet['emoji']}</td>
-                            <td>{$interet['texte']}</td>
+                            <td>{$techno['id']}</td>
+                            <td><img src=\"../cv-ressources/techno/{$techno['icone']}\"</td>
+                            <td>{$techno['alt-icone']}</td>
                             <td>{$valide}</td>
                             <td class=\"crud\">
                                 <a 
-                                    href=\"interets-modifier.php?id={$interet['id']}\">
+                                    href=\"technos-modifier.php?id={$techno['id']}\">
                                         <i class=\"bi bi-pencil-fill\"></i>
                                 </a> /
                                 <a 
-                                    href=\"interets-supprimer.php?id={$interet['id']}\" 
-                                    onclick=\"javascript:return confirm('Êtes vous sûr de vouloir supprimer l\'interet {$interet['emoji']} - {$interet['texte']}');\">
+                                    href=\"technos-supprimer.php?id={$techno['id']}\" 
+                                    onclick=\"javascript:return confirm('Êtes vous sûr de vouloir supprimer la technotechnos {$techno['icone']} - {$techno['alt-icone']}');\">
                                         <i class=\"bi bi-trash3-fill\"></i>
                                 </a>
                             </td>
