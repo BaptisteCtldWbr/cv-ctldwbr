@@ -48,7 +48,7 @@
         <li><a href="interets.php">     <i class="bi bi-balloon-fill"></i>  Interêts    </a></li>
         <li><a href="technos.php">      <i class="bi bi-code-slash"></i>    Technos     </a></li>
         <li><a href="message.php">      <i class="bi bi-envelope-fill"></i> Messages    </a></li>
-        <li><a href="langue.php">       <i class="bi bi-megaphone-fill"></i> Langues     </a></li>
+        <li><a href="langues.php">      <i class="bi bi-megaphone-fill"></i> Langues     </a></li>
     </ul>
 </body>
 </html>
