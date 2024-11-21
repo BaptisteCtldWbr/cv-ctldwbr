@@ -1,49 +1,50 @@
 # À faire
 
-- [x] refaire le cv pdf
+- [x] refaire le cv PDF
 - [x] refaire la photo
 - [ ] rajouter tout les projets
     - [x] actualiser le portfolio
         - [x] pas oublier la photo de la galerie de projets
     - [x] SAE 102 - 202 (pastilles et affiches notamment)
     - [x] SAE 105 - 203
-    - [x] SAE 301
+    - [ ] SAE 301
     - [ ] SAE 302
-    - [ ] SAE 303
-    - [ ] Baptiste Drone
+    - [x] SAE 303
+    - [x] Baptiste Drone
     - [x] Andina Rumicruz
     - [x] photos 
-- [ ] Partie administration
-    - [x] Connexion / Déconnexion / Verification
+- [x] Partie administration
+    - [x] Connexion / Déconnexion / Vérification
+    - [ ] Import de fichiers
     - [x] Portfolio
         -[x] Tableau
         -[x] Ajout
-        -[x] Supression
+        -[x] Suppression
         -[x] Modification
     - [x] Contacts
         -[x] Tableau
         -[x] Ajout
-        -[x] Supression
+        -[x] Suppression
         -[x] Modification
-    - [ ] Expériences
-        -[ ] Tableau
-        -[ ] Ajout
-        -[ ] Supression
-        -[ ] Modification
-    - [x] Interets
+    - [x] Expériences
         -[x] Tableau
         -[x] Ajout
-        -[x] Supression
+        -[x] Suppression
         -[x] Modification
-    - [x] Messsages
-    - [ ] Techno
-        -[ ] Tableau
-        -[ ] Ajout
-        -[ ] Supression
-        -[ ] Modification
+    - [x] Intérêts
+        -[x] Tableau
+        -[x] Ajout
+        -[x] Suppression
+        -[x] Modification
+    - [x] Messages
+    - [x] Techno
+        -[x] Tableau
+        -[x] Ajout
+        -[x] Suppression
+        -[x] Modification
 - [x] suggestions projets depuis une page projet
 - [x] Faire galerie JS
-    - [x] Génére par PHP
+    - [x] Génère par PHP
 - [x] statistiques de vue
 - [x] faire la liste des projets
     - [x] inclure la redirection, quand c'est pas valide.
