@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="css/style.css">
+<link rel="shortcut icon" href="css/favicon.png" type="image/x-icon">
 
 <?php
 

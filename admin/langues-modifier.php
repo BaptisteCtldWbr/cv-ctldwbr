@@ -74,7 +74,7 @@ $langue = mysqli_fetch_assoc($result);
     <form action="#" method="post">
         <fieldset id="general">
             <div class="input">
-                <label for="emoji">Emoji<span>Liste des émojis : <a href="https://emojiterra.com/" target="_blank">emojiterra</a></span></label>
+                <label for="emoji">Emoji<span>Liste des émojis : <a href="https://emojiterra.com/country-flags/" target="_blank">emojiterra</a></span></label>
                 <input type="text" name="emoji" id="emoji" required value="<?php echo $langue['emoji'];?>">
             </div>
             <div class="input">
