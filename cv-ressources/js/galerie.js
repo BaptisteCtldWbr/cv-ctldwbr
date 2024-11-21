@@ -51,9 +51,9 @@ function galeriephoto(galerie){
         if (PhotoSuivante > nbPhoto){
             PhotoSuivante = 0;
         }
-        console.log(PhotoSuivante);
         //changement de photo
         photo.src = miniature[PhotoSuivante].dataset.chemin_photo;
+        titre.innerText = miniature[PhotoSuivante].dataset.titre;
         miniature[photoActuelle].querySelector("img").classList.remove("actif");
         photoActuelle = PhotoSuivante;
         miniature[photoActuelle].querySelector("img").classList.add("actif");
@@ -67,9 +67,9 @@ function galeriephoto(galerie){
         if (PhotoPrecedente < 0){
             PhotoPrecedente = nbPhoto;
         }
-        console.log(PhotoPrecedente);
         //changement de photo
         photo.src = miniature[PhotoPrecedente].dataset.chemin_photo;
+        titre.innerText = miniature[PhotoPrecedente].dataset.titre;
         photoActuelle = PhotoPrecedente;
         miniature[photoActuelle].querySelector("img").classList.remove("actif");
         miniature[photoActuelle].querySelector("img").classList.add("actif");

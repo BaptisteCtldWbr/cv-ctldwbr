@@ -104,7 +104,7 @@ function afficherGalerie(string $idGalerie, array $images, string $cheminSrc, st
     echo    '<ul class="galerie-mini">';
     foreach($images as $key => $val){
         echo    "<li>";                                             //Création de chaque miniatures
-        echo        "<a data-chemin_photo=\"{$cheminSrc}{$key}\" title=\"{$val}\">";
+        echo        "<a data-chemin_photo=\"{$cheminSrc}{$key}\" data-titre=\"{$val}\" title=\"{$val}\">";
         echo            "<img src=\"{$cheminMinia}{$key}\" alt=\"{$val}\">";
         echo        "</a>";
         echo    "</li>";
