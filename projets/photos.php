@@ -7,7 +7,7 @@
 
 $basketfauteuil = [
     "jo-basketfauteuil-01.jpg" => "Le stade de l'Arena Bercy pour le basket fauteuil",
-    "jo-basketfauteuil-02.jpg" => "Chritophe Carlier ",
+    "jo-basketfauteuil-02.jpg" => "Christophe Carlier ",
     "jo-basketfauteuil-03.jpg" => "Alexis Ramonet face au panier",
     "jo-basketfauteuil-04.jpg" => "Ben Fox face au panier",
     "jo-basketfauteuil-05.jpg" => "Panier !",
