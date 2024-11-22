@@ -181,7 +181,7 @@ if (isset($_POST['envoi'])) {                                                   
         require_once('cv-ressources/includes/nav.php');
         ?>
 
-        <p id="lien-cv">Accéder au CV au format PDF : <a href="cv-pdf.php" target="_blank">cv-catelandwambre.pdf</a><i class="bi-filetype-pdf"></i></p>
+        <p id="lien-cv">Accéder au CV au format PDF : <a href="cv-ressources/cv-catelandwambre.pdf" download="CATELANDWAMBRE-CV.pdf">cv-catelandwambre.pdf</a><i class="bi-filetype-pdf"></i></p>
 
         <section id="formations">
             <h2>Expériences et Formations</h2>
