@@ -13,6 +13,7 @@
     - [x] Baptiste Drone
     - [x] Andina Rumicruz
     - [x] photos 
+    - [x] STUDIO 195
 - [x] Partie administration
     - [x] Connexion / Déconnexion / Vérification
     - [ ] Import de fichiers
