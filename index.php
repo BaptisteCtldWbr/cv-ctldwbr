@@ -273,6 +273,22 @@ if (isset($_POST['envoi'])) {                                                   
         <section id="contact-form">
             <h2>Me contacter</h2>
 
+            <ul id="contact-liens">
+                <?php
+
+                $queryContact = "SELECT * FROM `contact` WHERE `valide` = 1;";                        //requête : tous les contacts, publics
+                $resultContact = mysqli_query($lien, $queryContact);                                  //envoi de la reqûete au SGBDR
+
+                while ($ligne = mysqli_fetch_assoc($resultContact)){                                 //affichage de toutes les technos avec la structure HTML
+                    if ($ligne['lien'] != null){
+                        echo "<li><a href=\"{$ligne['lien']}\" target=\"_blank\"><i class=\"bi-{$ligne['id-bootstrap']}\"></i></a></li>";
+                    }
+                }
+                mysqli_free_result($resultContact);
+
+                ?>
+            </ul>
+
             <?php 
             
             if (isset($msgErreur)) {

@@ -1,3 +1,22 @@
+ul#contact-liens{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    li{
+        color: var(--bleu);
+        font-size: 1.3em;
+        transition: all 0.3s ease-in-out;
+        a::after{
+            content: "";
+        }
+        &:hover{
+            transform: scale(1.2);
+        }
+    }
+}
+
 #contact-form form{
     display: grid;
     grid-template-columns: 1fr 1fr;
