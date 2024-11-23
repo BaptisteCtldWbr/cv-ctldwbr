@@ -117,6 +117,14 @@ figure{
         font-style: italic;
         text-align: center;
     }
+    &.siteIntegre{
+        width: 90%;
+        margin: 0 5%;
+        figcaption{
+            width: 70%;
+            margin: 0 15%;
+        }
+    }
 }
 
 figure .plsr-images{

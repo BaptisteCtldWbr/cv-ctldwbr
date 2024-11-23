@@ -2,7 +2,7 @@
 
 <h3>Cinémas franciliens</h3>
 <p>La première partie concerne donc la conception et le développement d'une application web interactive en JS, il a fallut choisir un jeu de données (jusque là, ça va ce n'est pas très compliqué), puis développer le site web pour donner vies à ces données. Nous avons choisi des données sur les salles de cinémas en Île de France, un jeu de donnée traité par la Région Île de France qui vient du CNC. Nous y avons intégré une carte de ces cinémas grâce au plugin Leaflet, un camembert avec l'origine des films, et une comparaison des compilations entre les départements.</p>
-<figure>
+<figure class="siteIntegre">
     <iframe src="https://baptistectldwbr.github.io/SAE303" frameborder="0">https://baptistectldwbr.github.io/SAE303</iframe>
     <figcaption><a href="https://baptistectldwbr.github.io/SAE303" target="_blank">Le site déployé</a> - Pour une expérience optimale, ouvrez-le en grand écran.</figcaption>
 </figure>
