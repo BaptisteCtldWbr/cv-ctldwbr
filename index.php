@@ -55,8 +55,9 @@ if (isset($_POST['envoi'])) {                                                   
     <?php require_once('cv-ressources/includes/head.php'); ?>
     <link rel="stylesheet" href="cv-ressources/css/index-header.css">
     <link rel="stylesheet" href="cv-ressources/css/index-main.css">
-    <link rel="stylesheet" href="cv-ressources/css/projets.css">
     <link rel="stylesheet" href="cv-ressources/css/index-contact.css">
+    <link rel="stylesheet" href="cv-ressources/css/index-details.css">
+    <link rel="stylesheet" href="cv-ressources/css/projets.css">
     <meta property="og:title" content="CV - Baptiste Cateland Wambre">
     <meta property="og:description" content="Découvrez mon profil à travers mon CV et mes expériences">
     <meta property="og:type" content="website">
@@ -88,14 +89,27 @@ if (isset($_POST['envoi'])) {                                                   
                     <img src="cv-ressources/img/DSCF0339.jpg" alt="Photo">
                 </div>
                 <div id="moi-texte">
-                    <h1>Baptiste Cateland--Wambre</h1>
+                    <h1>Baptiste<br>Cateland--Wambre</h1>
                     <p id="moi-titre">Étudiant en développement web</p>
                     <p id="moi-stage">En recherche de <strong>stage en développement web</strong> à partir du 14 avril
                         2025 pour une durée minimale de 10 semaines !​</p>
                 </div>
             </section>
-            <div id="moi-details">
-                <section id="contact">
+        </div>
+    </header>
+
+    <main id="contenu">
+
+        <?php
+        require_once('cv-ressources/includes/nav.php');
+        ?>
+
+        <p id="lien-cv">Accéder au CV au format PDF : <a href="cv-ressources/cv-catelandwambre.pdf" download="CATELANDWAMBRE-CV.pdf">cv-catelandwambre.pdf</a><i class="bi-filetype-pdf"></i></p>
+
+        <section id="details">
+            <h2>Détails</h2>
+            <div id="details">
+                <article id="contact">
                     <h3>Contact</h3>
                     <ul id="contact">
                         <?php
@@ -114,9 +128,9 @@ if (isset($_POST['envoi'])) {                                                   
 
                         ?>
                     </ul>
-                </section>
+                </article>
                 <div id="competences">
-                    <section id="technologies">
+                    <article id="technologies">
                         <h3>Technologies</h3>
                         <div id="techno-flex">
                             <?php
@@ -132,8 +146,8 @@ if (isset($_POST['envoi'])) {                                                   
 
                             ?>
                         </div>
-                    </section>
-                    <section id="langues">
+                    </article>
+                    <article id="langues">
                         <h3>Langues</h3>
                         <ul>
                             <?php
@@ -142,15 +156,15 @@ if (isset($_POST['envoi'])) {                                                   
                             $resultLangue = mysqli_query($lien, $queryLangue);                                    //envoi de la reqûete au SGBDR
 
                             while ($ligne = mysqli_fetch_assoc($resultLangue)){                                    //affichage de tous les hobbys avec la structure HTML
-                                printf("<li>%s %s - <span class=\"niveau-langue\">%s</span></li>", $ligne['emoji'], $ligne['langue'], $ligne['niveau']);
+                                printf("<li><span class=\"langue-emoji\">%s</span> %s - <span class=\"niveau-langue\">%s</span></li>", $ligne['emoji'], $ligne['langue'], $ligne['niveau']);
                             }
                             mysqli_free_result($resultLangue);
 
                             ?>
                         </ul>
-                    </section>
+                    </article>
                 </div>
-                <section id="interets">
+                <article id="interets">
                     <h3>Centres d'intérêt</h3>
                     <ul>
                         <?php
@@ -165,23 +179,9 @@ if (isset($_POST['envoi'])) {                                                   
 
                         ?>
                     </ul>
-                </section>
+                </article>
             </div>
-            <div id="scroll">
-                <a href="#contenu" class="sans">
-                    <p>></p>
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <main id="contenu">
-
-        <?php
-        require_once('cv-ressources/includes/nav.php');
-        ?>
-
-        <p id="lien-cv">Accéder au CV au format PDF : <a href="cv-ressources/cv-catelandwambre.pdf" download="CATELANDWAMBRE-CV.pdf">cv-catelandwambre.pdf</a><i class="bi-filetype-pdf"></i></p>
+        </section>
 
         <section id="formations">
             <h2>Expériences et Formations</h2>
@@ -230,7 +230,7 @@ if (isset($_POST['envoi'])) {                                                   
             }
 
             if($nb_lignes == 0){                                                                //Gestion des erreurs, affichage du nombre de projet
-                echo "<p>Aucun projet public - Veuillez revenir bientôt, désolé.</p>";
+                echo "<p>Aucun projet publié - Veuillez revenir bientôt, désolé.</p>";
             } else if ($nb_lignes == 1) {
                 echo "<p>{$nb_lignes} projet.</p>";
             } else {
@@ -258,7 +258,7 @@ if (isset($_POST['envoi'])) {                                                   
                             if(substr($value, 0, 3) == "bi-"){
                                 $listeTags .= "<li><i class=\"{$value}\" title=\"{$key}\"></i></li>";
                             } else {
-                                $listeTags .= "<li><img src=\"../{$value}\" alt=\"{$key}\" title=\"{$key}\"></li>";
+                                $listeTags .= "<li><img src=\"{$value}\" alt=\"{$key}\" title=\"{$key}\"></li>";
                             }
                         }
                         echo $listeTags;
@@ -270,6 +270,7 @@ if (isset($_POST['envoi'])) {                                                   
 
             ?>
         </section>
+
         <section id="contact-form">
             <h2>Me contacter</h2>
 
