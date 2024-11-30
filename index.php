@@ -57,6 +57,7 @@ if (isset($_POST['envoi'])) {                                                   
     <link rel="stylesheet" href="cv-ressources/css/index-main.css">
     <link rel="stylesheet" href="cv-ressources/css/index-contact.css">
     <link rel="stylesheet" href="cv-ressources/css/index-details.css">
+    <link rel="stylesheet" href="cv-ressources/css/index-lk.css">
     <link rel="stylesheet" href="cv-ressources/css/projets.css">
     <meta property="og:title" content="CV - Baptiste Cateland Wambre">
     <meta property="og:description" content="Découvrez mon profil à travers mon CV et mes expériences">
@@ -315,6 +316,40 @@ if (isset($_POST['envoi'])) {                                                   
                 </div>
                 <button type="submit" name="envoi">Envoyer</button>
             </form>
+        </section>
+
+        <section id="linkedin">
+            <h2><i class="bi bi-linkedin"></i> Posts Linkedin</h2>
+            <div id="lk-grid">
+            <?php
+            
+            $selectLK = "SELECT * FROM `posts-lk` ORDER BY 'date' DESC;";
+            $resultLK = mysqli_query($lien, $selectLK);
+
+            if($resultLK){
+                $nb_lignesLK = mysqli_num_rows($resultLK);
+            } else {
+                echo "<p>Problème avec la requête - Veuillez revenir bientôt, désolé.</p>";
+            }
+            if($nb_lignesLK == 0){
+                echo "<p>Aucun post publié - Veuillez revenir bientôt, désolé.</p>";
+            } else {
+                echo "<p>{$nb_lignesLK} posts.</p>";
+            }
+
+            while($post = mysqli_fetch_assoc($resultLK)){
+                echo "<a href=\"{$post['lien-lk']}\" target=\"_blank\"><article>
+                    <div class=\"lk-desc\">
+                        <h4>{$post['auteur']} <span class=\"lk-date\">&lt;{$post['date']}&gt;</span></h4>
+                        <p class=\"text-lk\">{$post['texte']}</p>
+                        <p class=\"lien-lk\">Voir plus...</p>
+                    </div>
+                    <img src=\"cv-ressources/lk-minia/{$post['img']}\" alt=\"{$post['alt-img']}\">
+                </article></a>";
+            }
+            ?>
+                
+            </div>
         </section>
     </main>
     <?php require_once('cv-ressources/includes/footer.php'); ?>
