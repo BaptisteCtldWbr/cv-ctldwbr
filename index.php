@@ -338,9 +338,10 @@ if (isset($_POST['envoi'])) {                                                   
             }
 
             while($post = mysqli_fetch_assoc($resultLK)){
+                $date = formatDateFr($post['date']);
                 echo "<a href=\"{$post['lien-lk']}\" target=\"_blank\"><article>
                     <div class=\"lk-desc\">
-                        <h4>{$post['auteur']} <span class=\"lk-date\">&lt;{$post['date']}&gt;</span></h4>
+                        <h4>{$post['auteur']} <span class=\"lk-date\">&lt;{$date}&gt;</span></h4>
                         <p class=\"text-lk\">{$post['texte']}</p>
                         <p class=\"lien-lk\">Voir plus...</p>
                     </div>

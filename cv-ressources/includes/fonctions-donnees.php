@@ -135,3 +135,41 @@ function NTUI(){
 
 
 ?>
+
+
+<?php
+
+//-------------------------
+//- TRADUCTION DE LA DATE -
+//-------------------------
+
+function formatDateFr(string $date){
+    $dateObj = date_create($date);                      //créattion d'un objet DATE
+    $dateJFY = date_format($dateObj, "j F Y");          //pour le formatage au format J mois YYYY
+
+    $mois = array(                                      //déclaration d'un tableau pour comparaison
+        'January' => 'janvier',
+        'February' => 'février',
+        'March' => 'mars',
+        'April' => 'avril',
+        'May' => 'mai',
+        'June' => 'juin',
+        'July' => 'juillet',
+        'August' => 'août',
+        'September' => 'septembre',
+        'October' => 'octobre',
+        'November' => 'novembre',
+        'December' => 'décembre'
+    );
+
+    foreach ($mois as $en => $fr){                      //comparaison et remplacement du mois anglais par le français
+        $dateFR = str_replace($en, $fr, $dateJFY);
+        if($dateJFY != $dateFR){                        //si il ya une différence, c'est qu'il y a un changement
+            return $dateFR;                             //on retourne le résulat
+        }
+    }
+    
+    return $dateFR;
+}
+
+?>
