@@ -323,7 +323,7 @@ if (isset($_POST['envoi'])) {                                                   
             <div id="lk-grid">
             <?php
             
-            $selectLK = "SELECT * FROM `posts-lk` ORDER BY 'date' DESC;";
+            $selectLK = "SELECT * FROM `posts-lk` WHERE `valide` = 1 ORDER BY 'date' DESC;";
             $resultLK = mysqli_query($lien, $selectLK);
 
             if($resultLK){
